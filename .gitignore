@@ -1,0 +1,17 @@
+# macOS metadata
+.DS_Store
+
+# Python local serving and development
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.log
+
+# Local environment variables
+.env
+.env.*
+!.env.example
+
+# Impeccable local review output
+.impeccable/
