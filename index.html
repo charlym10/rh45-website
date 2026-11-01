@@ -2,8 +2,8 @@
 <meta name="description" content="Rh45 is an early-stage company working toward a cognitive layer for the physical world. Our first project focuses on autonomous access.">
 <link rel="canonical" href="https://rh45.ai/">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#F7F6F2" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rh45">
 <meta property="og:title" content="Rh45 | The cognitive layer for the physical world">
@@ -17,25 +17,23 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400&display=swap">
 <style>
-/* Rh45 design system tokens. Keep names and values in sync with DESIGN.md. */
+/* Design tokens. Keep names and values in sync with DESIGN.md. */
 :root{
   color-scheme:light dark;
-  --paper:#F7F6F2;--surface:#FFFFFF;--ink:#111110;--ink-muted:#5E5D58;--on-ink:#F7F6F2;--line:#DDDBD3;
-  --accent:#8A5B12;--accent-soft:#EFE6D3;--danger:#A3332A;
-  --state-ok:#2E6A43;--state-active:#2C5C8A;--state-attention:var(--accent);--state-alert:var(--danger);
+  --paper:#FFFFFF;--surface:#F5F5F5;--surface-strong:#EBEBEB;--ink:#000000;--ink-muted:#666666;--on-ink:#FFFFFF;--line:#E0E0E0;
+  --art-mid:#BDBDBD;--footer-bg:#000000;
   --font-sans:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
-  --font-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
-  --space-1:4px;--space-2:8px;--space-4:16px;--space-6:24px;--space-12:48px;
-  --radius-sm:4px;--radius-md:8px;--radius-full:9999px;
-  --max:1120px;--nav-height:72px;
+  --font-serif:"Source Serif 4",ui-serif,Georgia,serif;
+  --space-1:4px;--space-2:8px;--space-4:16px;--space-6:24px;--space-8:32px;--space-12:48px;
+  --radius-button:10px;--radius-card:16px;--radius-full:9999px;
+  --max:1120px;--nav-height:84px;
 }
 @media(prefers-color-scheme:dark){
   :root{
-    --paper:#121211;--surface:#1C1C1A;--ink:#F2F1EC;--ink-muted:#A3A29B;--on-ink:#121211;--line:#2E2D2A;
-    --accent:#D9A54A;--accent-soft:#2A2418;--danger:#E07A6E;
-    --state-ok:#6FBF8A;--state-active:#8DB6E0;
+    --paper:#000000;--surface:#1F1F1F;--surface-strong:#333333;--ink:#FFFFFF;--ink-muted:#999999;--on-ink:#000000;--line:#333333;
+    --art-mid:#4D4D4D;--footer-bg:#1F1F1F;
   }
 }
 
@@ -48,128 +46,143 @@ p{margin:0}
 .shell{width:min(calc(100% - 2*var(--space-6)),var(--max));margin-inline:auto}
 .page{display:none}
 .page.active{display:block}
-section{padding:var(--space-12) 0;border-bottom:1px solid var(--line)}
-section.page{padding:0;border-bottom:0}
+section{padding:var(--space-12) 0}
+section.page{padding:0}
 
 /* Type */
-h1,.hero h1{max-width:900px;margin:0 0 var(--space-6);font-size:min(48px,12.5vw);line-height:1.0834;font-weight:600;letter-spacing:-.02em;text-wrap:balance}
-h1 em{font-style:normal}
+h1{margin:0 0 var(--space-6);font-size:clamp(30px,3vw,48px);line-height:1.25;font-weight:600;letter-spacing:-.01em;text-wrap:pretty}
+h1 em{font-family:var(--font-serif);font-style:normal;font-weight:400}
 h2{margin:0 0 var(--space-4);font-size:32px;line-height:40px;font-weight:600;letter-spacing:-.01em}
-h3{margin:0 0 var(--space-2);font-size:20px;line-height:28px;font-weight:600}
-.lead{max-width:68ch;font-size:20px;line-height:28px;color:var(--ink-muted)}
+h3{margin:0 0 var(--space-2);font-size:21px;line-height:26px;font-weight:700}
+.lead{max-width:68ch;font-size:18px;line-height:28px;color:var(--ink-muted)}
 .note{margin-top:var(--space-4);font-size:14px;line-height:20px;color:var(--ink-muted)}
-.eyebrow,.small{margin-bottom:var(--space-2);font-size:12px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-muted)}
-.num{font-family:var(--font-mono);font-size:13px;line-height:20px;font-weight:400;color:var(--ink-muted);font-variant-numeric:tabular-nums}
-.link,.back{display:inline-block;margin-top:var(--space-6);color:var(--accent);text-decoration:underline;text-underline-offset:4px}
+.eyebrow,.small{margin-bottom:var(--space-2);font-size:13px;line-height:20px;letter-spacing:.01em;color:var(--ink-muted)}
+.num{font-size:28px;line-height:32px;font-weight:600;font-variant-numeric:tabular-nums}
+.link,.back{display:inline-flex;align-items:center;gap:var(--space-2);justify-self:start;min-height:44px;margin-top:var(--space-6);padding:0 var(--space-6);background:var(--surface-strong);border:1px solid var(--line);border-radius:var(--radius-button)}
+.link:hover,.back:hover{background:var(--line)}
 
 /* Header and navigation */
-header{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
-nav{height:var(--nav-height);display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:var(--space-6)}
-.logo{font-size:20px;line-height:28px;font-weight:600;letter-spacing:-.02em}
-.links{display:flex;gap:var(--space-6)}
+header{position:sticky;top:0;z-index:5;background:var(--paper)}
+nav{height:var(--nav-height);display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:var(--space-2)}
+.logo{font-size:22px;line-height:28px;font-weight:700;letter-spacing:-.02em}
+.links{display:flex;gap:var(--space-2)}
 .company-menu{position:relative;display:flex;align-items:center}
-.company-trigger{display:inline-flex;align-items:center;gap:var(--space-2);flex:none;padding:var(--space-2) 0;background:none;border:0;color:var(--ink);font:inherit;font-size:14px;line-height:20px;font-weight:500;cursor:pointer}
+.company-trigger,.contact{display:inline-flex;align-items:center;gap:var(--space-2);flex:none;height:28px;padding:0 var(--space-4);border:1px solid var(--line);border-radius:var(--radius-full);font:inherit;font-size:13px;line-height:20px;letter-spacing:.01em;white-space:nowrap;cursor:pointer}
+.company-trigger{padding-right:12px;background:var(--surface);color:var(--ink)}
+.company-trigger:hover{background:var(--surface-strong)}
 .company-chevron{display:block;flex:0 0 12px;width:12px;height:12px;transition:transform .18s ease}
 .company-menu.open>.company-trigger .company-chevron{transform:rotate(180deg)}
-.company-dropdown{display:none;position:absolute;z-index:10;top:calc(100% + var(--space-4));left:calc(-1*var(--space-4));flex-direction:column;min-width:190px;padding:var(--space-2);background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md)}
+.company-dropdown{display:none;position:absolute;z-index:10;top:calc(100% + var(--space-2));left:0;flex-direction:column;min-width:190px;padding:var(--space-2);background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-card)}
 .company-menu.open>.company-dropdown{display:flex}
-.company-dropdown:before{content:"";position:absolute;left:0;right:0;top:calc(-1*var(--space-4) - 1px);height:var(--space-4)}
-.company-dropdown a{padding:var(--space-2);border-radius:var(--radius-sm);font-size:14px;line-height:20px;white-space:nowrap}
-.company-dropdown a:hover,.company-dropdown a:focus-visible{background:var(--paper)}
-.contact{justify-self:end;display:inline-flex;align-items:center;height:36px;padding:0 var(--space-4);background:var(--ink);border:1px solid var(--ink);border-radius:var(--radius-md);color:var(--on-ink);font-size:15px;font-weight:500;white-space:nowrap}
+.company-dropdown:before{content:"";position:absolute;left:0;right:0;top:calc(-1*var(--space-2) - 1px);height:var(--space-2)}
+.company-dropdown a{padding:var(--space-2) 12px;border-radius:var(--radius-button);font-size:14px;line-height:20px;white-space:nowrap}
+.company-dropdown a:hover,.company-dropdown a:focus-visible{background:var(--surface)}
+.contact{justify-self:end;background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
 .contact:hover{background:var(--ink-muted);border-color:var(--ink-muted)}
-.mobile-menu-toggle{display:none;align-items:center;justify-content:center;flex:none;width:44px;height:44px;background:transparent;border:1px solid var(--ink-muted);border-radius:var(--radius-md);color:var(--ink);cursor:pointer}
+.mobile-menu-toggle{display:none;align-items:center;justify-content:center;flex:none;width:44px;height:44px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-button);color:var(--ink);cursor:pointer}
 .mobile-menu-toggle svg{width:18px;height:18px}
 
 /* Home */
-.hero{--hero-pad:calc(2*var(--space-12));position:relative;overflow:hidden;padding:var(--hero-pad) 0}
-.hero .shell{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:var(--space-12)}
-.hero-art{align-self:end;margin-bottom:calc(-1*var(--hero-pad))}
-.hero-art svg{display:block;width:100%;height:auto;overflow:visible}
+.hero{padding:var(--space-8) 0 var(--space-12)}
+.hero-copy .lead{margin-top:calc(-1*var(--space-2))}
+.hero-art{position:relative;overflow:hidden;height:clamp(280px,34vw,440px);margin-top:var(--space-12);background:var(--surface)}
+.hero-art svg{position:absolute;left:50%;bottom:0;width:min(480px,100%);height:auto;overflow:visible;transform:translateX(-50%)}
 .art-ink{fill:var(--ink)}
 .art-muted{fill:var(--ink-muted)}
-.art-accent{fill:var(--accent)}
-.art-paper{fill:var(--paper)}
+.art-mid{fill:var(--art-mid)}
+.art-cut{fill:var(--surface)}
 .art-edge{fill:none;stroke:var(--ink);stroke-width:1.5px;vector-effect:non-scaling-stroke}
-.art-hub{fill:var(--accent);stroke:var(--paper);stroke-width:3}
-.ink-block{padding:var(--space-12);background:var(--ink);color:var(--on-ink);border-radius:var(--radius-sm)}
-.ink-block .lead,.ink-block .note{color:var(--on-ink)}
-.conflict-flow{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:var(--space-4);align-items:stretch;margin-top:var(--space-6)}
+.art-hub{fill:var(--ink);stroke:var(--surface);stroke-width:3}
+.statement>.shell{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--space-4);align-items:start}
+.statement>.shell>.eyebrow,.statement>.shell>.conflict-flow,.statement>.shell>.cognitive-cycle,.statement>.shell>.cycle-return{grid-column:1 / -1}
+.statement>.shell>h2{grid-row:span 2;margin-bottom:0;padding-right:var(--space-8);font-size:clamp(32px,3.8vw,48px);line-height:1.08}
+.statement>.shell>.lead,.statement>.shell>.note,.statement>.shell>.link{grid-column:2}
+.statement>.shell>.note-wide{grid-column:1 / -1}
+.band{padding:calc(2*var(--space-12)) 0;background:var(--surface)}
+.conflict-flow{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:var(--space-4);align-items:stretch;margin-top:var(--space-8)}
 .conflict-arrow{display:flex;align-items:center;justify-content:center;width:24px;color:var(--ink-muted)}
 .conflict-arrow svg{display:block;width:24px;height:24px}
-.cognitive-cycle{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-4);margin-top:var(--space-6)}
+.cognitive-cycle{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-4);margin-top:var(--space-8)}
 .cycle-link{position:absolute;left:12.5%;right:12.5%;top:50%;height:1px;background:var(--ink);pointer-events:none}
 .cycle-return{display:flex;align-items:center;gap:var(--space-2);margin-top:var(--space-6);font-weight:500}
 .cycle-return svg{flex:none;width:24px;height:24px}
 
 /* Cards */
-.tile,.cap,.aboutcard,.operating-principle{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:var(--space-4)}
-.tile h3,.cap h3,.aboutcard h3{font-size:16px;line-height:24px}
-.tile .note,.cap p,.aboutcard p{margin:0;font-size:14px;line-height:20px;color:var(--ink)}
-.cap{padding:var(--space-6)}
-.cap .cap-title{display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-2);font-size:20px;line-height:28px}
-.cap .num{font-size:28px;line-height:32px;font-weight:500;letter-spacing:-.01em;color:var(--ink)}
+.tile,.cap,.aboutcard,.operating-principle{position:relative;background:var(--surface);border-radius:var(--radius-card);padding:var(--space-8)}
+.tile .note,.cap p,.aboutcard p{margin:0;font-size:14.5px;line-height:22px}
+.cap .cap-title{display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-2);margin-bottom:var(--space-2)}
 .aboutgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4)}
-.aboutcard .eyebrow{font-family:var(--font-mono);font-size:13px;line-height:20px;font-weight:400;letter-spacing:0;font-variant-numeric:tabular-nums}
+.aboutcard .eyebrow{font-variant-numeric:tabular-nums}
 
 /* Company pages */
-.subhero{padding:var(--space-12) 0;border-bottom:1px solid var(--line)}
-.subbody{padding:var(--space-12) 0}
+.subhero{padding:var(--space-8) 0 var(--space-12)}
+.subbody{padding:0 0 var(--space-12)}
 .copy{max-width:68ch}
 .copy p{margin-bottom:var(--space-4)}
 .copy h2:not(:first-child),.about-title{margin-top:var(--space-12)}
 .operating-principles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4)}
-.operating-principle{display:grid;grid-template-columns:24px minmax(0,1fr);align-content:start;gap:var(--space-4);padding:var(--space-6)}
+.operating-principle{display:grid;grid-template-columns:24px minmax(0,1fr);align-content:start;gap:var(--space-4)}
 .operating-principle:last-child{grid-column:1 / -1}
 .principle-icon{width:24px;height:24px;line-height:0}
 .principle-icon svg{display:block;width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.principle-content h2{margin:0 0 var(--space-2);font-size:20px;line-height:28px;letter-spacing:0}
-.principle-content p{max-width:68ch}
-.operating-closing{margin-top:var(--space-12);font-size:32px;line-height:40px;font-weight:600;letter-spacing:-.01em}
+.principle-content h2{margin:0 0 var(--space-2);font-size:21px;line-height:26px;font-weight:700;letter-spacing:0}
+.principle-content p{max-width:68ch;font-size:14.5px;line-height:22px}
+.operating-closing{margin-top:var(--space-12);font-family:var(--font-serif);font-size:32px;line-height:40px}
 .manifesto-copy{max-width:68ch}
 .manifesto-copy p{margin-bottom:var(--space-4)}
-.manifesto-copy p:first-child{font-size:20px;line-height:28px;font-weight:600}
+.manifesto-copy p:first-child{font-size:21px;line-height:28px;font-weight:600}
 
 /* Footer */
-footer{padding:var(--space-6) 0;border-top:1px solid var(--line);font-size:14px;line-height:20px;color:var(--ink-muted)}
-footer .row{display:flex;justify-content:space-between;align-items:center;gap:var(--space-6)}
+footer{padding:calc(2*var(--space-12)) 0 var(--space-12);background:var(--footer-bg);color:#FFFFFF;font-size:14px;line-height:20px}
+.footer-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:var(--space-12) var(--space-4)}
+.footer-rows{display:flex;flex-direction:column;border-top:1px solid #333333}
+.footer-rows a{display:flex;justify-content:space-between;align-items:center;min-height:52px;border-bottom:1px solid #333333;color:#999999}
+.footer-rows a:hover{color:#FFFFFF}
+.footer-rows svg{width:12px;height:12px;transform:rotate(-90deg)}
+.footer-meta{grid-column:1 / -1;display:flex;justify-content:space-between;gap:var(--space-6);color:#999999}
 
 /* Responsive */
 @media(hover:hover) and (pointer:fine) and (min-width:621px){
   .company-menu:hover>.company-dropdown,.company-menu:focus-within>.company-dropdown{display:flex}
   .company-menu:hover>.company-trigger .company-chevron,.company-menu:focus-within>.company-trigger .company-chevron{transform:rotate(180deg)}
 }
+@media(max-width:1000px){
+  .cognitive-cycle{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cycle-link{display:none}
+}
 @media(max-width:860px){
-  .hero .shell{grid-template-columns:minmax(0,1fr);gap:var(--space-6)}
-  .hero-art{position:relative;overflow:hidden;width:100%;max-width:400px;height:132px}
-  .hero-art svg{position:absolute;left:0;bottom:0}
+  .statement>.shell{grid-template-columns:minmax(0,1fr)}
+  .statement>.shell>h2{grid-row:auto;margin-bottom:var(--space-4);padding-right:0}
+  .statement>.shell>.lead,.statement>.shell>.note,.statement>.shell>.link,.statement>.shell>.note-wide{grid-column:auto}
+  .footer-grid{grid-template-columns:minmax(0,1fr)}
 }
 @media(max-width:720px){
   .operating-principles{grid-template-columns:1fr}
   .operating-principle:last-child{grid-column:auto}
 }
 @media(max-width:620px){
-  h1,.hero h1{font-size:min(38px,10vw)}
+  :root{--nav-height:72px}
   nav{display:flex;justify-content:space-between;gap:var(--space-2)}
   .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;padding:var(--space-2) var(--space-6) var(--space-4);background:var(--paper);border-bottom:1px solid var(--line)}
   .links.open{display:flex}
   .company-menu{flex-direction:column;align-items:stretch}
-  .company-trigger{justify-content:space-between;width:100%;min-height:44px}
-  .company-dropdown{position:static;min-width:0;padding:0 0 0 var(--space-4);background:transparent;border:0;border-left:1px solid var(--line);border-radius:0}
-  .company-dropdown a{padding:var(--space-2);min-height:44px;display:flex;align-items:center;white-space:normal}
-  .contact{height:44px;margin-left:auto}
+  .company-trigger{justify-content:space-between;width:100%;height:44px;font-size:14px}
+  .company-dropdown{position:static;min-width:0;padding:var(--space-2) 0 0;background:transparent;border:0;border-radius:0}
+  .company-dropdown a{padding:var(--space-2) var(--space-4);min-height:44px;display:flex;align-items:center;white-space:normal}
+  .contact{height:44px;margin-left:auto;font-size:14px}
   .mobile-menu-toggle{display:inline-flex}
-  .hero{--hero-pad:var(--space-12)}
-  .ink-block{padding:var(--space-6)}
+  .band{padding:var(--space-12) 0}
   .conflict-flow,.cognitive-cycle,.aboutgrid{grid-template-columns:1fr}
   .conflict-arrow{width:100%;transform:rotate(90deg)}
-  .cycle-link{left:50%;right:auto;top:12%;bottom:12%;width:1px;height:auto}
-  footer .row{flex-direction:column;align-items:flex-start;gap:var(--space-2)}
+  .cycle-link{display:block;left:50%;right:auto;top:12%;bottom:12%;width:1px;height:auto}
+  .tile,.cap,.aboutcard,.operating-principle{padding:var(--space-6)}
+  .footer-meta{flex-direction:column;gap:var(--space-2)}
 }
 
 /* Keep keyboard navigation visible and respect reduced-motion preferences. */
 a:focus-visible,
-button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+footer a:focus-visible{outline-color:#FFFFFF}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
@@ -177,10 +190,10 @@ button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 </style><link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-</head><body id="top"><header><nav class="shell"><a class="logo" href="#top" id="home-link">Rh45</a><div class="links" id="main-navigation"><div class="company-menu"><button class="company-trigger" type="button" aria-expanded="false" aria-haspopup="true">Company<svg class="company-chevron" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="company-dropdown"><a href="#manifesto">Manifesto</a><a href="#how-we-operate">How we operate</a><a href="#about">About</a></div></div></div><a class="contact" href="mailto:info@rh45.ai">Contact Rh45 ↗</a><button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="main-navigation" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></nav></header><main><div class="page active" id="home-page"><section class="hero"><div class="shell"><div class="hero-copy"><h1>The world around us is changing.<br><em>Our environments must, too.</em></h1><p class="lead">The places where people live and work remain too often passive, fragmented and reactive&#8288;—even as the systems around them become more complex.</p><a class="link" href="#conflict">See the challenge <span>↓</span></a></div><div class="hero-art" aria-hidden="true"><svg viewBox="0 0 480 288"><defs><pattern id="art-nodes" width="48" height="48" patternUnits="userSpaceOnUse"><circle class="art-muted" cx="24" cy="24" r="3"/></pattern><pattern id="art-cuts" width="48" height="48" patternUnits="userSpaceOnUse"><circle class="art-paper" cx="24" cy="24" r="3"/></pattern><clipPath id="art-blocks"><rect x="48" y="-1008" width="144" height="1272"/><rect x="320" y="72" width="160" height="192"/><rect x="208" y="168" width="96" height="96"/></clipPath></defs><rect x="0" y="-960" width="480" height="1200" fill="url(#art-nodes)"/><rect class="art-ink" x="48" y="-1008" width="144" height="1272" rx="4"/><rect class="art-muted" x="320" y="72" width="160" height="192" rx="4"/><rect class="art-accent" x="208" y="168" width="96" height="96" rx="4"/><rect x="0" y="-960" width="480" height="1200" fill="url(#art-cuts)" clip-path="url(#art-blocks)"/><path class="art-edge" d="M216 72H264L360 120L456 72M360 120L408 216M216 120H360"/><circle class="art-hub" cx="360" cy="120" r="8"/></svg></div></div></section><section id="conflict"><div class="shell"><h2>Connected is not the same as intelligent.</h2><p class="lead">Connectivity has brought more devices and data into physical spaces. But isolated systems, delayed responses and fragmented operations can still leave environments unable to understand context or coordinate effectively.</p><div class="conflict-flow"><div class="tile"><div class="small">The status quo</div><h3>Fragmented systems</h3><p class="note">Information and action remain separated.</p></div><div class="conflict-arrow" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 16H27M19 8L27 16L19 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="tile"><div class="small">The consequence</div><h3>Reactive environments</h3><p class="note">People still carry the burden of coordination.</p></div></div></div></section><section><div class="shell"><div class="ink-block"><h2>What if the environment itself could understand and respond?</h2><p class="lead">Not simply by adding another app or dashboard, but by embedding intelligence into the physical layer&#8288;—where context, infrastructure and everyday life meet.</p><p class="note">Rh45 is at an early stage. This site shares our direction and how we intend to work as we begin our first project, focused on autonomous access.</p></div></div></section><section id="cognitive"><div class="shell"><div class="eyebrow">The cognitive layer</div><h2>Intelligence, embedded into the environments where life happens.</h2><p class="lead">Rh45’s foundational ambition is to connect the physical layer with distributed intelligence, so environments can move beyond isolated automation toward contextual, coordinated action.</p><div class="cognitive-cycle"><div class="cycle-link" aria-hidden="true"></div><div class="cap"><h3 class="cap-title"><span class="num">01</span> Sense</h3><p>Understand what is happening across a physical environment.</p></div><div class="cap"><h3 class="cap-title"><span class="num">02</span> Reason</h3><p>Interpret context and determine appropriate responses.</p></div><div class="cap"><h3 class="cap-title"><span class="num">03</span> Coordinate</h3><p>Coordinate connected systems, infrastructure and agents.</p></div><div class="cap"><h3 class="cap-title"><span class="num">04</span> Act</h3><p>Execute actions autonomously within defined boundaries.</p></div></div><div class="cycle-return"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M25 12A10 10 0 0 0 7 9L4 12M4 12V5M4 12H11M7 20A10 10 0 0 0 25 23L28 20M28 20V27M28 20H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Each action informs the next cycle</span></div><p class="note">Conceptual model of the infrastructure Rh45 aims to build&#8288;—not a description of a currently available product.</p></div></section><section id="mission"><div class="shell"><h2>Our long-term direction is to build a cognitive layer for the physical world.</h2><p class="lead">We aim to build foundational infrastructure that enables physical environments to become autonomous, adaptive and secure.</p><a class="link" href="#about">Discover Rh45 <span>↗</span></a></div></section></div><section class="page how-operate-page" id="how-we-operate-page">
+</head><body id="top"><header><nav class="shell"><a class="logo" href="#top" id="home-link">Rh45</a><div class="links" id="main-navigation"><div class="company-menu"><button class="company-trigger" type="button" aria-expanded="false" aria-haspopup="true">Company<svg class="company-chevron" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="company-dropdown"><a href="#manifesto">Manifesto</a><a href="#how-we-operate">How we operate</a><a href="#about">About</a></div></div></div><a class="contact" href="mailto:info@rh45.ai">Contact Rh45 ↗</a><button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="main-navigation" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></nav></header><main><div class="page active" id="home-page"><section class="hero"><div class="shell"><div class="hero-copy"><h1>The world around us is changing. <em>Our environments must, too.</em></h1><p class="lead">The places where people live and work remain too often passive, fragmented and reactive&#8288;—even as the systems around them become more complex.</p><a class="link" href="#conflict">See the challenge <span>↓</span></a></div><div class="hero-art" aria-hidden="true"><svg viewBox="0 0 480 288"><defs><pattern id="art-nodes" width="48" height="48" patternUnits="userSpaceOnUse"><circle class="art-muted" cx="24" cy="24" r="3"/></pattern><pattern id="art-cuts" width="48" height="48" patternUnits="userSpaceOnUse"><circle class="art-cut" cx="24" cy="24" r="3"/></pattern><clipPath id="art-blocks"><rect x="48" y="-1008" width="144" height="1272"/><rect x="320" y="72" width="160" height="192"/><rect x="208" y="168" width="96" height="96"/></clipPath></defs><rect x="-1440" y="-960" width="3360" height="1200" fill="url(#art-nodes)"/><rect class="art-ink" x="48" y="-1008" width="144" height="1272" rx="4"/><rect class="art-muted" x="320" y="72" width="160" height="192" rx="4"/><rect class="art-mid" x="208" y="168" width="96" height="96" rx="4"/><rect x="-1440" y="-960" width="3360" height="1200" fill="url(#art-cuts)" clip-path="url(#art-blocks)"/><path class="art-edge" d="M216 72H264L360 120L456 72M360 120L408 216M216 120H360"/><circle class="art-hub" cx="360" cy="120" r="8"/></svg></div></div></section><section class="statement" id="conflict"><div class="shell"><h2>Connected is not the same as intelligent.</h2><p class="lead">Connectivity has brought more devices and data into physical spaces. But isolated systems, delayed responses and fragmented operations can still leave environments unable to understand context or coordinate effectively.</p><div class="conflict-flow"><div class="tile"><div class="small">The status quo</div><h3>Fragmented systems</h3><p class="note">Information and action remain separated.</p></div><div class="conflict-arrow" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 16H27M19 8L27 16L19 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="tile"><div class="small">The consequence</div><h3>Reactive environments</h3><p class="note">People still carry the burden of coordination.</p></div></div></div></section><section class="statement band"><div class="shell"><h2>What if the environment itself could understand and respond?</h2><p class="lead">Not simply by adding another app or dashboard, but by embedding intelligence into the physical layer&#8288;—where context, infrastructure and everyday life meet.</p><p class="note">Rh45 is at an early stage. This site shares our direction and how we intend to work as we begin our first project, focused on autonomous access.</p></div></section><section class="statement" id="cognitive"><div class="shell"><div class="eyebrow">The cognitive layer</div><h2>Intelligence, embedded into the environments where life happens.</h2><p class="lead">Rh45’s foundational ambition is to connect the physical layer with distributed intelligence, so environments can move beyond isolated automation toward contextual, coordinated action.</p><div class="cognitive-cycle"><div class="cycle-link" aria-hidden="true"></div><div class="cap"><h3 class="cap-title"><span class="num">01</span> Sense</h3><p>Understand what is happening across a physical environment.</p></div><div class="cap"><h3 class="cap-title"><span class="num">02</span> Reason</h3><p>Interpret context and determine appropriate responses.</p></div><div class="cap"><h3 class="cap-title"><span class="num">03</span> Coordinate</h3><p>Coordinate connected systems, infrastructure and agents.</p></div><div class="cap"><h3 class="cap-title"><span class="num">04</span> Act</h3><p>Execute actions autonomously within defined boundaries.</p></div></div><div class="cycle-return"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M25 12A10 10 0 0 0 7 9L4 12M4 12V5M4 12H11M7 20A10 10 0 0 0 25 23L28 20M28 20V27M28 20H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Each action informs the next cycle</span></div><p class="note note-wide">Conceptual model of the infrastructure Rh45 aims to build&#8288;—not a description of a currently available product.</p></div></section><section class="statement" id="mission"><div class="shell"><h2>Our long-term direction is to build a cognitive layer for the physical world.</h2><p class="lead">We aim to build foundational infrastructure that enables physical environments to become autonomous, adaptive and secure.</p><a class="link" href="#about">Discover Rh45 <span>↗</span></a></div></section></div><section class="page how-operate-page" id="how-we-operate-page">
   <div class="subhero"><div class="shell">
     <div class="eyebrow">How we operate</div>
-    <h1>Build fast.<br><em>Learn faster.</em></h1>
+    <h1>Build fast. <em>Learn faster.</em></h1>
     <p class="lead">At Rh45, we believe building the future requires more than ambitious ideas. It requires clarity of purpose, thoughtful decisions, and the ability to turn ideas into reality.</p>
   </div></div>
   <div class="subbody"><div class="shell">
@@ -226,7 +239,7 @@ Places that evolve.</p>
 <h2 class="about-title">Core values</h2><div class="aboutgrid"><article class="aboutcard"><div class="eyebrow">01</div><h3>Intellectual honesty</h3><p>Reality matters more than ego, assumptions or narratives. We value clear thinking, honest communication and evidence-based decisions. Problems are solved faster when they are understood truthfully.</p></article><article class="aboutcard"><div class="eyebrow">02</div><h3>Long-term thinking</h3><p>We build with durability in mind. Our decisions prioritize long-term resilience, adaptability and foundational value over short-term optimization or temporary trends.</p></article><article class="aboutcard"><div class="eyebrow">03</div><h3>Systems thinking</h3><p>Complex environments cannot be understood in isolation. We approach technology, infrastructure and operations as interconnected systems where every component influences the whole.</p></article><article class="aboutcard"><div class="eyebrow">04</div><h3>Responsible autonomy</h3><p>Autonomy must always be paired with accountability. As systems become more intelligent and independent, transparency, security and meaningful human oversight remain essential.</p></article><article class="aboutcard"><div class="eyebrow">05</div><h3>Precision over noise</h3><p>Clarity and substance matter more than hype. We prioritize rigor, thoughtful execution and technical depth over unnecessary complexity, distraction or superficial innovation.</p></article><article class="aboutcard"><div class="eyebrow">06</div><h3>Human-centered engineering</h3><p>Technology should work in service of people. We design systems that improve safety, efficiency, adaptability and quality of life within the environments where humanity lives.</p></article></div>
 <h2 class="about-title">Core beliefs</h2><div class="aboutgrid"><article class="aboutcard"><div class="eyebrow">01</div><h3>Physical environments will become intelligent</h3><p>Homes, communities and cities will evolve from passive structures into adaptive systems capable of sensing, reasoning and responding in real time.</p></article><article class="aboutcard"><div class="eyebrow">02</div><h3>Intelligence will be distributed</h3><p>The future of intelligent systems will depend on the coordination of edge infrastructure, cloud systems, embodied agents, and human context.</p></article><article class="aboutcard"><div class="eyebrow">03</div><h3>Infrastructure is becoming computational</h3><p>Connectivity, energy, security and physical operations are evolving into programmable and data-driven systems.</p></article><article class="aboutcard"><div class="eyebrow">04</div><h3>Autonomy will become part of everyday life</h3><p>Autonomous systems will increasingly operate within the environments where people live, requiring reliability, transparency and human oversight.</p></article><article class="aboutcard"><div class="eyebrow">05</div><h3>Interoperability enables scale</h3><p>Long-term innovation depends on open and interoperable ecosystems capable of evolving across technologies, vendors and environments.</p></article><article class="aboutcard"><div class="eyebrow">06</div><h3>Human-centered systems create lasting value</h3><p>Technology creates meaningful impact when it improves safety, efficiency and quality of life for the people it serves.</p></article><article class="aboutcard"><div class="eyebrow">07</div><h3>Foundations matter more than isolated products</h3><p>Lasting technological change is driven by foundational infrastructure that enables continuous evolution, not by disconnected point solutions.</p></article></div>
 <h2 class="about-title">Non-negotiables</h2><div class="aboutgrid"><article class="aboutcard"><div class="eyebrow">01</div><h3>Human safety comes first</h3><p>No system, automation or optimization is more important than the safety and well-being of the people who depend on it.</p></article><article class="aboutcard"><div class="eyebrow">02</div><h3>Security and privacy are foundational</h3><p>Trust cannot exist without strong security, resilient infrastructure and responsible data practices.</p></article><article class="aboutcard"><div class="eyebrow">03</div><h3>Reliability is mandatory</h3><p>Systems operating in physical environments must remain dependable, resilient and operational under real-world conditions.</p></article><article class="aboutcard"><div class="eyebrow">04</div><h3>Autonomy requires transparency</h3><p>Autonomous systems must remain observable, understandable and accountable to human oversight.</p></article><article class="aboutcard"><div class="eyebrow">05</div><h3>Interoperability is a strategic requirement</h3><p>We do not build ecosystems that depend on unnecessary lock-in, fragmentation or closed standards.</p></article><article class="aboutcard"><div class="eyebrow">06</div><h3>Long-term foundations outweigh short-term gains</h3><p>We prioritize durable infrastructure, sustainable architecture and long-term value over temporary optimization or rapid but fragile growth.</p></article><article class="aboutcard"><div class="eyebrow">07</div><h3>Technical rigor is non-negotiable</h3><p>Important systems require depth, precision and disciplined execution&#8288;—not hype, shortcuts or superficial innovation.</p></article></div>
-<a class="back" href="#top" id="back-home">← Back to home</a></div></div></section><footer><div class="shell row"><span>Delaware Corporation · United States</span><span>Copyright © 2026 Rh45 Corp. All rights reserved.</span></div></footer><script>
+<a class="back" href="#top" id="back-home">← Back to home</a></div></div></section><footer><div class="shell footer-grid"><span class="logo">Rh45</span><div class="footer-rows"><a href="#manifesto">Manifesto<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#how-we-operate">How we operate<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#about">About<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="footer-meta"><span>Delaware Corporation · United States</span><span>Copyright © 2026 Rh45 Corp. All rights reserved.</span></div></div></footer><script>
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const mainNavigation = document.querySelector('#main-navigation');
 const companyMenu = document.querySelector('.company-menu');
@@ -279,7 +292,7 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
-document.querySelectorAll('#main-navigation a[href^="#"]').forEach((link) => {
+document.querySelectorAll('#main-navigation a[href^="#"], .footer-rows a').forEach((link) => {
   link.addEventListener('click', (event) => {
     const id = link.getAttribute('href').slice(1);
     const target = document.getElementById(id);
