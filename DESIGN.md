@@ -1,211 +1,95 @@
 ---
 name: Rh45
-description: A precise, architectural visual language for the physical world's cognitive layer.
+description: Warm black and white, generous space and clear type. One ochre accent marks the moments a person is needed.
 colors:
-  primary: "#C6F36A"
-  neutral-bg: "#0B0D10"
-  neutral-deep: "#0E1115"
-  neutral-surface: "#12171C"
-  neutral-foreground: "#F3F5F7"
-  neutral-muted: "#A6AFB9"
-  cool-gray: "#C5CBD2"
-  label-muted: "#8E99A5"
-  footer-muted: "#89939D"
-  neutral-line: "#FFFFFF20"
-  pill-line: "#FFFFFF44"
-  lime-outline: "rgba(190,255,80,.28)"
-  hero-outline: "#C6F36A25"
-  hero-ring-wide: "#C6F36A08"
-  hero-ring-outer: "#C6F36A05"
+  paper: { light: "#F7F6F2", dark: "#121211" }
+  surface: { light: "#FFFFFF", dark: "#1C1C1A" }
+  ink: { light: "#111110", dark: "#F2F1EC" }
+  ink-muted: { light: "#5E5D58", dark: "#A3A29B" }
+  on-ink: { light: "#F7F6F2", dark: "#121211" }
+  line: { light: "#DDDBD3", dark: "#2E2D2A" }
+  accent: { light: "#8A5B12", dark: "#D9A54A" }
+  accent-soft: { light: "#EFE6D3", dark: "#2A2418" }
+  danger: { light: "#A3332A", dark: "#E07A6E" }
+  state-ok: { light: "#2E6A43", dark: "#6FBF8A" }
+  state-active: { light: "#2C5C8A", dark: "#8DB6E0" }
+  state-attention: "{colors.accent}"
+  state-alert: "{colors.danger}"
 typography:
-  display:
-    fontFamily: "Inter, system-ui, sans-serif"
-    fontSize: "clamp(3rem, 6vw, 5.25rem)"
-    fontWeight: 560
-    lineHeight: 0.98
-    letterSpacing: "-0.05em"
-  headline:
-    fontFamily: "Inter, system-ui, sans-serif"
-    fontSize: "clamp(2rem, 5vw, 4.1rem)"
-    fontWeight: 550
-    lineHeight: 1.05
-    letterSpacing: "-0.035em"
-  title:
-    fontFamily: "Inter, system-ui, sans-serif"
-    fontSize: "1.2rem"
-    fontWeight: 700
-    letterSpacing: "-0.03em"
-  body:
-    fontFamily: "Inter, system-ui, sans-serif"
-    fontSize: "16px"
-    fontWeight: 400
-    lineHeight: 1.6
-  label:
-    fontFamily: "Inter, system-ui, sans-serif"
-    fontSize: "0.72rem"
-    fontWeight: 700
-    letterSpacing: "0.16em"
-  contact:
-    fontFamily: "Inter, system-ui, sans-serif"
-    fontSize: "0.82rem"
-    fontWeight: 650
-    lineHeight: 1.6
+  display: { fontFamily: "Inter", fontSize: "48px", lineHeight: "52px", fontWeight: 600, letterSpacing: "-0.02em" }
+  title: { fontFamily: "Inter", fontSize: "32px", lineHeight: "40px", fontWeight: 600, letterSpacing: "-0.01em" }
+  heading: { fontFamily: "Inter", fontSize: "20px", lineHeight: "28px", fontWeight: 600 }
+  body: { fontFamily: "Inter", fontSize: "16px", lineHeight: "26px", fontWeight: 400 }
+  small: { fontFamily: "Inter", fontSize: "14px", lineHeight: "20px", fontWeight: 400 }
+  label: { fontFamily: "Inter", fontSize: "12px", lineHeight: "16px", fontWeight: 500, letterSpacing: "0.04em" }
+  metric: { fontFamily: "JetBrains Mono", fontSize: "28px", lineHeight: "32px", fontWeight: 500, letterSpacing: "-0.01em" }
+  data: { fontFamily: "JetBrains Mono", fontSize: "13px", lineHeight: "20px", fontWeight: 400 }
 rounded:
-  dropdown: "12px"
-  card: "15px"
-  list-item: "7px"
-  pill: "20px"
-  circular: "50%"
+  sm: "4px"
+  md: "8px"
+  full: "9999px"
 spacing:
-  shell-gutter: "20px"
-  nav-gap: "24px"
-  grid-gap: "12px"
-  card-padding: "24px"
-  section-desktop: "90px"
-  section-mobile: "68px"
-components:
-  contact-link:
-    backgroundColor: "{colors.neutral-surface}"
-    textColor: "{colors.primary}"
-    typography: "{typography.contact}"
-    rounded: "{rounded.card}"
-    padding: "9px 16px"
-  content-card:
-    backgroundColor: "{colors.neutral-surface}"
-    textColor: "{colors.neutral-foreground}"
-    rounded: "{rounded.card}"
-    padding: "24px"
-  dropdown-item:
-    backgroundColor: "{colors.neutral-bg}"
-    textColor: "{colors.cool-gray}"
-    rounded: "{rounded.list-item}"
-    padding: "10px 12px"
-  mobile-menu:
-    backgroundColor: "transparent"
-    textColor: "{colors.neutral-foreground}"
-    rounded: "{rounded.circular}"
-    size: "44px"
-  text-link:
-    textColor: "{colors.neutral-foreground}"
-    padding: "0 0 6px"
+  space-1: "4px"
+  space-2: "8px"
+  space-4: "16px"
+  space-6: "24px"
+  space-12: "48px"
 ---
 
 # Design System: Rh45
 
-## Overview
+This file records how the website applies the Rh45 design system. The system itself is kept in the **Rh45** Design System artifact on claude.ai, which owns the tokens, components and brand book. When they differ, the artifact wins: update it first, then the tokens in `index.html` and this file.
 
-**Creative North Star: "La capa cognitiva del mundo físico"**
+## Principles
 
-The visual language is precise, architectural, and human. It gives a long-term infrastructure ambition a confident presence while keeping the interface controlled and legible. Large sans-serif headlines and deliberate open space let the physical-world thesis carry the weight.
+1. **Precision over noise.** No hype, no superlatives, no decoration that does not explain something.
+2. **Observable by design.** What a system does, why, and who acted must always be visible.
+3. **Systems, not screens.** Show relationships, not isolated widgets.
+4. **The human decides.** `accent` is reserved for where a person is asked to look, decide or approve.
+5. **Rules, not shadows.** Separate with `line` and with space. No shadows, no gradients.
 
-Surfaces stay mostly flat and tonal. Fine borders define cards and controls; lime marks emphasis and action. Controls and cards remain minimal and nearly invisible around the content. The rendered website is the source of truth for this document: it currently uses a soft electric lime, charcoal backgrounds, cool grays, and a dark theme.
+## Voice
 
-**Key Characteristics:**
-- Dark charcoal canvas with a soft electric-lime accent and cool gray supporting text.
-- Architectural spacing and large, responsive sans-serif headlines.
-- Flat tonal panels, fine borders, and restrained controls.
-- Human consequences remain present in technical storytelling.
+Short, declarative sentences. Lead with the fact, in the active voice. Sentence case for titles and labels. No exclamation marks, emoji or metaphors about magic or brains.
 
-## Colors
+## Color
 
-The implemented palette pairs a near-black canvas with a soft lime signal and cool gray text. The values in the frontmatter preserve the actual rendered colors, including distinct low-contrast details still present in the stylesheet.
-
-### Primary
-- **Electric Lime** (`{colors.primary}`): Emphasized words, small labels, links, and the contact action.
-
-### Neutral
-- **Near-Black Canvas** (`{colors.neutral-bg}`): Page background, header, and dropdown field.
-- **Deep Charcoal Surface** (`{colors.neutral-deep}`): Alternate dark sections.
-- **Graphite Panel** (`{colors.neutral-surface}`): Contact action and content cards.
-- **Soft White** (`{colors.neutral-foreground}`): Main headings and body text.
-- **Mist Gray** (`{colors.neutral-muted}`): Muted descriptions and supporting copy.
-- **Cool Gray** (`{colors.cool-gray}`): Navigation and paragraph text.
-- **Small Label Gray** (`{colors.label-muted}`): Compact uppercase labels.
-- **Footer Gray** (`{colors.footer-muted}`): Footer copy.
-- **Hairline White** (`{colors.neutral-line}`): Standard section, card, and control borders.
-- **Pill Border** (`{colors.pill-line}`): Dashed outline on small status pills.
-- **Lime Icon Outline** (`{colors.lime-outline}`): Border around How We Operate principle icons.
-- **Hero Lime Outline** (`{colors.hero-outline}`): Fine outline around the Home hero rings.
-- **Wide Hero Ring** (`{colors.hero-ring-wide}`) and **Outer Hero Ring** (`{colors.hero-ring-outer}`): Faint concentric bands behind the Home headline.
-
-**The Lime Signal Rule.** Reserve the accent for emphasis and actions; keep most of each screen in dark neutrals and supporting grays.
+- Page: `paper`. Cards and panels: `surface`. Text: `ink`, secondary `ink-muted`. Never text in `line`.
+- Control borders use `ink-muted`; `line` is for decorative rules only.
+- On this site `accent` appears only on links and focus rings. The site has no item awaiting a human decision yet.
+- The theme follows `prefers-color-scheme`. Both themes use the same token names.
 
 ## Typography
 
-**Display Font:** Inter, with a system sans-serif fallback  
-**Body Font:** Inter, with a system sans-serif fallback  
-**Label Font:** Inter, with a system sans-serif fallback
+Inter for text, JetBrains Mono for figures. Both load from Google Fonts. Hierarchy comes from size and weight, never from color.
 
-**Character:** A compact, modern sans-serif voice balances a technical subject with direct, readable language. Headlines carry the strongest weight; supporting copy uses generous line height.
-
-### Hierarchy
-- **Display** (weight 560, `clamp(3rem, 6vw, 5.25rem)`, line height 0.98): Home and company-page hero headlines; page-specific responsive overrides are documented in Layout.
-- **Headline** (weight 550, `clamp(2rem, 5vw, 4.1rem)`, line height 1.05): Major section statements.
-- **Title** (weight 700, `1.2rem`): Card and principle titles, with tight tracking.
-- **Body** (weight 400, `16px`, line height 1.6): Default copy. Lead paragraphs grow fluidly and use a 760px maximum measure.
-- **Label** (weight 700, `0.72rem`, tracking `0.16em`, uppercase): Eyebrows and short section labels.
-
-**The Headline Scale Rule.** Let page statements lead, then reduce scale and density for supporting copy; preserve the per-page mobile overrides rather than applying one headline size everywhere.
+| Element | Style |
+| --- | --- |
+| `h1` | `display`, scaled down below 384px wide so long words fit |
+| `h2`, closing statement | `title` |
+| Principle headings, `h3` | `heading` |
+| Card titles | 16/24, weight 600, from the Card component |
+| Lead paragraphs | 20/28, weight 400, `ink-muted` |
+| Running text | `body`, measure near 68 characters |
+| Card text, notes, footer, company menu | `small` |
+| Eyebrows | `label`, uppercase |
+| Numbering (01, 02) | `data` |
 
 ## Layout
 
-Content sits in a centered shell capped at 1120px with 20px side gutters. Desktop navigation is 74px high with 24px gaps. Sections use 90px vertical padding on wide screens and 68px below 621px. Card grids use 12px gaps and 24px internal padding; larger editorial blocks use two-column layouts before collapsing to one column.
-
-At widths below 621px, navigation collapses behind a 44px circular control, the Home hero is at least 400px high, and its headline uses `clamp(2.7rem, 8vw, 3rem)`. Company-page hero headings use `clamp(2.8rem, 13vw, 4.2rem)` at that width. From 1200px upward, Home and company-page hero headings use `clamp(3.5rem, 6vw, 5.25rem)` with `-0.04em` tracking. The How We Operate principle grid becomes one column below 721px; content grids adjust below 801px. Company subpages use 30px/28px hero padding and 22px/72px body padding on wide screens, tightening to 22px/22px and 18px/52px below 621px.
-
-**The Measured Shell Rule.** Keep reading content aligned to the centered shell and preserve the wide-screen measure; let grids collapse at their observed breakpoints instead of squeezing cards.
-
-## Elevation & Depth
-
-Depth is mostly tonal: the panel surface and fine border separate cards from the canvas without a default shadow. The company dropdown uses the only structural shadow. The Home hero adds faint concentric lime bands as a localized atmospheric effect. The header uses a translucent dark backdrop and blur; neither effect is a general panel treatment.
-
-### Shadow Vocabulary
-- **Dropdown separation** (`0 14px 34px #0008`): Floating company menu.
-- **Hero rings** (`0 0 0 60px #c6f36a08, 0 0 0 120px #c6f36a05`): Home hero only.
-
-**The Flat Surface Rule.** Use tonal contrast and fine borders at rest; keep shadows and blur limited to their existing header, dropdown, and hero contexts.
-
-## Shapes
-
-Cards and the contact action use gently rounded 15px corners; the dropdown uses 12px, dropdown items 7px, and small status pills 20px. The mobile navigation control is circular. Borders remain 1px and quiet, except the pill's dashed border. Keep these restrained silhouettes rather than introducing a new radius language.
+A centered 1120px shell with `space-6` side margins. Content is left-aligned. Sections are `space-12` apart and separated by a `line` rule. Grids collapse to one column at 720px (How we operate) and 620px (everything else). One solid `ink` block on Home acts as counterweight.
 
 ## Components
 
-### Company Navigation
-- The wordmark sits at the left of the header. The company dropdown and contact action follow on desktop; a circular menu control appears on mobile.
-- The dropdown is a dark floating column with compact links. Hover and keyboard focus change the item surface and accent color; the chevron rotates over 180ms.
-- Smooth anchor scrolling is disabled when reduced motion is requested.
+- **Button:** the header contact link uses the secondary style. Its height grows from 36px to 44px below 620px, for touch.
+- **Card:** tiles, cycle steps, principles and About cards. `surface`, `line` border, `radius-md`, `space-4` padding.
+- **Text link:** `accent`, underlined, so color is never the only cue.
+- **Status, Metric and EventRow:** not used. They show live readings, and the site must not present data Rh45 does not have.
 
-### Contact Action
-- **Character:** Compact, quiet, and easy to find in the header.
-- **Surface:** Panel background, lime text, and a fine outline; 15px corners and `9px 16px` padding.
-- **Typography:** Inter, 0.82rem, weight 650.
+## Iconography
 
-### Content Cards
-- **Surface:** Tonal panel with a 1px hairline border, 15px corners, and 24px padding.
-- **Use:** Principles, operating ideas, and supporting content. Keep body copy muted and subordinate to its heading.
+1.5px stroke icons with rounded joins, in `ink` or `ink-muted`. The system has no icon set yet.
 
-### Text Link
-- **Style:** Inline text with a fine lime underline and a small directional cue; the underline sits 6px below the text.
+## Logo
 
-### How We Operate Principle
-- **Layout:** Two-column row with a line icon and explanatory text; cards form two columns above 720px and one below.
-- **Surface:** Quiet translucent white tint, hairline border, 15px corners, and 28px padding, reduced to 22px on mobile.
-- **Icon:** 44px outlined container with a 12px radius, reduced to 40px below 721px.
-
-### Mobile Menu Control
-- **Style:** Circular 44px control with a 1px border and an 18px three-line icon.
-- **Behavior:** Opens the navigation; the company menu toggles on touch layouts.
-
-## Do's and Don'ts
-
-### Do:
-- **Do** use the implemented accent sparingly for emphasis, labels, and actions.
-- **Do** preserve the high-contrast headline hierarchy and responsive type steps.
-- **Do** keep panels flat, tonal, and outlined with the existing fine border.
-- **Do** respect reduced-motion preferences for anchor scrolling and transitions.
-
-### Don't:
-- **Don't** introduce a new accent color or silently merge the distinct grays and translucent borders documented from the current stylesheet.
-- **Don't** apply shadows, blur, or hero-ring effects to ordinary cards.
-- **Don't** let navigation controls or decorative details compete with the page message.
+The system has no logo yet. The wordmark is "Rh45" in Inter 600, `ink`, letter-spacing -0.02em. The favicons set "45" in type, `on-ink` on `ink`, and are not a logo.
