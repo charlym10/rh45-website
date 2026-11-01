@@ -9,7 +9,9 @@ colors:
   ink-muted: { light: "#666666", dark: "#999999" }
   on-ink: { light: "#FFFFFF", dark: "#000000" }
   line: { light: "#E0E0E0", dark: "#333333" }
-  art-mid: { light: "#BDBDBD", dark: "#4D4D4D" }
+  ring-line: { light: "rgba(0,0,0,.145)", dark: "rgba(255,255,255,.145)" }
+  ring-wide: { light: "rgba(0,0,0,.03)", dark: "rgba(255,255,255,.03)" }
+  ring-outer: { light: "rgba(0,0,0,.02)", dark: "rgba(255,255,255,.02)" }
   footer-bg: { light: "#000000", dark: "#1F1F1F" }
 typography:
   statement: { fontFamily: "Inter", fontSize: "clamp(30px, 3vw, 48px)", lineHeight: 1.25, fontWeight: 600, letterSpacing: "-0.01em" }
@@ -22,6 +24,7 @@ typography:
   card-body: { fontFamily: "Inter", fontSize: "14.5px", lineHeight: "22px", fontWeight: 400 }
   caption: { fontFamily: "Inter", fontSize: "13px", lineHeight: "20px", fontWeight: 400, letterSpacing: "0.01em" }
 rounded:
+  icon-button: "8px"
   button: "10px"
   card: "16px"
   full: "9999px"
@@ -46,8 +49,8 @@ This file records the design the website ships. The tokens in `index.html` and t
 
 1. **Statements first.** Each page opens with its claim in type, then the supporting detail.
 2. **Monochrome.** Color never carries meaning here. Hierarchy comes from size, weight and typeface.
-3. **Flat and soft.** Cards are tonal, with no borders or shadows. Sections separate with space and tone, not rules.
-4. **Systems, not screens.** The hero composition and the cognitive cycle show parts connected to each other.
+3. **Flat and soft.** Cards are tonal, with no borders or shadows. Sections separate with space and tone; only the hero keeps a rule below it.
+4. **Systems, not screens.** The cognitive cycle shows parts connected to each other.
 
 ## Voice
 
@@ -55,10 +58,10 @@ Short, declarative sentences. Lead with the fact, in the active voice. Sentence 
 
 ## Color
 
-- Page: `paper`. Cards and the band: `surface`. Buttons and hover states: `surface-strong`.
-- Text: `ink`, secondary `ink-muted`. Never text in `line` or `art-mid`.
-- `art-mid` is only for the middle block in the hero composition.
-- The footer stays dark in both themes, using `footer-bg` with fixed white and `#999999` text and `#333333` rules.
+- Page: `paper`. Cards and the band: `surface`. Hover states: `surface-strong`.
+- Text: `ink`, secondary `ink-muted`. Never text in `line`.
+- The `ring-*` tokens are only for the hero rings.
+- The footer stays dark in both themes, using `footer-bg` with fixed `#999999` text.
 - The theme follows `prefers-color-scheme`.
 
 ## Typography
@@ -75,21 +78,23 @@ Inter for text, Source Serif 4 for the second beat of a headline and the closing
 | Running text | `body`, measure near 68 characters |
 | Card text | `card-body` |
 | Eyebrows, card labels, About numbering | `caption`, `ink-muted` |
+| Mobile menu links | 12.48px, kept from the first version of the site |
 | Cognitive cycle numbers | 28/32, weight 600, tabular figures |
 
 ## Layout
 
 A centered 1120px shell with `space-6` side margins. Home sections are two columns, with the title on the left and the supporting text on the right, and they collapse to one column at 860px. One full-width `surface` band sits in the middle of Home. Card grids use `space-4` gaps. The cycle goes from four columns to two at 1000px and to one at 620px. Principles collapse at 720px, and About cards at 620px.
 
-The Home hero is a statement followed by a full-width `surface` panel holding the composition: an `ink` slab bled off the top, `ink-muted` and `art-mid` blocks, a node grid at a 48px pitch and thin `ink` edges joining one hub. It is decorative, so it stays hidden from assistive technology.
+The Home hero keeps the rings from the first version of the site, in the new palette: a 550px circle 120px past the right edge and 12% from the top, with a 1px `ring-line` border and two flat bands of 60px (`ring-wide`) and 120px (`ring-outer`). The hero is at least 460px high, 400px below 620px wide, and clips the rings at its lower rule.
 
 ## Components
 
-- **Navigation pill:** 28px high, `radius-full`, 13px text, `surface` with a `line` border. Grows to 44px on touch layouts.
-- **Primary button:** the header contact link, in the pill shape with an `ink` fill. One per view.
-- **Secondary button:** `.link` and `.back`. 44px high, `radius-button`, `surface-strong` with a `line` border.
+- **Navigation pill:** 28px high, `radius-full`, 13px text, `surface` with a `line` border. Desktop only.
+- **Primary button:** the header contact link, in the pill shape with an `ink` fill. One per view. Below 620px it is 36px high with a 44px touch target.
+- **Content links:** kept from the first version of the site. `.link` is inline `ink` text with a 1px `ink` underline 6px below it. `.back` is plain `ink` text with its arrow.
+- **Mobile menu:** below 620px, a 36px square button with an 8px radius and a 44px touch target. Its icon is three left-aligned lines of decreasing length. The menu opens as a panel under the header: Company as a plain row, and its links indented behind a `line` rule, kept from the first version of the site.
 - **Card:** tiles, cycle steps, principles and About cards. `surface`, `radius-card`, `space-8` padding, `space-6` below 620px. No border.
-- **Footer:** the wordmark on the left, ruled links with chevrons on the right and a legal line below.
+- **Footer:** the legal line only, on `footer-bg`.
 - **Status, Metric and EventRow:** not used. They show live readings, and the site must not present data Rh45 does not have.
 
 ## Iconography
