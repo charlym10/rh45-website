@@ -56,7 +56,7 @@ Short, declarative sentences. Lead with the fact, in the active voice. Sentence 
 
 - Page: `paper`. Cards and panels: `surface`. Text: `ink`, secondary `ink-muted`. Never text in `line`.
 - Control borders use `ink-muted`; `line` is for decorative rules only.
-- On this site `accent` appears only on links and focus rings. The site has no item awaiting a human decision yet.
+- On this site `accent` appears on links, focus rings and the hero composition. The site has no item awaiting a human decision yet.
 - The theme follows `prefers-color-scheme`. Both themes use the same token names.
 
 ## Typography
@@ -65,7 +65,7 @@ Inter for text, JetBrains Mono for figures. Both load from Google Fonts. Hierarc
 
 | Element | Style |
 | --- | --- |
-| `h1` | `display`, scaled down below 384px wide so long words fit |
+| `h1` | `display`; 38px at 620px wide and below, down to 10vw so long words fit |
 | `h2`, closing statement | `title` |
 | Principle headings, `h3` | `heading` |
 | Card titles | 16/24, weight 600, from the Card component |
@@ -73,16 +73,19 @@ Inter for text, JetBrains Mono for figures. Both load from Google Fonts. Hierarc
 | Running text | `body`, measure near 68 characters |
 | Card text, notes, footer, company menu | `small` |
 | Eyebrows | `label`, uppercase |
-| Numbering (01, 02) | `data` |
+| Numbering (01, 02) | `data`; the four cognitive cycle steps use `metric`, because their order carries meaning |
+| Cycle step titles | `heading` |
 
 ## Layout
 
 A centered 1120px shell with `space-6` side margins. Content is left-aligned. Sections are `space-12` apart and separated by a `line` rule. Grids collapse to one column at 720px (How we operate) and 620px (everything else). One solid `ink` block on Home acts as counterweight.
 
+The Home hero carries the composition from the system's cover: an `ink` slab bled off the top, `ink-muted` and `accent` blocks, a node grid at a 48px pitch and thin `ink` edges joining one `accent` hub. It is decorative, so it stays hidden from assistive technology. Below 860px it becomes a short band under the text.
+
 ## Components
 
-- **Button:** the header contact link uses the secondary style. Its height grows from 36px to 44px below 620px, for touch.
-- **Card:** tiles, cycle steps, principles and About cards. `surface`, `line` border, `radius-md`, `space-4` padding.
+- **Button:** the header contact link is the one primary button in each view. Its height grows from 36px to 44px below 620px, for touch.
+- **Card:** tiles, cycle steps, principles and About cards. `surface`, `line` border, `radius-md`, `space-4` padding; cycle steps and How we operate principles use `space-6`.
 - **Text link:** `accent`, underlined, so color is never the only cue.
 - **Status, Metric and EventRow:** not used. They show live readings, and the site must not present data Rh45 does not have.
 
