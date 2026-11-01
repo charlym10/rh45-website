@@ -160,7 +160,8 @@ footer .row{display:flex;justify-content:space-between;align-items:center;gap:va
   .contact{position:relative;height:36px;margin-left:auto;padding:0 12px}
   .mobile-menu-toggle{position:relative;display:inline-flex;width:36px;height:36px}
   /* Keep 44px touch targets around the smaller visible controls. */
-  .contact:after,.mobile-menu-toggle:after{content:"";position:absolute;inset:-5px -1px}
+  .contact:after,.mobile-menu-toggle:after{content:"";position:absolute;inset:-5px}
+  .contact:after{inset:-5px -1px}
   .hero{min-height:400px}
   .hero .shell{padding:42px 0 36px}
   .band{padding:var(--space-12) 0}
