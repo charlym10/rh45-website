@@ -83,9 +83,9 @@ nav{height:var(--nav-height);display:grid;grid-template-columns:1fr auto auto;al
 .mobile-menu-toggle svg{width:20px;height:20px}
 
 /* Home */
-.hero{position:relative;display:flex;align-items:flex-start;min-height:460px;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero{position:relative;display:flex;align-items:center;min-height:max(460px,calc(100svh - var(--nav-height)));overflow:hidden;border-bottom:1px solid var(--line)}
 .hero:after{content:"";position:absolute;right:-120px;top:12%;width:550px;height:550px;border:1px solid var(--ring-line);border-radius:50%;box-shadow:0 0 0 60px var(--ring-wide),0 0 0 120px var(--ring-outer)}
-.hero .shell{position:relative;z-index:1;padding:64px 0 48px}
+.hero .shell{position:relative;z-index:1}
 .statement>.shell{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--space-4);align-items:start}
 .statement>.shell>.eyebrow,.statement>.shell>.conflict-flow,.statement>.shell>.cognitive-cycle,.statement>.shell>.cycle-return{grid-column:1 / -1}
 .statement>.shell>h2{grid-row:span 2;margin-bottom:0;padding-right:var(--space-8);font-size:clamp(32px,3.8vw,48px);line-height:1.08}
@@ -162,8 +162,7 @@ footer .row{display:flex;justify-content:space-between;align-items:center;gap:va
   /* Keep 44px touch targets around the smaller visible controls. */
   .contact:after,.mobile-menu-toggle:after{content:"";position:absolute;inset:-5px}
   .contact:after{inset:-5px -1px}
-  .hero{min-height:400px}
-  .hero .shell{padding:42px 0 36px}
+  .hero{min-height:max(400px,calc(100svh - var(--nav-height)))}
   .band{padding:var(--space-12) 0}
   .conflict-flow,.cognitive-cycle,.aboutgrid{grid-template-columns:1fr}
   .conflict-arrow{width:100%;transform:rotate(90deg)}
