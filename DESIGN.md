@@ -54,7 +54,7 @@ This file records the design the website ships. The tokens in `index.html` and t
 
 ## Voice
 
-Short, declarative sentences. Lead with the fact, in the active voice. Sentence case for titles and labels. No exclamation marks, emoji or metaphors about magic or brains.
+Short, declarative sentences. Lead with the fact, in the active voice. Sentence case for titles and labels, except the company page titles above the `h1`, which CSS sets in uppercase. No exclamation marks, emoji or metaphors about magic or brains.
 
 ## Color
 
@@ -77,7 +77,8 @@ Inter for text, Source Serif 4 for the second beat of a headline and the closing
 | Lead paragraphs on company pages and in the closing Home section | `lead`, `ink-muted` |
 | Running text, including the other Home paragraphs | `body`, measure near 68 characters |
 | Card text | `card-body` |
-| Eyebrows, card labels, About numbering | `caption`, `ink-muted` |
+| Company page titles above the `h1` | 12/16, weight 600, tracking 0.14em, uppercase, `ink` |
+| Other eyebrows, card labels, About numbering | `caption`, `ink-muted` |
 | Mobile menu links | 12.48px, kept from the first version of the site |
 | Cognitive cycle numbers | 28/32, weight 600, tabular figures |
 
