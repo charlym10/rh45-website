@@ -133,13 +133,8 @@ nav{height:var(--nav-height);display:grid;grid-template-columns:1fr auto auto;al
 .manifesto-copy p:first-child{font-size:21px;line-height:28px;font-weight:600}
 
 /* Footer */
-footer{padding:calc(2*var(--space-12)) 0 var(--space-12);background:var(--footer-bg);color:#FFFFFF;font-size:14px;line-height:20px}
-.footer-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:var(--space-12) var(--space-4)}
-.footer-rows{display:flex;flex-direction:column;border-top:1px solid #333333}
-.footer-rows a{display:flex;justify-content:space-between;align-items:center;min-height:52px;border-bottom:1px solid #333333;color:#999999}
-.footer-rows a:hover{color:#FFFFFF}
-.footer-rows svg{width:12px;height:12px;transform:rotate(-90deg)}
-.footer-meta{grid-column:1 / -1;display:flex;justify-content:space-between;gap:var(--space-6);color:#999999}
+footer{padding:var(--space-6) 0;background:var(--footer-bg);color:#999999;font-size:14px;line-height:20px}
+footer .row{display:flex;justify-content:space-between;align-items:center;gap:var(--space-6)}
 
 /* Responsive */
 @media(hover:hover) and (pointer:fine) and (min-width:621px){
@@ -154,7 +149,6 @@ footer{padding:calc(2*var(--space-12)) 0 var(--space-12);background:var(--footer
   .statement>.shell{grid-template-columns:minmax(0,1fr)}
   .statement>.shell>h2{grid-row:auto;margin-bottom:var(--space-4);padding-right:0}
   .statement>.shell>.lead,.statement>.shell>.note,.statement>.shell>.link,.statement>.shell>.note-wide{grid-column:auto}
-  .footer-grid{grid-template-columns:minmax(0,1fr)}
 }
 @media(max-width:720px){
   .operating-principles{grid-template-columns:1fr}
@@ -176,13 +170,12 @@ footer{padding:calc(2*var(--space-12)) 0 var(--space-12);background:var(--footer
   .conflict-arrow{width:100%;transform:rotate(90deg)}
   .cycle-link{display:block;left:50%;right:auto;top:12%;bottom:12%;width:1px;height:auto}
   .tile,.cap,.aboutcard,.operating-principle{padding:var(--space-6)}
-  .footer-meta{flex-direction:column;gap:var(--space-2)}
+  footer .row{flex-direction:column;align-items:flex-start;gap:var(--space-2)}
 }
 
 /* Keep keyboard navigation visible and respect reduced-motion preferences. */
 a:focus-visible,
 button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
-footer a:focus-visible{outline-color:#FFFFFF}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
@@ -239,7 +232,7 @@ Places that evolve.</p>
 <h2 class="about-title">Core values</h2><div class="aboutgrid"><article class="aboutcard"><div class="eyebrow">01</div><h3>Intellectual honesty</h3><p>Reality matters more than ego, assumptions or narratives. We value clear thinking, honest communication and evidence-based decisions. Problems are solved faster when they are understood truthfully.</p></article><article class="aboutcard"><div class="eyebrow">02</div><h3>Long-term thinking</h3><p>We build with durability in mind. Our decisions prioritize long-term resilience, adaptability and foundational value over short-term optimization or temporary trends.</p></article><article class="aboutcard"><div class="eyebrow">03</div><h3>Systems thinking</h3><p>Complex environments cannot be understood in isolation. We approach technology, infrastructure and operations as interconnected systems where every component influences the whole.</p></article><article class="aboutcard"><div class="eyebrow">04</div><h3>Responsible autonomy</h3><p>Autonomy must always be paired with accountability. As systems become more intelligent and independent, transparency, security and meaningful human oversight remain essential.</p></article><article class="aboutcard"><div class="eyebrow">05</div><h3>Precision over noise</h3><p>Clarity and substance matter more than hype. We prioritize rigor, thoughtful execution and technical depth over unnecessary complexity, distraction or superficial innovation.</p></article><article class="aboutcard"><div class="eyebrow">06</div><h3>Human-centered engineering</h3><p>Technology should work in service of people. We design systems that improve safety, efficiency, adaptability and quality of life within the environments where humanity lives.</p></article></div>
 <h2 class="about-title">Core beliefs</h2><div class="aboutgrid"><article class="aboutcard"><div class="eyebrow">01</div><h3>Physical environments will become intelligent</h3><p>Homes, communities and cities will evolve from passive structures into adaptive systems capable of sensing, reasoning and responding in real time.</p></article><article class="aboutcard"><div class="eyebrow">02</div><h3>Intelligence will be distributed</h3><p>The future of intelligent systems will depend on the coordination of edge infrastructure, cloud systems, embodied agents, and human context.</p></article><article class="aboutcard"><div class="eyebrow">03</div><h3>Infrastructure is becoming computational</h3><p>Connectivity, energy, security and physical operations are evolving into programmable and data-driven systems.</p></article><article class="aboutcard"><div class="eyebrow">04</div><h3>Autonomy will become part of everyday life</h3><p>Autonomous systems will increasingly operate within the environments where people live, requiring reliability, transparency and human oversight.</p></article><article class="aboutcard"><div class="eyebrow">05</div><h3>Interoperability enables scale</h3><p>Long-term innovation depends on open and interoperable ecosystems capable of evolving across technologies, vendors and environments.</p></article><article class="aboutcard"><div class="eyebrow">06</div><h3>Human-centered systems create lasting value</h3><p>Technology creates meaningful impact when it improves safety, efficiency and quality of life for the people it serves.</p></article><article class="aboutcard"><div class="eyebrow">07</div><h3>Foundations matter more than isolated products</h3><p>Lasting technological change is driven by foundational infrastructure that enables continuous evolution, not by disconnected point solutions.</p></article></div>
 <h2 class="about-title">Non-negotiables</h2><div class="aboutgrid"><article class="aboutcard"><div class="eyebrow">01</div><h3>Human safety comes first</h3><p>No system, automation or optimization is more important than the safety and well-being of the people who depend on it.</p></article><article class="aboutcard"><div class="eyebrow">02</div><h3>Security and privacy are foundational</h3><p>Trust cannot exist without strong security, resilient infrastructure and responsible data practices.</p></article><article class="aboutcard"><div class="eyebrow">03</div><h3>Reliability is mandatory</h3><p>Systems operating in physical environments must remain dependable, resilient and operational under real-world conditions.</p></article><article class="aboutcard"><div class="eyebrow">04</div><h3>Autonomy requires transparency</h3><p>Autonomous systems must remain observable, understandable and accountable to human oversight.</p></article><article class="aboutcard"><div class="eyebrow">05</div><h3>Interoperability is a strategic requirement</h3><p>We do not build ecosystems that depend on unnecessary lock-in, fragmentation or closed standards.</p></article><article class="aboutcard"><div class="eyebrow">06</div><h3>Long-term foundations outweigh short-term gains</h3><p>We prioritize durable infrastructure, sustainable architecture and long-term value over temporary optimization or rapid but fragile growth.</p></article><article class="aboutcard"><div class="eyebrow">07</div><h3>Technical rigor is non-negotiable</h3><p>Important systems require depth, precision and disciplined execution&#8288;—not hype, shortcuts or superficial innovation.</p></article></div>
-<a class="back" href="#top" id="back-home">← Back to home</a></div></div></section><footer><div class="shell footer-grid"><span class="logo">Rh45</span><div class="footer-rows"><a href="#manifesto">Manifesto<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#how-we-operate">How we operate<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#about">About<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="footer-meta"><span>Delaware Corporation · United States</span><span>Copyright © 2026 Rh45 Corp. All rights reserved.</span></div></div></footer><script>
+<a class="back" href="#top" id="back-home">← Back to home</a></div></div></section><footer><div class="shell row"><span>Delaware Corporation · United States</span><span>Copyright © 2026 Rh45 Corp. All rights reserved.</span></div></footer><script>
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const mainNavigation = document.querySelector('#main-navigation');
 const companyMenu = document.querySelector('.company-menu');
@@ -292,7 +285,7 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
-document.querySelectorAll('#main-navigation a[href^="#"], .footer-rows a').forEach((link) => {
+document.querySelectorAll('#main-navigation a[href^="#"]').forEach((link) => {
   link.addEventListener('click', (event) => {
     const id = link.getAttribute('href').slice(1);
     const target = document.getElementById(id);
