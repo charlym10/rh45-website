@@ -1,6 +1,6 @@
 # Rh45 Website
 
-Static website prototype for Rh45 Corp. Follows the Rh45 design system; see `DESIGN.md`. Includes favicon assets matching its ink and paper colors.
+Static website prototype for Rh45 Corp. See `DESIGN.md` for its design system. Includes favicon assets matching the site's black and white palette.
 
 ## Deploy with GitHub Pages
 

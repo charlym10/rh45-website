@@ -1,52 +1,53 @@
 ---
 name: Rh45
-description: Warm black and white, generous space and clear type. One ochre accent marks the moments a person is needed.
+description: A monochrome statement site. White and black pages, soft flat cards, pill navigation and headlines that pair a bold sans with a quiet serif.
 colors:
-  paper: { light: "#F7F6F2", dark: "#121211" }
-  surface: { light: "#FFFFFF", dark: "#1C1C1A" }
-  ink: { light: "#111110", dark: "#F2F1EC" }
-  ink-muted: { light: "#5E5D58", dark: "#A3A29B" }
-  on-ink: { light: "#F7F6F2", dark: "#121211" }
-  line: { light: "#DDDBD3", dark: "#2E2D2A" }
-  accent: { light: "#8A5B12", dark: "#D9A54A" }
-  accent-soft: { light: "#EFE6D3", dark: "#2A2418" }
-  danger: { light: "#A3332A", dark: "#E07A6E" }
-  state-ok: { light: "#2E6A43", dark: "#6FBF8A" }
-  state-active: { light: "#2C5C8A", dark: "#8DB6E0" }
-  state-attention: "{colors.accent}"
-  state-alert: "{colors.danger}"
+  paper: { light: "#FFFFFF", dark: "#000000" }
+  surface: { light: "#F5F5F5", dark: "#1F1F1F" }
+  surface-strong: { light: "#EBEBEB", dark: "#333333" }
+  ink: { light: "#000000", dark: "#FFFFFF" }
+  ink-muted: { light: "#666666", dark: "#999999" }
+  on-ink: { light: "#FFFFFF", dark: "#000000" }
+  line: { light: "#E0E0E0", dark: "#333333" }
+  art-mid: { light: "#BDBDBD", dark: "#4D4D4D" }
+  footer-bg: { light: "#000000", dark: "#1F1F1F" }
 typography:
-  display: { fontFamily: "Inter", fontSize: "48px", lineHeight: "52px", fontWeight: 600, letterSpacing: "-0.02em" }
+  statement: { fontFamily: "Inter", fontSize: "clamp(30px, 3vw, 48px)", lineHeight: 1.25, fontWeight: 600, letterSpacing: "-0.01em" }
+  statement-serif: { fontFamily: "Source Serif 4", fontWeight: 400 }
+  section-title: { fontFamily: "Inter", fontSize: "clamp(32px, 3.8vw, 48px)", lineHeight: 1.08, fontWeight: 600, letterSpacing: "-0.01em" }
   title: { fontFamily: "Inter", fontSize: "32px", lineHeight: "40px", fontWeight: 600, letterSpacing: "-0.01em" }
-  heading: { fontFamily: "Inter", fontSize: "20px", lineHeight: "28px", fontWeight: 600 }
+  card-title: { fontFamily: "Inter", fontSize: "21px", lineHeight: "26px", fontWeight: 700 }
+  lead: { fontFamily: "Inter", fontSize: "18px", lineHeight: "28px", fontWeight: 400 }
   body: { fontFamily: "Inter", fontSize: "16px", lineHeight: "26px", fontWeight: 400 }
-  small: { fontFamily: "Inter", fontSize: "14px", lineHeight: "20px", fontWeight: 400 }
-  label: { fontFamily: "Inter", fontSize: "12px", lineHeight: "16px", fontWeight: 500, letterSpacing: "0.04em" }
-  metric: { fontFamily: "JetBrains Mono", fontSize: "28px", lineHeight: "32px", fontWeight: 500, letterSpacing: "-0.01em" }
-  data: { fontFamily: "JetBrains Mono", fontSize: "13px", lineHeight: "20px", fontWeight: 400 }
+  card-body: { fontFamily: "Inter", fontSize: "14.5px", lineHeight: "22px", fontWeight: 400 }
+  caption: { fontFamily: "Inter", fontSize: "13px", lineHeight: "20px", fontWeight: 400, letterSpacing: "0.01em" }
 rounded:
-  sm: "4px"
-  md: "8px"
+  button: "10px"
+  card: "16px"
   full: "9999px"
 spacing:
   space-1: "4px"
   space-2: "8px"
   space-4: "16px"
   space-6: "24px"
+  space-8: "32px"
   space-12: "48px"
 ---
 
 # Design System: Rh45
 
-This file records how the website applies the Rh45 design system. The system itself is kept in the **Rh45** Design System artifact on claude.ai, which owns the tokens, components and brand book. When they differ, the artifact wins: update it first, then the tokens in `index.html` and this file.
+This file records the design the website ships. The tokens in `index.html` and this file are the source of truth for the site.
+
+**Relationship to the Rh45 design system artifact.** The site started from the **Rh45** Design System artifact on claude.ai and has since deliberately diverged from it: this palette and these components replace its warm paper, ochre accent, JetBrains Mono and its Button and Card shapes. Its voice and its composition grammar still apply. Changing the artifact does not change the site until someone updates these tokens.
+
+**References.** Component shapes are modeled on anthropic.com, and the palette on openai.com. They are references for structure and color only. Do not use their logos, illustrations, copy or proprietary typefaces.
 
 ## Principles
 
-1. **Precision over noise.** No hype, no superlatives, no decoration that does not explain something.
-2. **Observable by design.** What a system does, why, and who acted must always be visible.
-3. **Systems, not screens.** Show relationships, not isolated widgets.
-4. **The human decides.** `accent` is reserved for where a person is asked to look, decide or approve.
-5. **Rules, not shadows.** Separate with `line` and with space. No shadows, no gradients.
+1. **Statements first.** Each page opens with its claim in type, then the supporting detail.
+2. **Monochrome.** Color never carries meaning here. Hierarchy comes from size, weight and typeface.
+3. **Flat and soft.** Cards are tonal, with no borders or shadows. Sections separate with space and tone, not rules.
+4. **Systems, not screens.** The hero composition and the cognitive cycle show parts connected to each other.
 
 ## Voice
 
@@ -54,45 +55,47 @@ Short, declarative sentences. Lead with the fact, in the active voice. Sentence 
 
 ## Color
 
-- Page: `paper`. Cards and panels: `surface`. Text: `ink`, secondary `ink-muted`. Never text in `line`.
-- Control borders use `ink-muted`; `line` is for decorative rules only.
-- On this site `accent` appears on links, focus rings and the hero composition. The site has no item awaiting a human decision yet.
-- The theme follows `prefers-color-scheme`. Both themes use the same token names.
+- Page: `paper`. Cards and the band: `surface`. Buttons and hover states: `surface-strong`.
+- Text: `ink`, secondary `ink-muted`. Never text in `line` or `art-mid`.
+- `art-mid` is only for the middle block in the hero composition.
+- The footer stays dark in both themes, using `footer-bg` with fixed white and `#999999` text and `#333333` rules.
+- The theme follows `prefers-color-scheme`.
 
 ## Typography
 
-Inter for text, JetBrains Mono for figures. Both load from Google Fonts. Hierarchy comes from size and weight, never from color.
+Inter for text, Source Serif 4 for the second beat of a headline and the closing statement. Both load from Google Fonts.
 
 | Element | Style |
 | --- | --- |
-| `h1` | `display`; 38px at 620px wide and below, down to 10vw so long words fit |
-| `h2`, closing statement | `title` |
-| Principle headings, `h3` | `heading` |
-| Card titles | 16/24, weight 600, from the Card component |
-| Lead paragraphs | 20/28, weight 400, `ink-muted` |
+| `h1` | `statement`; its `em` uses `statement-serif` |
+| Home section `h2` | `section-title` |
+| Other `h2`, closing statement | `title`; the closing statement is set in the serif at weight 400 |
+| Card `h3`, principle headings | `card-title` |
+| Lead paragraphs | `lead`, `ink-muted` |
 | Running text | `body`, measure near 68 characters |
-| Card text, notes, footer, company menu | `small` |
-| Eyebrows | `label`, uppercase |
-| Numbering (01, 02) | `data`; the four cognitive cycle steps use `metric`, because their order carries meaning |
-| Cycle step titles | `heading` |
+| Card text | `card-body` |
+| Eyebrows, card labels, About numbering | `caption`, `ink-muted` |
+| Cognitive cycle numbers | 28/32, weight 600, tabular figures |
 
 ## Layout
 
-A centered 1120px shell with `space-6` side margins. Content is left-aligned. Sections are `space-12` apart and separated by a `line` rule. Grids collapse to one column at 720px (How we operate) and 620px (everything else). One solid `ink` block on Home acts as counterweight.
+A centered 1120px shell with `space-6` side margins. Home sections are two columns, with the title on the left and the supporting text on the right, and they collapse to one column at 860px. One full-width `surface` band sits in the middle of Home. Card grids use `space-4` gaps. The cycle goes from four columns to two at 1000px and to one at 620px. Principles collapse at 720px, and About cards at 620px.
 
-The Home hero carries the composition from the system's cover: an `ink` slab bled off the top, `ink-muted` and `accent` blocks, a node grid at a 48px pitch and thin `ink` edges joining one `accent` hub. It is decorative, so it stays hidden from assistive technology. Below 860px it becomes a short band under the text.
+The Home hero is a statement followed by a full-width `surface` panel holding the composition: an `ink` slab bled off the top, `ink-muted` and `art-mid` blocks, a node grid at a 48px pitch and thin `ink` edges joining one hub. It is decorative, so it stays hidden from assistive technology.
 
 ## Components
 
-- **Button:** the header contact link is the one primary button in each view. Its height grows from 36px to 44px below 620px, for touch.
-- **Card:** tiles, cycle steps, principles and About cards. `surface`, `line` border, `radius-md`, `space-4` padding; cycle steps and How we operate principles use `space-6`.
-- **Text link:** `accent`, underlined, so color is never the only cue.
+- **Navigation pill:** 28px high, `radius-full`, 13px text, `surface` with a `line` border. Grows to 44px on touch layouts.
+- **Primary button:** the header contact link, in the pill shape with an `ink` fill. One per view.
+- **Secondary button:** `.link` and `.back`. 44px high, `radius-button`, `surface-strong` with a `line` border.
+- **Card:** tiles, cycle steps, principles and About cards. `surface`, `radius-card`, `space-8` padding, `space-6` below 620px. No border.
+- **Footer:** the wordmark on the left, ruled links with chevrons on the right and a legal line below.
 - **Status, Metric and EventRow:** not used. They show live readings, and the site must not present data Rh45 does not have.
 
 ## Iconography
 
-1.5px stroke icons with rounded joins, in `ink` or `ink-muted`. The system has no icon set yet.
+1.5px stroke icons with rounded joins, in `ink` or `ink-muted`. The site has no icon set yet.
 
 ## Logo
 
-The system has no logo yet. The wordmark is "Rh45" in Inter 600, `ink`, letter-spacing -0.02em. The favicons set "45" in type, `on-ink` on `ink`, and are not a logo.
+The site has no logo yet. The wordmark is "Rh45" in Inter 700, letter-spacing -0.02em. The favicons set "45" in white on black and are not a logo.
