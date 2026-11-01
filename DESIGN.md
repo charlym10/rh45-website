@@ -74,8 +74,8 @@ Inter for text, Source Serif 4 for the second beat of a headline and the closing
 | Home section `h2` | `section-title` |
 | Other `h2`, closing statement | `title`; the closing statement is set in the serif at weight 400 |
 | Card `h3`, principle headings | `card-title` |
-| Lead paragraphs | `lead`, `ink-muted` |
-| Running text | `body`, measure near 68 characters |
+| Lead paragraphs on company pages and in the closing Home section | `lead`, `ink-muted` |
+| Running text, including the other Home paragraphs | `body`, measure near 68 characters |
 | Card text | `card-body` |
 | Eyebrows, card labels, About numbering | `caption`, `ink-muted` |
 | Mobile menu links | 12.48px, kept from the first version of the site |
@@ -91,7 +91,7 @@ The Home hero fills the viewport below the header, with its text vertically cent
 
 - **Navigation pill:** 28px high, `radius-full`, 13px text, `surface` with a `line` border. Desktop only.
 - **Primary button:** the header contact link, in the pill shape with an `ink` fill. One per view. Below 620px it is 36px high with a 44px touch target.
-- **Content links:** kept from the first version of the site. `.link` is inline `ink` text with a 1px `ink` underline 6px below it. `.back` is plain `ink` text with its arrow.
+- **Content links:** kept from the first version of the site. `.link` and `.back` share one style: inline `ink` text with a 1px `ink` underline 6px below it.
 - **Mobile menu:** below 620px, a 36px square button with an 8px radius and a 44px touch target. Its icon is three left-aligned lines of decreasing length. The menu opens as a panel under the header: Company as a plain row, and its links indented behind a `line` rule, kept from the first version of the site.
 - **Card:** tiles, cycle steps, principles and About cards. `surface`, `radius-card`, `space-8` padding, `space-6` below 620px. No border.
 - **Footer:** the legal line only, on `footer-bg`.
