@@ -9,12 +9,12 @@ colors:
   ink-muted: { light: "#666666", dark: "#999999" }
   on-ink: { light: "#FFFFFF", dark: "#000000" }
   line: { light: "#E0E0E0", dark: "#333333" }
-  ring-line: { light: "rgba(0,0,0,.145)", dark: "rgba(255,255,255,.145)" }
-  ring-wide: { light: "rgba(0,0,0,.03)", dark: "rgba(255,255,255,.03)" }
-  ring-outer: { light: "rgba(0,0,0,.02)", dark: "rgba(255,255,255,.02)" }
+  ring-line: { light: "rgba(0,0,0,.28)", dark: "rgba(255,255,255,.34)" }
+  ring-wide: { light: "rgba(0,0,0,.07)", dark: "rgba(255,255,255,.13)" }
+  ring-outer: { light: "rgba(0,0,0,.04)", dark: "rgba(255,255,255,.07)" }
   footer-bg: { light: "#000000", dark: "#1F1F1F" }
 typography:
-  statement: { fontFamily: "Inter", fontSize: "clamp(30px, 3vw, 48px)", lineHeight: 1.25, fontWeight: 600, letterSpacing: "-0.01em" }
+  statement: { fontFamily: "Inter", fontSize: "clamp(36px, 4.4vw, 64px)", lineHeight: 1.25, fontWeight: 600, letterSpacing: "-0.01em" }
   statement-serif: { fontFamily: "Source Serif 4", fontWeight: 400 }
   section-title: { fontFamily: "Inter", fontSize: "clamp(32px, 3.8vw, 48px)", lineHeight: 1.08, fontWeight: 600, letterSpacing: "-0.01em" }
   title: { fontFamily: "Inter", fontSize: "32px", lineHeight: "40px", fontWeight: 600, letterSpacing: "-0.01em" }
@@ -83,9 +83,9 @@ Inter for text, Source Serif 4 for the second beat of a headline and the closing
 
 ## Layout
 
-A centered 1120px shell with `space-6` side margins. Home sections are two columns, with the title on the left and the supporting text on the right, and they collapse to one column at 860px. One full-width `surface` band sits in the middle of Home. Card grids use `space-4` gaps. The cycle goes from four columns to two at 1000px and to one at 620px. Principles collapse at 720px, and About cards at 620px.
+A centered 1120px shell with `space-6` side margins. Home sections are two columns, with the title on the left and the supporting text on the right, and they collapse to one column at 860px. Two full-width `surface` bands alternate with the `paper` sections on Home, and the second closes the page above the footer. Card grids use `space-4` gaps. The cycle goes from four columns to two at 1000px and to one at 620px. Principles collapse at 720px, and About cards at 620px.
 
-The Home hero keeps the rings from the first version of the site, in the new palette: a 550px circle 120px past the right edge and 12% from the top, with a 1px `ring-line` border and two flat bands of 60px (`ring-wide`) and 120px (`ring-outer`). The hero is at least 460px high, 400px below 620px wide, and clips the rings at its lower rule.
+The Home hero fills the viewport below the header, with its text vertically centered, so its link leads to the next section. It keeps the rings from the first version of the site, in the new palette and stronger, so they read in both themes: a 550px circle 120px past the right edge and 12% from the top, with a 1px `ring-line` border and two flat bands of 60px (`ring-wide`) and 120px (`ring-outer`). The hero is never shorter than 460px, or 400px below 620px wide, and clips the rings at its lower rule.
 
 ## Components
 
