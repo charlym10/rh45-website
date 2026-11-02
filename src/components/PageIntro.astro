@@ -1,15 +1,15 @@
 ---
 interface Props {
-  eyebrow: string;
+  label: string;
   lead: string;
 }
 
-const { eyebrow, lead } = Astro.props;
+const { label, lead } = Astro.props;
 ---
 
-<div class="pt-8 pb-12">
+<div class="pt-12 pb-12">
   <div class="shell">
-    <div class="mb-2 text-xs font-semibold tracking-[.14em] uppercase">{eyebrow}</div>
+    <div class="mb-4 text-xs font-medium tracking-wide uppercase">{label}</div>
     <h1><slot /></h1>
     <p class="lead">{lead}</p>
   </div>

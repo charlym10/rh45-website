@@ -1,7 +1,7 @@
 ---
 import '@/styles/globals.css';
 import Footer from '@/components/Footer.astro';
-import Header from '@/components/Header.astro';
+import { SiteHeader } from '@/components/SiteHeader';
 
 interface Props {
   title: string;
@@ -11,6 +11,7 @@ const { title } = Astro.props;
 const description =
   'Rh45 is an early-stage company building a cognitive layer for the physical world. Our first project focuses on autonomous access.';
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const path = Astro.url.pathname.replace(/\/?$/, '/');
 ---
 
 <!doctype html>
@@ -34,13 +35,22 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:description" content={description} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   </head>
   <body>
-    <Header />
+    <header class="sticky top-0 z-10 bg-background">
+      <SiteHeader client:load path={path} />
+    </header>
+    <noscript>
+      <nav class="shell flex gap-4 pb-4 text-sm underline">
+        <a href="/manifesto/">Manifesto</a>
+        <a href="/how-we-operate/">How we operate</a>
+        <a href="/about/">About</a>
+      </nav>
+    </noscript>
     <main>
       <slot />
     </main>

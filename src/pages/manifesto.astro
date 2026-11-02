@@ -7,7 +7,7 @@ import Layout from '@/layouts/Layout.astro';
 
 <Layout title="Manifesto | Rh45">
   <PageIntro
-    eyebrow="Manifesto"
+    label="Manifesto"
     lead="A different future for the physical world begins with environments that can understand and respond."
   >
     The places where humanity lives were never designed to <em>think.</em>
@@ -15,7 +15,11 @@ import Layout from '@/layouts/Layout.astro';
   <div class="pb-12">
     <div class="shell">
       <div class="max-w-[68ch]">
-        {paragraphs.map((text, index) => <p class:list={['mb-4', index === 0 && 'text-xl leading-7 font-semibold']}>{text}</p>)}
+        {
+          paragraphs.map((text, index) => (
+            <p class:list={['mb-4 whitespace-pre-line', index === 0 && 'text-xl leading-7 font-semibold', text.startsWith('Places that') && 'my-6 text-xl leading-7 font-semibold']}>{text}</p>
+          ))
+        }
         <BackHome />
       </div>
     </div>

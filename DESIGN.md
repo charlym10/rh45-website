@@ -12,15 +12,15 @@ colors:
   footer: { light: "#000000", dark: "#141414" }
   footer-foreground: { light: "#8C8C8C", dark: "#A3A3A3" }
 typography:
-  statement: { fontFamily: "Inter", fontSize: "clamp(36px, 4.4vw, 64px)", lineHeight: 1.25, fontWeight: 600, letterSpacing: "-0.01em" }
-  statement-serif: { fontFamily: "Source Serif 4", fontWeight: 400 }
-  section-title: { fontFamily: "Inter", fontSize: "clamp(32px, 3.8vw, 48px)", lineHeight: 1.08, fontWeight: 600, letterSpacing: "-0.01em" }
+  display: { fontFamily: "Inter", fontSize: "48px", lineHeight: "52px", fontWeight: 600, letterSpacing: "-0.02em" }
+  display-second-beat: { fontFamily: "Inter", fontWeight: 400 }
   title: { fontFamily: "Inter", fontSize: "30px", lineHeight: "36px", fontWeight: 600, letterSpacing: "-0.01em" }
-  card-title: { fontFamily: "Inter", fontSize: "20px", lineHeight: "28px", fontWeight: 600 }
+  heading: { fontFamily: "Inter", fontSize: "20px", lineHeight: "28px", fontWeight: 600 }
   lead: { fontFamily: "Inter", fontSize: "18px", lineHeight: "28px", fontWeight: 400 }
   body: { fontFamily: "Inter", fontSize: "16px", lineHeight: "24px", fontWeight: 400 }
-  card-body: { fontFamily: "Inter", fontSize: "14px", lineHeight: "20px", fontWeight: 400 }
-  caption: { fontFamily: "Inter", fontSize: "13px", lineHeight: "20px", fontWeight: 400, letterSpacing: "0.01em" }
+  small: { fontFamily: "Inter", fontSize: "14px", lineHeight: "20px", fontWeight: 400 }
+  label: { fontFamily: "Inter", fontSize: "12px", lineHeight: "16px", fontWeight: 500, letterSpacing: "0.025em" }
+  data: { fontFamily: "JetBrains Mono", fontSize: "13px", lineHeight: "20px", fontWeight: 400 }
 rounded:
   base: "8px"
   full: "9999px"
@@ -35,74 +35,77 @@ spacing:
 
 # Design System: Rh45
 
-This file records the design the website ships. The website uses the **Rh45** Design System artifact on claude.ai: its shadcn/ui tokens, `globals.css` theme, Button and Card. `src/styles/globals.css` holds the tokens, and changing the artifact does not change the site until someone updates that file.
+This file records the design the website ships. The website uses the **Rh45** Design System artifact on claude.ai: its shadcn/ui tokens, `globals.css` theme, type, components and Lucide icons. `src/styles/globals.css` holds the tokens, and changing the artifact does not change the site until someone updates that file.
 
-**Where the site differs from the artifact, on purpose.** It adds Source Serif 4 and a larger `h1`. It keeps the content links, hero circle, mobile menu, footer and uppercase page titles of its earlier versions. It uses the media query instead of the `.dark` class, because it follows the system theme. It does not use `attention` or the state colors, Status, Metric, EventRow or JetBrains Mono.
-
-**References.** Do not use the logos, illustrations, copy or proprietary typefaces of any reference site.
+**Where the site differs from the artifact, on purpose.** It uses the media query instead of the `.dark` class, because it follows the system theme. `lead` 18/28 and the regular-weight second beat of a headline are its own. Status, Metric, EventRow, Chart, Input and AlertDialog are not used: Rh45 has no live data to show and the site has no forms.
 
 ## Principles
 
-1. **Statements first.** Each page opens with its claim in type, then the supporting detail.
-2. **Monochrome.** Color never carries meaning here. Hierarchy comes from size, weight and typeface.
-3. **Rules, not shadows.** Cards have a `border` and no shadow. Sections separate with space and tone; only the hero keeps a rule below it.
-4. **Systems, not screens.** The cognitive cycle shows parts connected to each other.
+1. **The cycle is the spine.** Sense, reason, coordinate and act organize Home, instead of sitting in a row of tiles.
+2. **Monochrome.** Color never carries meaning here. Hierarchy comes from size and weight.
+3. **Rules, not shadows.** Cards have a `border` and no shadow. Separate with space, rules and tone. shadcn's own shadows stay on menus and dialogs.
+4. **One solid block.** A full-width `primary` block is the counterweight of a page: "What if…" on Home, the closing line on How we operate.
+5. **Real content only.** Never show readings, metrics or logs Rh45 does not have.
 
 ## Voice
 
-Short, declarative sentences. Lead with the fact, in the active voice. Sentence case for titles and labels, except the company page titles above the `h1`, which CSS sets in uppercase. No exclamation marks, emoji or metaphors about magic or brains.
+Short, declarative sentences. Lead with the fact, in the active voice. Sentence case for titles, except the company page labels above the `h1`, which CSS sets in uppercase. No exclamation marks, emoji or metaphors about magic or brains.
 
 ## Color
 
-- Page: `background`. Cards: `card`, set apart by `border`. Bands: `secondary`. Hover states: `accent`, which equals `secondary`, and `muted-foreground` on the primary button.
-- Use only tokens from the system, with no literal colors. Translucent effects use a token with opacity: the hero circle uses `foreground`, and focus rings are shadcn's `ring` at 50%.
+- Page: `background`. Cards: `card`, set apart by `border`. Bands: `secondary`. Solid block: `primary` with `primary-foreground`.
 - Text: `foreground`, secondary `muted-foreground`. Never text in `border`.
-- The footer stays dark in both themes, using `footer` and `footer-foreground`.
+- Hover: `accent`, which equals `secondary`; `muted-foreground` on the primary button.
+- The footer uses `footer` and `footer-foreground` in both themes.
+- No literal colors. Translucency is a token with opacity, as in shadcn's focus rings at 50%.
 - The theme follows `prefers-color-scheme`.
 
 ## Typography
 
-Inter (400, 500, 600) for text, Source Serif 4 for the second beat of a headline and the closing statement. Both load from Google Fonts.
+Inter for text, from Google Fonts. JetBrains Mono only for numbering.
 
 | Element | Style |
 | --- | --- |
-| `h1` | `statement`; its `em` uses `statement-serif` |
-| Home section `h2` | `section-title` |
-| Other `h2`, closing statement | `title`; the closing statement is set in the serif at weight 400 |
-| Card `h3`, principle headings | `card-title` |
-| Lead paragraphs on company pages and in the closing Home section | `lead`, `muted-foreground` |
-| Running text, including the other Home paragraphs | `body`, measure near 68 characters |
-| Card text | `card-body` |
-| Company page titles above the `h1` | 12/16, weight 600, tracking 0.14em, uppercase, `foreground` |
-| Other eyebrows, card labels, About numbering | `caption`, `muted-foreground` |
-| Mobile menu links | 12.48px, kept from the first version of the site |
-| Cognitive cycle numbers | 28/32, weight 600, tabular figures |
+| `h1` | `display`, 36/40 below 620px; its `em` uses `display-second-beat` |
+| `h2`, cycle step titles, closing statement | `title` |
+| `h3`, card and principle headings | `heading` |
+| Lead paragraphs, cycle step text | `lead` |
+| Running text | `body`, measure near 68 characters |
+| Card text, notes | `small` |
+| Company page labels above the `h1` | `label`, uppercase |
+| Cycle and About numbering | `data`, `muted-foreground`, tabular figures |
 
 ## Layout
 
-A centered 1120px shell with `space-6` side margins. Each company page is its own route. Home sections are two columns, with the title on the left and the supporting text on the right, and they collapse to one column at 860px. Two full-width `secondary` bands alternate with the `background` sections on Home, and the second closes the page above the footer. Card grids use `space-4` gaps. The cycle goes from four columns to two at 1000px and to one at 620px. Principles collapse at 720px, and About cards at 620px.
+A centered 1120px shell with `space-6` side margins. Sections have 96px of vertical padding, 48px below 620px. Statements are two columns, with the title on the left and the text on the right, and collapse at 860px. Card grids use `space-4` gaps and collapse at 620px or 720px.
 
-The Home hero fills the viewport below the header, with its text vertically centered, so its link leads to the next section. It keeps the circle from the first version of the site, in the palette of the design system: 550px wide, 120px past the right edge and 12% from the top, with a 1px border of `foreground` at 30% and two flat bands of 60px (`foreground` at 10%) and 120px (`foreground` at 5%). The hero is never shorter than 460px, or 400px below 620px wide, and clips the circle at its lower rule.
+The Home hero fills the viewport below the header, with its text vertically centered and a full-width line along its lower edge: four nodes labelled Sense, Reason, Coordinate and Act, each linking to its step.
 
 ## Components
 
-- **Company button:** shadcn Button, `outline`, `sm`, with an `input` border and no shadow. Desktop only.
-- **Primary button:** the header contact link, shadcn Button `default`, `sm`. One per view. Below 620px it is 36px high with a 44px touch target.
-- **Content links:** kept from the first version of the site. `.content-link` is inline `foreground` text with a 1px `foreground` underline 6px below it.
-- **Mobile menu:** below 620px, a shadcn Button, `outline`, `icon`, with an `input` border and a 44px touch target. Its icon is three left-aligned lines of decreasing length. The menu opens as a panel under the header: Company as a plain row, and its links indented behind a `border` rule, kept from the first version of the site.
-- **Card:** shadcn Card for tiles, cycle steps, principles and About cards, with its border and `shadow-none`. `space-6` padding.
-- **Footer:** on every page, a contact close (title, one sentence and the email address as a content link) above the legal line, all in `footer-foreground`, on `footer`.
-- **Status, Metric and EventRow:** not used. They show live readings, and the site must not present data Rh45 does not have.
+All from shadcn/ui, themed by the tokens. Their files in `src/components/ui/` are not edited for color or radius.
+
+- **Button:** `default` once per view, for Contact, with `sm` size and 36px high below 620px. `outline` with an `input` border and no shadow for Company, the mobile menu and section actions. `link` with an underline for Back to home and the footer email.
+- **DropdownMenu:** Company on desktop.
+- **Sheet:** Company below 620px.
+- **Dialog:** Contact. It holds the contact sentence and the email button.
+- **Card:** the conflict tiles, operating principles and About groups, with `shadow-none` and `space-6` padding.
+- **Badge:** `secondary`, for The status quo and The consequence.
+- **Table:** Purpose, Mission and Vision, and Non-negotiables.
+- **Tabs:** the four About groups. Every panel stays in the HTML.
+- **Separator:** between the About introduction and its tabs.
+- **Cycle rail:** the site's own. A sticky list on a 1px `foreground` line, whose node fills as its step reaches the middle of the viewport. Hidden below 720px, where the steps read as a list.
+- **Footer:** on every page, a contact close above the legal line.
 
 ## Behavior
 
-- **Pages:** each company page is its own URL with its own title. The old `#manifesto`, `#how-we-operate` and `#about` links redirect to them. React runs only at build time.
-- **Company menu:** a disclosure. A mouse opens it on hover; keyboard and touch toggle it with the button. Escape closes it, and it closes after any header link is used. The current page's link is marked with `aria-current` and weight 600.
-- **Mobile menu:** opening it moves focus to Company. Escape returns focus to the button. It closes on an outside tap, on any header link and when the layout crosses 620px.
+- **Pages:** each company page is its own URL with its own title. The old `#manifesto`, `#how-we-operate` and `#about` links redirect to them.
+- **Menus and dialog:** Radix handles keyboard, focus and Escape.
+- **JavaScript:** React runs in the browser only for the header and the About tabs. Without JavaScript, a plain list of company links appears under the header and the footer still offers the email.
 
 ## Iconography
 
-Lucide, in `foreground` or `muted-foreground`: 16px with a 1.5px stroke, or 24px in diagrams and principle cards. The mobile menu icon is custom.
+Lucide at 16px with a 1.5px stroke, in `foreground` or `muted-foreground`. Arrows on links are Lucide icons, not text characters.
 
 ## Logo
 
