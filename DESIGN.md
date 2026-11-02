@@ -16,7 +16,6 @@ typography:
   display-second-beat: { fontFamily: "Source Serif 4", fontWeight: 400 }
   title: { fontFamily: "Inter", fontSize: "30px", lineHeight: "36px", fontWeight: 600, letterSpacing: "-0.01em" }
   heading: { fontFamily: "Inter", fontSize: "20px", lineHeight: "28px", fontWeight: 600 }
-  lead: { fontFamily: "Inter", fontSize: "18px", lineHeight: "28px", fontWeight: 400 }
   body: { fontFamily: "Inter", fontSize: "16px", lineHeight: "24px", fontWeight: 400 }
   small: { fontFamily: "Inter", fontSize: "14px", lineHeight: "20px", fontWeight: 400 }
   label: { fontFamily: "Inter", fontSize: "12px", lineHeight: "16px", fontWeight: 500, letterSpacing: "0.025em" }
@@ -37,7 +36,7 @@ spacing:
 
 This file records the design the website ships. The website uses the **Rh45** Design System artifact on claude.ai: its shadcn/ui tokens, `globals.css` theme, type, components and Lucide icons. `src/styles/globals.css` holds the tokens, and changing the artifact does not change the site until someone updates that file.
 
-**Where the site differs from the artifact, on purpose.** It uses the media query instead of the `.dark` class, because it follows the system theme. `lead` 18/28 is its own. Status, Metric, EventRow, Chart, Input and AlertDialog are not used: Rh45 has no live data to show and the site has no forms.
+**Where the site differs from the artifact, on purpose.** It uses the media query instead of the `.dark` class, because it follows the system theme. Status, Metric, EventRow, Chart, Input and AlertDialog are not used: Rh45 has no live data to show and the site has no forms.
 
 ## Principles
 
@@ -70,8 +69,7 @@ Inter for text and Source Serif 4 for the second beat of a headline, from Google
 | `h1` | `display`, 36/40 below 620px; its `em` uses `display-second-beat` |
 | `h2`, cycle step titles, closing statement | `title` |
 | `h3`, card and principle headings | `heading` |
-| Lead paragraphs, cycle step text | `lead` |
-| Running text | `body`, measure near 68 characters |
+| Running text, page introductions, cycle step text | `body`, measure near 68 characters; introductions in `muted-foreground` |
 | Card text, notes | `small` |
 | Company page labels above the `h1` | `label`, uppercase |
 | Cycle numbers | `data`, `muted-foreground`, tabular figures |

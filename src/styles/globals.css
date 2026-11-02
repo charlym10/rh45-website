@@ -144,7 +144,6 @@
 
 @layer components {
   .shell { width: min(calc(100% - 3rem), var(--max)); margin-inline: auto; }
-  .lead { max-width: 68ch; font-size: 18px; line-height: 28px; color: var(--muted-foreground); }
   .note { margin-top: 1rem; font-size: 14px; line-height: 20px; color: var(--muted-foreground); }
 }
 
