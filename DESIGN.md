@@ -44,7 +44,7 @@ This file records the design the website ships. The website uses the **Rh45** De
 1. **The cycle is the spine.** Sense, reason, coordinate and act organize Home, instead of sitting in a row of tiles.
 2. **Monochrome.** Color never carries meaning here. Hierarchy comes from size and weight.
 3. **Rules, not shadows.** Cards have a `border` and no shadow. Separate with space, rules and tone. shadcn's own shadows stay on menus and dialogs.
-4. **One solid block.** A full-width `primary` block is the counterweight of a page: "What if…" on Home, the closing line on How we operate.
+4. **One solid block.** A full-width `primary` block is the counterweight of a page in the light theme: "What if…" on Home, the closing line on How we operate. In the dark theme it uses `secondary`, because a white band overpowers the page.
 5. **Real content only.** Never show readings, metrics or logs Rh45 does not have.
 
 ## Voice
@@ -53,7 +53,7 @@ Short, declarative sentences. Lead with the fact, in the active voice. Sentence 
 
 ## Color
 
-- Page: `background`. Cards: `card`, set apart by `border`. Bands: `secondary`. Solid block: `primary` with `primary-foreground`.
+- Page: `background`. Cards: `card`, set apart by `border`. Bands: `secondary`. Solid block: `primary` with `primary-foreground`, or `secondary` with `foreground` in the dark theme.
 - Text: `foreground`, secondary `muted-foreground`. Never text in `border`.
 - Hover: `accent`, which equals `secondary`; `muted-foreground` on the primary button.
 - The footer uses `footer` and `footer-foreground` in both themes.
@@ -79,7 +79,7 @@ Inter for text, from Google Fonts. JetBrains Mono only for numbering.
 
 A centered 1120px shell with `space-6` side margins. Sections have 96px of vertical padding, 48px below 620px. Statements are two columns, with the title on the left and the text on the right, and collapse at 860px. Card grids use `space-4` gaps and collapse at 620px or 720px.
 
-The Home hero fills the viewport below the header, with its text vertically centered and a full-width line along its lower edge: four nodes labelled Sense, Reason, Coordinate and Act, each linking to its step.
+The Home hero fills the viewport below the header, with its text vertically centered. Its circle is 550px wide, 120px past the right edge and 12% from the top, with a 1px border of `foreground` at 30% and two flat bands of 60px (`foreground` at 10%) and 120px (`foreground` at 5%).
 
 ## Components
 

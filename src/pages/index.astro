@@ -22,20 +22,11 @@ const conflict = [
     // The company pages used to live at these hashes; keep old links working.
     if (['#manifesto', '#how-we-operate', '#about'].includes(location.hash)) location.replace(`/${location.hash.slice(1)}/`);
   </script>
-  <section class="hero flex flex-col">
-    <div class="shell flex flex-1 flex-col justify-center py-12">
+  <section class="hero relative flex flex-col overflow-hidden">
+    <div class="shell relative z-1 flex flex-1 flex-col justify-center py-12">
       <h1>The world around us is changing.<br /><em>Our environments must, too.</em></h1>
       <p class="max-w-[68ch] text-lg leading-7">The places where people live and work remain too often passive, fragmented and reactive&#8288;—even as the systems around them become more complex. Rh45 is building the cognitive layer for the physical world, starting with autonomous access.</p>
       <a class={buttonVariants({ variant: 'outline', className: 'mt-6 w-fit border-input shadow-none' })} href="#conflict">See the challenge <ArrowDown /></a>
-    </div>
-    <div class="shell pb-6">
-      <div class="cycle-line relative grid grid-cols-4 text-sm">
-        {
-          cycle.map(({ id, title }) => (
-            <a class="pt-4 underline-offset-4 hover:underline" href={`#${id}`}>{title}</a>
-          ))
-        }
-      </div>
     </div>
   </section>
 
@@ -64,7 +55,7 @@ const conflict = [
     </div>
   </section>
 
-  <section class="bg-primary py-24 text-primary-foreground max-[620px]:py-12">
+  <section class="bg-primary py-24 text-primary-foreground max-[620px]:py-12 dark:bg-secondary dark:text-foreground">
     <div class="shell statement">
       <h2>What if the environment itself could understand and respond?</h2>
       <div>
@@ -128,10 +119,7 @@ const conflict = [
   .hero { min-height: max(460px, calc(100vh - var(--nav-height))); min-height: max(460px, calc(100svh - var(--nav-height))); }
   .statement { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 3rem; align-items: start; }
   .statement h2 { margin-bottom: 0; }
-  /* The hero and the rail draw the same line and nodes. */
-  .cycle-line::before { content: ""; position: absolute; inset: 3px 0 auto; height: 1px; background: var(--foreground); }
-  .cycle-line a { position: relative; }
-  .cycle-line a::before { content: ""; position: absolute; left: 0; top: 0; width: 7px; height: 7px; border-radius: var(--radius-full, 9999px); background: var(--foreground); }
+  .hero::after { content: ""; position: absolute; right: -120px; top: 12%; width: 550px; height: 550px; border: 1px solid color-mix(in srgb, var(--foreground) 30%, transparent); border-radius: 50%; box-shadow: 0 0 0 60px color-mix(in srgb, var(--foreground) 10%, transparent), 0 0 0 120px color-mix(in srgb, var(--foreground) 5%, transparent); }
   .cycle-rail { position: relative; display: flex; flex-direction: column; gap: 1.5rem; }
   .cycle-rail::before { content: ""; position: absolute; left: 3px; top: .5rem; bottom: .5rem; width: 1px; background: var(--foreground); }
   .cycle-rail a { position: relative; display: block; padding-left: 1.5rem; color: var(--muted-foreground); }
