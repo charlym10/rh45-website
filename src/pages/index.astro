@@ -17,7 +17,7 @@ const conflict = [
 ];
 ---
 
-<Layout title="Rh45 | The cognitive layer for the physical world">
+<Layout title="Rh45 | Redefining how the physical world supports human life">
   <script is:inline>
     // The company pages used to live at these hashes; keep old links working.
     if (['#manifesto', '#how-we-operate', '#about'].includes(location.hash)) location.replace(`/${location.hash.slice(1)}/`);
@@ -25,7 +25,7 @@ const conflict = [
   <section class="hero relative flex flex-col overflow-hidden">
     <div class="shell relative z-1 flex flex-1 flex-col justify-center py-12">
       <h1>The world around us is changing.<br /><em>Our environments must, too.</em></h1>
-      <p class="max-w-[68ch] text-lg leading-7">The places where people live and work remain too often passive, fragmented and reactive&#8288;—even as the systems around them become more complex. Rh45 is building the cognitive layer for the physical world, starting with autonomous access.</p>
+      <p class="max-w-[68ch] text-lg leading-7">The places where people live, work and gather remain too often passive, fragmented and reactive&#8288;—even as the systems around them become more complex. Rh45 exists to give the physical world the ability to think, starting with autonomous access.</p>
       <a class={buttonVariants({ variant: 'outline', className: 'mt-6 w-fit border-input shadow-none' })} href="#conflict">See the challenge <ArrowDown /></a>
     </div>
   </section>
@@ -59,7 +59,7 @@ const conflict = [
     <div class="shell statement">
       <h2>What if the environment itself could understand and respond?</h2>
       <div>
-        <p>Not simply by adding another app or dashboard, but by embedding intelligence into the physical layer&#8288;—where context, infrastructure and everyday life meet.</p>
+        <p>Not simply by adding another app or dashboard, but by embedding intelligence into the physical world&#8288;—where context, infrastructure and everyday life meet.</p>
         <p class="mt-4 text-sm">Rh45 is at an early stage. This site shares our direction and how we work as we build our first project, focused on autonomous access.</p>
       </div>
     </div>
@@ -69,12 +69,11 @@ const conflict = [
     <div class="shell">
       <div class="statement">
         <h2>Intelligence, embedded into the environments where life happens.</h2>
-        <p>Rh45’s foundational ambition is to connect the physical layer with distributed intelligence, so environments can move beyond isolated automation toward contextual, coordinated action.</p>
+        <p>Rh45’s foundational ambition is to connect the physical world with distributed intelligence, so environments can move beyond isolated automation toward contextual, coordinated action.</p>
       </div>
       <div class="mt-12 grid grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-12 border-t pt-12 max-[720px]:grid-cols-1 max-[720px]:gap-6">
         <div class="sticky top-[calc(var(--nav-height)+1.5rem)] self-start max-[720px]:static">
-          <div class="text-xl leading-7 font-semibold">The cognitive layer</div>
-          <ol class="cycle-rail mt-6">
+          <ol class="cycle-rail">
             {
               cycle.map(({ id, title }, index) => (
                 <li>
@@ -106,9 +105,9 @@ const conflict = [
 
   <section class="bg-secondary py-24 max-[620px]:py-12" id="mission">
     <div class="shell statement">
-      <h2>We are building a cognitive layer for the physical world.</h2>
+      <h2>To redefine how the physical world supports human life.</h2>
       <div>
-        <p class="lead">We are building foundational infrastructure that enables physical environments to become autonomous, adaptive and secure.</p>
+        <p class="lead">To enable the places where people live, work and gather to become autonomous, adaptive and secure&#8288;—built on foundations designed to evolve.</p>
         <a class={buttonVariants({ variant: 'outline', className: 'mt-6 border-input shadow-none' })} href="/about/">Discover Rh45 <ArrowRight /></a>
       </div>
     </div>
