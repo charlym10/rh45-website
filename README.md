@@ -1,16 +1,21 @@
 # Rh45 Website
 
-Static website prototype for Rh45 Corp. See `DESIGN.md` for its design system. Includes favicon assets matching the site's black and white palette.
+The Rh45 Corp. website, built with Astro, Tailwind CSS and shadcn/ui. See `DESIGN.md` for its design system. React renders the shadcn components at build time only; the pages ship no React.
+
+## Develop
+
+```bash
+npm install
+npm run dev
+```
+
+`npm run build` writes the static site to `dist/`, and `npm run preview` serves it.
 
 ## Deploy with GitHub Pages
 
-1. Upload `index.html`, `favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, `CNAME`, and `README.md` to the root of the `main` branch.
-2. In the repository, open **Settings → Pages**.
-3. Under **Build and deployment**, select **Deploy from a branch**.
-4. Select branch `main` and folder `/(root)`, then click **Save**.
-5. Wait for the Pages deployment to finish.
+Every push to `main` runs `.github/workflows/deploy.yml`, which builds the site and publishes `dist/`.
+
+Before the first deploy, open **Settings → Pages** in the repository and, under **Build and deployment**, set **Source** to **GitHub Actions**. The custom domain comes from `public/CNAME`.
 
 Expected site URL:
 https://rh45.ai/
-
-This repository contains a static HTML prototype; no build step is required.

@@ -42,7 +42,7 @@ The repository contains an existing static company website with Home, About, Man
 
 ## Evidence on Hand
 
-- `index.html` contains the current company website. About describes the cognitive layer as a direction Rh45 is working toward; the homepage labels its sense/reason/coordinate/act cycle as a conceptual model, not a currently available product. The Manifesto also uses the stronger phrase "is building," so public copy should keep this stage distinction clear.
+- `src/pages/` contains the current company website. About describes the cognitive layer as a direction Rh45 is working toward; the homepage labels its sense/reason/coordinate/act cycle as a conceptual model, not a currently available product. The Manifesto also uses the stronger phrase "is building," so public copy should keep this stage distinction clear.
 - `README.md` describes the site as a static website prototype and documents GitHub Pages deployment.
 - No customer evidence, product demonstration, performance data, or case study is documented in this repository.
 
