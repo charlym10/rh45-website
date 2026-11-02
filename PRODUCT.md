@@ -12,7 +12,7 @@ The current company website is oriented toward prospective partners, suppliers, 
 
 ## Product Purpose
 
-Rh45 is an early-stage company. Its About page states its purpose as redefining how the physical world supports human life, its mission as enabling the places where people live, work and gather to become autonomous, adaptive and secure, on foundations designed to evolve, and its vision as a world where the places people inhabit anticipate needs, protect life and adapt over time while remaining accountable to the people they serve. The company is beginning work on its first concrete project, focused on autonomous access.
+Rh45 is an early-stage company. Its About page states its purpose as redefining how the physical world supports human life, its mission as enabling the places where people live, work and gather to become autonomous, adaptive and secure, on foundations designed to evolve, and its vision as a world where the places people inhabit anticipate needs, protect life and adapt over time while remaining accountable to the people they serve. Its first project is an autonomous access system for residential communities. Development has not started.
 
 ## Positioning
 
@@ -20,14 +20,14 @@ The foundational text is the Rh45 Foundational Direction (Revised) doc. It says 
 
 ## Operating Context
 
-The repository contains a static company website with Home, About, Manifesto, and How We Operate content. The site currently addresses prospective partners, suppliers, investors, and collaborators rather than end users. The company's first concrete project is focused on autonomous access; its setting, workflow, user roles, and scope have not been confirmed. The About page sets out purpose, mission, vision, principles, values, beliefs, and non-negotiables for the company.
+The repository contains a static company website with Home, About, Manifesto, and How We Operate content. The site currently addresses prospective partners, suppliers, investors, and collaborators rather than end users. The first project is an autonomous access system for residential communities: it will understand context, manage access and intercom for visitors and delivery drivers with residents, and admit people and vehicles. Rh45 intends to integrate with private security companies rather than compete with them. The About page sets out purpose, mission, vision, principles, values, beliefs, and non-negotiables for the company.
 
 ## Capabilities and Constraints
 
-- Confirmed company stage: early-stage, beginning work on a concrete autonomous-access project.
-- The autonomous-access project's requirements, architecture, current implementation status, and available capabilities remain unconfirmed.
+- Confirmed company stage: early-stage, preparing an autonomous-access project. Development has not started.
+- The autonomous-access project's requirements and architecture remain unconfirmed, and it has no available capabilities yet.
 - The About page describes autonomous environments as company purpose, mission, and vision; it does not define a technical implementation.
-- The website says Rh45 "exists to" give the physical world the ability to think or make environments capable of sensing, reasoning, coordinating and acting, and calls the sense, reason, coordinate and act cycle "the infrastructure Rh45 is building." Do not infer shipped capabilities from those phrases.
+- The website says Rh45 "exists to" give the physical world the ability to think or make environments capable of sensing, reasoning, coordinating and acting, and calls the sense, reason, coordinate and act cycle "the infrastructure Rh45 aims to build." Describe the project in the future tense until development is under way.
 - Keep strategic beliefs and future capabilities distinct from verified implementation.
 - The website is a static Astro project; its pages are in `src/pages/` and its deployment instructions are in `README.md`.
 
