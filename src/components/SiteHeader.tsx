@@ -17,11 +17,11 @@ function MobileMenu({ path }: { path: string }) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button className="relative -ml-2 cursor-pointer after:absolute after:-inset-1" variant="ghost" size="icon" aria-label="Open navigation menu">
+        <Button className="relative -mr-2 cursor-pointer after:absolute after:-inset-1" variant="ghost" size="icon" aria-label="Open navigation menu">
           <PanelLeft />
         </Button>
       </SheetTrigger>
-      <SheetContent className="w-72 gap-0 bg-sidebar text-sidebar-foreground" side="left" aria-describedby={undefined}>
+      <SheetContent className="w-72 gap-0 bg-sidebar text-sidebar-foreground" side="right" aria-describedby={undefined}>
         <SheetHeader className="px-4 pb-2">
           <SheetTitle className="mb-0 text-xs leading-4 font-medium tracking-normal text-muted-foreground">Rh45</SheetTitle>
         </SheetHeader>
@@ -61,14 +61,9 @@ function MobileMenu({ path }: { path: string }) {
 export function SiteHeader({ path }: { path: string }) {
   return (
     <nav className="shell flex h-(--nav-height) items-center justify-between gap-2">
-      <div className="flex items-center gap-2">
-        <div className="min-[621px]:hidden">
-          <MobileMenu path={path} />
-        </div>
-        <a className="text-[22px] leading-7 font-semibold tracking-[-.02em]" href="/">
-          Rh45
-        </a>
-      </div>
+      <a className="text-[22px] leading-7 font-semibold tracking-[-.02em]" href="/">
+        Rh45
+      </a>
       <div className="flex items-center gap-2">
         <div className="max-[620px]:hidden">
           <DropdownMenu>
@@ -109,6 +104,9 @@ export function SiteHeader({ path }: { path: string }) {
             </Button>
           </DialogContent>
         </Dialog>
+        <div className="min-[621px]:hidden">
+          <MobileMenu path={path} />
+        </div>
       </div>
     </nav>
   );
