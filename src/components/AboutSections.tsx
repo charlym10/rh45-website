@@ -64,7 +64,7 @@ function ItemTable({ items }: { items: Item[] }) {
   );
 }
 
-// Every panel stays in the HTML, so the content does not depend on JavaScript being loaded.
+// Every panel stays in the HTML, and the about page shows them all when JavaScript is off.
 export function AboutTabs({ groups }: { groups: Group[] }) {
   return (
     <Tabs defaultValue={groups[0].title} className="gap-6">

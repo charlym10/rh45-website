@@ -1,7 +1,7 @@
 ---
 import '@/styles/globals.css';
 import Footer from '@/components/Footer.astro';
-import { SiteHeader } from '@/components/SiteHeader';
+import SiteHeader from '@/components/SiteHeader.astro';
 
 interface Props {
   title: string;
@@ -11,7 +11,6 @@ const { title } = Astro.props;
 const description =
   'Rh45 is an early-stage company that exists to give the physical world the ability to think. Our first project focuses on autonomous access.';
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const path = Astro.url.pathname.replace(/\/?$/, '/');
 ---
 
 <!doctype html>
@@ -39,13 +38,14 @@ const path = Astro.url.pathname.replace(/\/?$/, '/');
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <slot name="head" />
   </head>
   <body>
     <header class="sticky top-0 z-10 bg-background">
-      <SiteHeader client:load path={path} />
+      <SiteHeader />
     </header>
     <noscript>
-      <nav class="shell flex gap-4 pb-4 text-sm underline">
+      <nav class="shell flex gap-4 pb-4 text-sm underline min-[621px]:hidden">
         <a href="/manifesto/">Manifesto</a>
         <a href="/how-we-operate/">How we operate</a>
         <a href="/about/">About</a>

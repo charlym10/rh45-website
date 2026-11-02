@@ -15,6 +15,13 @@ const direction = [
 ---
 
 <Layout title="About | Rh45">
+  <noscript slot="head">
+    <style>
+      [data-slot='tabs-list'] { display: none; }
+      [data-slot='tabs-content'][data-state='inactive'] { display: block; }
+      [data-slot='tabs-content'] h2 { position: static; width: auto; height: auto; margin: 3rem 0 1rem; overflow: visible; clip-path: none; white-space: normal; }
+    </style>
+  </noscript>
   <PageIntro
     label="About Rh45"
     lead="Rh45 is an early-stage company enabling the places where people live, work and gather to become autonomous, adaptive and secure."

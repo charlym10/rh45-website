@@ -84,12 +84,11 @@ The Home hero fills the viewport below the header, with its text vertically cent
 
 ## Components
 
-All from shadcn/ui, themed by the tokens. Their files in `src/components/ui/` are not edited for color or radius.
+From shadcn/ui, themed by the tokens, unless noted. Their files in `src/components/ui/` are not edited for color or radius.
 
-- **Button:** `default` once per view, for Contact, with `sm` size at every width, and a 44px high touch area. `outline` with an `input` border and no shadow for Company and section actions. `ghost` `icon-sm` with a 44px high touch area and the Lucide `PanelLeft` icon for the mobile menu, 32px high like Contact, with the icon aligned to the shell edge, at the right end of the header. `link` with an underline for Back to home and the footer email.
-- **DropdownMenu:** Company on desktop.
-- **Sheet and Collapsible:** the mobile menu below 620px, built like shadcn's Sidebar and using its `sidebar` tokens. It opens from the right, under an Rh45 group label, with Home and a collapsible Company item whose links sit behind a `sidebar-border` rule. Company starts open.
-- **Dialog:** Contact. It holds the contact sentence and the email button.
+- **Button:** `default` once per view, for the Contact link to the email address, with `sm` size at every width and a 44px high touch area. `outline` with an `input` border and no shadow for Company and section actions. `ghost` `icon-sm` with a 44px high touch area and the Lucide `PanelLeft` icon for the mobile menu, 32px high like Contact, with the icon aligned to the shell edge, at the right end of the header. `link` with an underline for Back to home and the footer email.
+- **Company menu:** a native `<details>` on desktop, styled like shadcn's DropdownMenu with `popover` tokens.
+- **Mobile menu:** a native `<dialog>` below 620px, built like shadcn's Sidebar with its `sidebar` tokens. It opens from the right, under an Rh45 group label, with Home and a collapsible Company item whose links sit behind a `sidebar-border` rule. Company starts open.
 - **Card:** the conflict tiles, operating principles and About groups, with `shadow-none` and `space-6` padding.
 - **Badge:** `secondary`, for The status quo and The consequence.
 - **Table:** Purpose, Mission and Vision, and Non-negotiables.
@@ -101,8 +100,8 @@ All from shadcn/ui, themed by the tokens. Their files in `src/components/ui/` ar
 ## Behavior
 
 - **Pages:** each company page is its own URL with its own title. The old `#manifesto`, `#how-we-operate` and `#about` links redirect to them.
-- **Menus and dialog:** Radix handles keyboard, focus and Escape.
-- **JavaScript:** React runs in the browser only for the header and the About tabs. Without JavaScript, a plain list of company links appears under the header and the footer still offers the email.
+- **Menus:** native `<details>` and `<dialog>` handle keyboard and focus, with a small script to close them on Escape or an outside click.
+- **JavaScript:** React runs in the browser only for the About tabs. Without JavaScript, the Company menu still opens on desktop, a plain list of company links appears under the header on mobile, and About shows all its groups in sequence.
 
 ## Iconography
 

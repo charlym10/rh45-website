@@ -1,6 +1,6 @@
 # Rh45 Website
 
-The Rh45 Corp. website, built with Astro, Tailwind CSS and shadcn/ui. See `DESIGN.md` for its design system. React renders most shadcn components at build time; only the header and the About tabs run React in the browser.
+The Rh45 Corp. website, built with Astro, Tailwind CSS and shadcn/ui. See `DESIGN.md` for its design system. React renders most shadcn components at build time; only the About tabs run React in the browser.
 
 ## Develop
 
