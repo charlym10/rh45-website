@@ -27,7 +27,7 @@ The repository contains a static company website with Home, About, Manifesto, an
 - Confirmed company stage: early-stage, beginning work on a concrete autonomous-access project.
 - The autonomous-access project's requirements, architecture, current implementation status, and available capabilities remain unconfirmed.
 - The About page describes autonomous environments as company purpose, mission, and vision; it does not define a technical implementation.
-- The website says Rh45 "exists to" give the physical world the ability to think, and calls the sense, reason, coordinate and act cycle "the infrastructure Rh45 is building." Do not infer shipped capabilities from those phrases.
+- The website says Rh45 "exists to" give the physical world the ability to think or make environments capable of sensing, reasoning, coordinating and acting, and calls the sense, reason, coordinate and act cycle "the infrastructure Rh45 is building." Do not infer shipped capabilities from those phrases.
 - Keep strategic beliefs and future capabilities distinct from verified implementation.
 - The website is a static Astro project; its pages are in `src/pages/` and its deployment instructions are in `README.md`.
 
