@@ -98,6 +98,12 @@ The Home hero fills the viewport below the header, with its text vertically cent
 - **Footer:** the legal line only, on `footer-bg`.
 - **Status, Metric and EventRow:** not used. They show live readings, and the site must not present data Rh45 does not have.
 
+## Behavior
+
+- **Views:** the URL hash decides the view, so links, Back, Forward and typed URLs agree. Each view sets its own title. Changing view jumps to the top without animation and moves focus to the view's `h1`.
+- **Company menu:** a disclosure. A mouse opens it on hover; keyboard and touch toggle it with the button. Escape closes it, and it closes after any header link is used. The current page's link is marked with `aria-current` and weight 600.
+- **Mobile menu:** opening it moves focus to Company. Escape returns focus to the button. It closes on an outside tap, on any header link and when the layout crosses 620px.
+
 ## Iconography
 
 1.5px stroke icons with rounded joins, in `ink` or `ink-muted`. The site has no icon set yet.
