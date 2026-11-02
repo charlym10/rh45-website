@@ -63,7 +63,7 @@ Short, declarative sentences. Lead with the fact, in the active voice. Sentence 
 
 ## Typography
 
-Inter for text, from Google Fonts. JetBrains Mono only for numbering.
+Inter for text, from Google Fonts. JetBrains Mono only for the cycle numbers.
 
 | Element | Style |
 | --- | --- |
@@ -74,7 +74,7 @@ Inter for text, from Google Fonts. JetBrains Mono only for numbering.
 | Running text | `body`, measure near 68 characters |
 | Card text, notes | `small` |
 | Company page labels above the `h1` | `label`, uppercase |
-| Cycle and About numbering | `data`, `muted-foreground`, tabular figures |
+| Cycle numbers | `data`, `muted-foreground`, tabular figures |
 
 ## Layout
 
@@ -95,6 +95,8 @@ From shadcn/ui, themed by the tokens, unless noted. Their files in `src/componen
 - **Tabs:** the four About groups. Every panel stays in the HTML.
 - **Separator:** between the About introduction and its tabs.
 - **Cycle rail:** the site's own. A sticky list on a 1px `foreground` line, whose node fills as its step reaches the middle of the viewport. Hidden below 720px, where the steps read as a list.
+- **Skip link:** first in the page, visible on focus.
+- **404:** the standard page introduction and Back to home.
 - **Footer:** on every page, a contact close above the legal line.
 
 ## Behavior

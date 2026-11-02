@@ -41,6 +41,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <slot name="head" />
   </head>
   <body>
+    <a class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-30 focus:rounded-md focus:bg-background focus:px-3 focus:py-2 focus:text-sm" href="#main">Skip to content</a>
     <header class="sticky top-0 z-10 bg-background">
       <SiteHeader />
     </header>
@@ -51,7 +52,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         <a href="/about/">About</a>
       </nav>
     </noscript>
-    <main>
+    <main id="main">
       <slot />
     </main>
     <Footer />

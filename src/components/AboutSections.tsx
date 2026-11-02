@@ -3,7 +3,6 @@ import { Table, TableBody, TableCell, TableHead, TableRow } from '@/components/u
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 interface Item {
-  number: string;
   title: string;
   text: string;
 }
@@ -33,10 +32,9 @@ export function DirectionTable({ rows }: { rows: { title: string; text: string }
 function ItemCards({ items }: { items: Item[] }) {
   return (
     <div className="grid grid-cols-2 gap-4 max-[620px]:grid-cols-1">
-      {items.map(({ number, title, text }) => (
-        <Card key={number} className="shadow-none">
+      {items.map(({ title, text }) => (
+        <Card key={title} className="shadow-none last:odd:col-span-full">
           <CardContent>
-            <div className="mb-2 font-mono text-[13px] leading-5 text-muted-foreground tabular-nums">{number}</div>
             <h3>{title}</h3>
             <p className="text-sm">{text}</p>
           </CardContent>
@@ -50,9 +48,8 @@ function ItemTable({ items }: { items: Item[] }) {
   return (
     <Table>
       <TableBody>
-        {items.map(({ number, title, text }) => (
-          <TableRow key={number} className="hover:bg-transparent">
-            <TableCell className="w-12 py-4 align-top font-mono text-[13px] text-muted-foreground tabular-nums">{number}</TableCell>
+        {items.map(({ title, text }) => (
+          <TableRow key={title} className="hover:bg-transparent">
             <TableHead scope="row" className="h-auto w-[38%] py-4 align-top text-base font-semibold whitespace-normal max-[620px]:w-auto">
               {title}
             </TableHead>
@@ -64,19 +61,22 @@ function ItemTable({ items }: { items: Item[] }) {
   );
 }
 
+// Radix builds element ids from the value, so it cannot contain spaces.
+const tabValue = (title: string) => title.toLowerCase().replace(/\s+/g, '-');
+
 // Every panel stays in the HTML, and the about page shows them all when JavaScript is off.
 export function AboutTabs({ groups }: { groups: Group[] }) {
   return (
-    <Tabs defaultValue={groups[0].title} className="gap-6">
+    <Tabs defaultValue={tabValue(groups[0].title)} className="gap-6">
       <TabsList className="h-auto w-full flex-wrap justify-start group-data-[orientation=horizontal]/tabs:h-auto">
         {groups.map(({ title }) => (
-          <TabsTrigger key={title} value={title} className="flex-none cursor-pointer px-3 py-1.5">
+          <TabsTrigger key={title} value={tabValue(title)} className="flex-none cursor-pointer px-3 py-1.5 max-[620px]:min-h-11">
             {title}
           </TabsTrigger>
         ))}
       </TabsList>
       {groups.map(({ title, items }, index) => (
-        <TabsContent key={title} value={title} forceMount className="data-[state=inactive]:hidden">
+        <TabsContent key={title} value={tabValue(title)} forceMount className="data-[state=inactive]:hidden">
           <h2 className="sr-only">{title}</h2>
           {index === groups.length - 1 ? <ItemTable items={items} /> : <ItemCards items={items} />}
         </TabsContent>

@@ -3,27 +3,22 @@
     "title": "Core principles",
     "items": [
       {
-        "number": "01",
         "title": "Purpose before technology",
         "text": "Technology is a means, not the goal. Every system we build must exist to solve a real problem."
       },
       {
-        "number": "02",
         "title": "Distributed over centralized",
         "text": "Intelligence should operate as close as possible to where events occur. We do not design systems that depend on a single point of reasoning or control."
       },
       {
-        "number": "03",
         "title": "Open at the boundaries",
         "text": "We may build any part of the stack ourselves, but what we build exposes open interfaces. Other systems, vendors and protocols must be able to connect to, extend and replace what we build."
       },
       {
-        "number": "04",
         "title": "Autonomy with accountability",
         "text": "Systems must act independently, but always transparently, securely and under human governance."
       },
       {
-        "number": "05",
         "title": "Foundations, not dead ends",
         "text": "Whether we deliver a component, a product or a complete system, it must strengthen a foundation that can evolve. We do not build point solutions that cannot be extended."
       }
@@ -33,32 +28,26 @@
     "title": "Core values",
     "items": [
       {
-        "number": "01",
         "title": "Intellectual honesty",
         "text": "Reality matters more than ego, assumptions or narratives. We value clear thinking, honest communication and evidence-based decisions."
       },
       {
-        "number": "02",
         "title": "Long-term thinking",
         "text": "We build with durability in mind. Our decisions prioritize long-term resilience, adaptability and foundational value over short-term optimization or temporary trends."
       },
       {
-        "number": "03",
         "title": "Systems thinking",
         "text": "Complex environments cannot be understood in isolation. We approach technology, infrastructure and operations as interconnected systems where every component influences the whole."
       },
       {
-        "number": "04",
         "title": "Ownership",
         "text": "We act independently and take responsibility for outcomes. Freedom to decide comes with accountability for what those decisions produce."
       },
       {
-        "number": "05",
         "title": "Precision over noise",
         "text": "Clarity and substance matter more than hype. We prioritize rigor and technical depth over unnecessary complexity, distraction or superficial innovation."
       },
       {
-        "number": "06",
         "title": "Human-centered engineering",
         "text": "Technology should work in service of people. We design systems that improve safety, efficiency, adaptability and quality of life where people live."
       }
@@ -68,37 +57,30 @@
     "title": "Core beliefs",
     "items": [
       {
-        "number": "01",
         "title": "Physical environments will become intelligent",
         "text": "Homes, workplaces, communities and cities will evolve from passive structures into adaptive systems that sense, reason, collaborate and respond in real time."
       },
       {
-        "number": "02",
         "title": "Intelligence will be distributed",
         "text": "Intelligent systems will run across edge, cloud and human context rather than being concentrated in any single system."
       },
       {
-        "number": "03",
         "title": "Infrastructure is becoming computational",
         "text": "Connectivity, energy, security and physical operations are evolving into programmable, data-driven systems."
       },
       {
-        "number": "04",
         "title": "Autonomy will become part of everyday life",
         "text": "Autonomous systems will increasingly operate where people live, requiring reliability, transparency and human oversight."
       },
       {
-        "number": "05",
         "title": "Interoperability enables scale",
         "text": "Long-term innovation depends on open ecosystems that can evolve across technologies, vendors and environments."
       },
       {
-        "number": "06",
         "title": "Human-centered systems create lasting value",
         "text": "Technology creates meaningful impact when it improves safety, efficiency and quality of life for the people it serves."
       },
       {
-        "number": "07",
         "title": "Foundations outlast point solutions",
         "text": "Lasting technological change comes from foundations that keep evolving, not from disconnected point solutions."
       }
@@ -108,27 +90,22 @@
     "title": "Non-negotiables",
     "items": [
       {
-        "number": "01",
         "title": "Human safety comes first",
         "text": "No system, automation or optimization is more important than the safety and well-being of the people who depend on it."
       },
       {
-        "number": "02",
         "title": "Security and privacy are foundational",
         "text": "Trust cannot exist without strong security, resilient infrastructure and responsible data practices."
       },
       {
-        "number": "03",
         "title": "Reliability and rigor are mandatory",
         "text": "Systems operating in physical environments must remain dependable under real-world conditions. We take no shortcuts on systems people depend on."
       },
       {
-        "number": "04",
         "title": "Autonomy requires transparency",
         "text": "Autonomous systems must remain observable, understandable and accountable to human oversight."
       },
       {
-        "number": "05",
         "title": "No artificial lock-in",
         "text": "We never make people dependent on Rh45 by closing interfaces or withholding access to their own data."
       }
