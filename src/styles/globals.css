@@ -1,0 +1,164 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* The website follows the system theme, so dark mode is a media query instead of the .dark class. */
+@custom-variant dark (@media (prefers-color-scheme: dark));
+
+/* Rh45 theme for shadcn/ui — generated from the Rh45 design system tokens */
+:root {
+  --radius: 0.5rem;
+  --background: #FFFFFF;
+  --foreground: #000000;
+  --card: #F5F5F5;
+  --card-foreground: var(--foreground);
+  --popover: var(--background);
+  --popover-foreground: var(--foreground);
+  --primary: var(--foreground);
+  --primary-foreground: var(--background);
+  --secondary: #F5F5F5;
+  --secondary-foreground: var(--foreground);
+  --muted: var(--secondary);
+  --muted-foreground: #666666;
+  --accent: #EBEBEB;
+  --accent-foreground: var(--foreground);
+  --destructive: #A3332A;
+  --border: #E0E0E0;
+  --input: #8C8C8C;
+  --ring: var(--foreground);
+  --attention: #8A5B12;
+  --attention-soft: #EFE6D3;
+  --state-ok: #2E6A43;
+  --state-active: #2C5C8A;
+  --state-attention: var(--attention);
+  --state-alert: var(--destructive);
+  --chart-1: var(--foreground);
+  --chart-2: var(--state-active);
+  --chart-3: var(--muted-foreground);
+  --chart-4: var(--attention);
+  --chart-5: #A3A3A3;
+  --circle-line: rgba(0,0,0,.28);
+  --circle-wide: rgba(0,0,0,.07);
+  --circle-outer: rgba(0,0,0,.04);
+  --footer: #000000;
+  --footer-foreground: #999999;
+  --sidebar: var(--card);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #FFFFFF;
+    --card: #1F1F1F;
+    --secondary: #1F1F1F;
+    --muted-foreground: #999999;
+    --accent: #333333;
+    --destructive: #E07A6E;
+    --border: #333333;
+    --input: #737373;
+    --attention: #D9A54A;
+    --attention-soft: #2A2418;
+    --state-ok: #6FBF8A;
+    --state-active: #8DB6E0;
+    --chart-5: #5C5C5C;
+    --circle-line: rgba(255,255,255,.34);
+    --circle-wide: rgba(255,255,255,.13);
+    --circle-outer: rgba(255,255,255,.07);
+    --footer: #1F1F1F;
+  }
+}
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-serif: "Source Serif 4", ui-serif, Georgia, serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-attention: var(--attention);
+  --color-attention-soft: var(--attention-soft);
+  --color-state-ok: var(--state-ok);
+  --color-state-active: var(--state-active);
+  --color-state-attention: var(--state-attention);
+  --color-state-alert: var(--state-alert);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-circle-line: var(--circle-line);
+  --color-circle-wide: var(--circle-wide);
+  --color-circle-outer: var(--circle-outer);
+  --color-footer: var(--footer);
+  --color-footer-foreground: var(--footer-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  body { @apply bg-background text-foreground; }
+}
+
+/* Rh45 website: the styles that are not part of the design system theme. */
+:root {
+  color-scheme: light dark;
+  --max: 1120px;
+  --nav-height: 84px;
+}
+@media (max-width: 620px) {
+  :root { --nav-height: 66px; }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 1rem); }
+  h1 { margin-bottom: 1.5rem; font-size: clamp(36px, 4.4vw, 64px); line-height: 1.25; font-weight: 600; letter-spacing: -.01em; text-wrap: pretty; }
+  h1 em { font-family: var(--font-serif); font-style: normal; font-weight: 400; }
+  h2 { margin-bottom: 1rem; font-size: 30px; line-height: 36px; font-weight: 600; letter-spacing: -.01em; }
+  h3 { margin-bottom: .5rem; font-size: 20px; line-height: 28px; font-weight: 600; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+}
+
+@layer components {
+  .shell { width: min(calc(100% - 3rem), var(--max)); margin-inline: auto; }
+  .lead { max-width: 68ch; font-size: 18px; line-height: 28px; color: var(--muted-foreground); }
+  .note { margin-top: 1rem; font-size: 14px; line-height: 20px; color: var(--muted-foreground); }
+  .eyebrow { margin-bottom: .5rem; font-size: 13px; line-height: 20px; letter-spacing: .01em; color: var(--muted-foreground); }
+  .content-link { display: inline-block; justify-self: start; margin-top: 18px; padding-bottom: 6px; border-bottom: 1px solid var(--foreground); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}

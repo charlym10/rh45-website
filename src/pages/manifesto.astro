@@ -1,0 +1,23 @@
+---
+import BackHome from '@/components/BackHome.astro';
+import PageIntro from '@/components/PageIntro.astro';
+import paragraphs from '@/data/manifesto.json';
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title="Manifesto | Rh45">
+  <PageIntro
+    eyebrow="Manifesto"
+    lead="A different future for the physical world begins with environments that can understand and respond."
+  >
+    The places where humanity lives were never designed to <em>think.</em>
+  </PageIntro>
+  <div class="pb-12">
+    <div class="shell">
+      <div class="max-w-[68ch]">
+        {paragraphs.map((text, index) => <p class:list={['mb-4', index === 0 && 'text-xl leading-7 font-semibold']}>{text}</p>)}
+        <BackHome />
+      </div>
+    </div>
+  </div>
+</Layout>

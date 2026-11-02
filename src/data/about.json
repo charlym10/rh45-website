@@ -1,0 +1,152 @@
+{
+  "principles": {
+    "title": "Core principles",
+    "items": [
+      {
+        "number": "01",
+        "title": "Purpose before technology",
+        "text": "Technology is a means, not the goal. Every system we build must exist to solve a real problem."
+      },
+      {
+        "number": "02",
+        "title": "Environments should think and collaborate",
+        "text": "Living spaces should not depend entirely on human intervention to operate effectively. They should detect change, reason about context, collaborate with other systems and environments, and act autonomously within distributed intelligence networks."
+      },
+      {
+        "number": "03",
+        "title": "Intelligence is distributed, not centralized",
+        "text": "Intelligence is distributed across environments, infrastructure, and human context⁠—not centralized in any single system."
+      },
+      {
+        "number": "04",
+        "title": "Interoperability over lock-in",
+        "text": "No single device, vendor or protocol defines intelligent living. Open ecosystems scale. Closed ones stagnate."
+      },
+      {
+        "number": "05",
+        "title": "Autonomy with accountability",
+        "text": "Systems must act independently, but always transparently, securely and under human governance."
+      },
+      {
+        "number": "06",
+        "title": "Scale through foundations",
+        "text": "We do not build isolated products. We build foundational infrastructure that enables long-term evolution."
+      }
+    ]
+  },
+  "values": {
+    "title": "Core values",
+    "items": [
+      {
+        "number": "01",
+        "title": "Intellectual honesty",
+        "text": "Reality matters more than ego, assumptions or narratives. We value clear thinking, honest communication and evidence-based decisions. Problems are solved faster when they are understood truthfully."
+      },
+      {
+        "number": "02",
+        "title": "Long-term thinking",
+        "text": "We build with durability in mind. Our decisions prioritize long-term resilience, adaptability and foundational value over short-term optimization or temporary trends."
+      },
+      {
+        "number": "03",
+        "title": "Systems thinking",
+        "text": "Complex environments cannot be understood in isolation. We approach technology, infrastructure and operations as interconnected systems where every component influences the whole."
+      },
+      {
+        "number": "04",
+        "title": "Responsible autonomy",
+        "text": "Autonomy must always be paired with accountability. As systems become more intelligent and independent, transparency, security and meaningful human oversight remain essential."
+      },
+      {
+        "number": "05",
+        "title": "Precision over noise",
+        "text": "Clarity and substance matter more than hype. We prioritize rigor, thoughtful execution and technical depth over unnecessary complexity, distraction or superficial innovation."
+      },
+      {
+        "number": "06",
+        "title": "Human-centered engineering",
+        "text": "Technology should work in service of people. We design systems that improve safety, efficiency, adaptability and quality of life within the environments where humanity lives."
+      }
+    ]
+  },
+  "beliefs": {
+    "title": "Core beliefs",
+    "items": [
+      {
+        "number": "01",
+        "title": "Physical environments will become intelligent",
+        "text": "Homes, communities and cities will evolve from passive structures into adaptive systems capable of sensing, reasoning and responding in real time."
+      },
+      {
+        "number": "02",
+        "title": "Intelligence will be distributed",
+        "text": "The future of intelligent systems will depend on the coordination of edge infrastructure, cloud systems, embodied agents, and human context."
+      },
+      {
+        "number": "03",
+        "title": "Infrastructure is becoming computational",
+        "text": "Connectivity, energy, security and physical operations are evolving into programmable and data-driven systems."
+      },
+      {
+        "number": "04",
+        "title": "Autonomy will become part of everyday life",
+        "text": "Autonomous systems will increasingly operate within the environments where people live, requiring reliability, transparency and human oversight."
+      },
+      {
+        "number": "05",
+        "title": "Interoperability enables scale",
+        "text": "Long-term innovation depends on open and interoperable ecosystems capable of evolving across technologies, vendors and environments."
+      },
+      {
+        "number": "06",
+        "title": "Human-centered systems create lasting value",
+        "text": "Technology creates meaningful impact when it improves safety, efficiency and quality of life for the people it serves."
+      },
+      {
+        "number": "07",
+        "title": "Foundations matter more than isolated products",
+        "text": "Lasting technological change is driven by foundational infrastructure that enables continuous evolution, not by disconnected point solutions."
+      }
+    ]
+  },
+  "nonNegotiables": {
+    "title": "Non-negotiables",
+    "items": [
+      {
+        "number": "01",
+        "title": "Human safety comes first",
+        "text": "No system, automation or optimization is more important than the safety and well-being of the people who depend on it."
+      },
+      {
+        "number": "02",
+        "title": "Security and privacy are foundational",
+        "text": "Trust cannot exist without strong security, resilient infrastructure and responsible data practices."
+      },
+      {
+        "number": "03",
+        "title": "Reliability is mandatory",
+        "text": "Systems operating in physical environments must remain dependable, resilient and operational under real-world conditions."
+      },
+      {
+        "number": "04",
+        "title": "Autonomy requires transparency",
+        "text": "Autonomous systems must remain observable, understandable and accountable to human oversight."
+      },
+      {
+        "number": "05",
+        "title": "Interoperability is a strategic requirement",
+        "text": "We do not build ecosystems that depend on unnecessary lock-in, fragmentation or closed standards."
+      },
+      {
+        "number": "06",
+        "title": "Long-term foundations outweigh short-term gains",
+        "text": "We prioritize durable infrastructure, sustainable architecture and long-term value over temporary optimization or rapid but fragile growth."
+      },
+      {
+        "number": "07",
+        "title": "Technical rigor is non-negotiable",
+        "text": "Important systems require depth, precision and disciplined execution⁠—not hype, shortcuts or superficial innovation."
+      }
+    ]
+  }
+}

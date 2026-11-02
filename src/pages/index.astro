@@ -1,0 +1,121 @@
+---
+import { ArrowRight, RefreshCw } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import Layout from '@/layouts/Layout.astro';
+
+const cycle = [
+  { number: '01', title: 'Sense', text: 'Understand what is happening across a physical environment.' },
+  { number: '02', title: 'Reason', text: 'Interpret context and determine appropriate responses.' },
+  { number: '03', title: 'Coordinate', text: 'Coordinate connected systems, infrastructure and agents.' },
+  { number: '04', title: 'Act', text: 'Execute actions autonomously within defined boundaries.' },
+];
+const conflict = [
+  { label: 'The status quo', title: 'Fragmented systems', text: 'Information and action remain separated.' },
+  { label: 'The consequence', title: 'Reactive environments', text: 'People still carry the burden of coordination.' },
+];
+---
+
+<Layout title="Rh45 | The cognitive layer for the physical world">
+  <script is:inline>
+    // The company pages used to live at these hashes; keep old links working.
+    if (['#manifesto', '#how-we-operate', '#about'].includes(location.hash)) location.replace(`/${location.hash.slice(1)}/`);
+  </script>
+  <section class="hero">
+    <div class="shell relative z-1">
+      <h1>The world around us is changing.<br /><em>Our environments must, too.</em></h1>
+      <p class="max-w-[68ch]">The places where people live and work remain too often passive, fragmented and reactive&#8288;—even as the systems around them become more complex.</p>
+      <a class="content-link" href="#conflict">See the challenge <span>↓</span></a>
+    </div>
+  </section>
+
+  <section class="statement" id="conflict">
+    <div class="shell">
+      <h2>Connected is not the same as intelligent.</h2>
+      <p>Connectivity has brought more devices and data into physical spaces. But isolated systems, delayed responses and fragmented operations can still leave environments unable to understand context or coordinate effectively.</p>
+      <div class="wide mt-8 grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-stretch gap-4 max-[620px]:grid-cols-1">
+        {
+          conflict.map(({ label, title, text }, index) => (
+            <>
+              {index > 0 && <ArrowRight className="size-6 self-center text-muted-foreground max-[620px]:w-full max-[620px]:rotate-90" strokeWidth={2} aria-hidden="true" />}
+              <Card className="shadow-none">
+                <CardContent>
+                  <div class="eyebrow">{label}</div>
+                  <h3>{title}</h3>
+                  <p class="text-sm text-muted-foreground">{text}</p>
+                </CardContent>
+              </Card>
+            </>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="statement bg-secondary py-24 max-[620px]:py-12">
+    <div class="shell">
+      <h2>What if the environment itself could understand and respond?</h2>
+      <p>Not simply by adding another app or dashboard, but by embedding intelligence into the physical layer&#8288;—where context, infrastructure and everyday life meet.</p>
+      <p class="note">Rh45 is at an early stage. This site shares our direction and how we intend to work as we begin our first project, focused on autonomous access.</p>
+    </div>
+  </section>
+
+  <section class="statement" id="cognitive">
+    <div class="shell">
+      <div class="eyebrow wide">The cognitive layer</div>
+      <h2>Intelligence, embedded into the environments where life happens.</h2>
+      <p>Rh45’s foundational ambition is to connect the physical layer with distributed intelligence, so environments can move beyond isolated automation toward contextual, coordinated action.</p>
+      <div class="wide relative mt-8 grid grid-cols-4 gap-4 max-[1000px]:grid-cols-2 max-[620px]:grid-cols-1">
+        <div class="cycle-link" aria-hidden="true"></div>
+        {
+          cycle.map(({ number, title, text }) => (
+            <Card className="relative shadow-none">
+              <CardContent>
+                <h3 class="flex flex-col items-start gap-2">
+                  <span class="text-[28px] leading-8 font-semibold tabular-nums">{number}</span> {title}
+                </h3>
+                <p class="text-sm">{text}</p>
+              </CardContent>
+            </Card>
+          ))
+        }
+      </div>
+      <div class="wide mt-6 flex items-center gap-2 font-medium">
+        <RefreshCw className="size-6 flex-none" strokeWidth={2} aria-hidden="true" />
+        <span>Each action informs the next cycle</span>
+      </div>
+      <p class="note wide">Conceptual model of the infrastructure Rh45 aims to build&#8288;—not a description of a currently available product.</p>
+    </div>
+  </section>
+
+  <section class="statement bg-secondary py-24 max-[620px]:py-12" id="mission">
+    <div class="shell">
+      <h2>Our long-term direction is to build a cognitive layer for the physical world.</h2>
+      <p class="lead">We aim to build foundational infrastructure that enables physical environments to become autonomous, adaptive and secure.</p>
+      <a class="content-link" href="/about/">Discover Rh45 <span>↗</span></a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero { position: relative; display: flex; align-items: center; min-height: max(460px, calc(100vh - var(--nav-height))); min-height: max(460px, calc(100svh - var(--nav-height))); overflow: hidden; border-bottom: 1px solid var(--border); }
+  .hero::after { content: ""; position: absolute; right: -120px; top: 12%; width: 550px; height: 550px; border: 1px solid var(--circle-line); border-radius: 50%; box-shadow: 0 0 0 60px var(--circle-wide), 0 0 0 120px var(--circle-outer); }
+  .statement:not(.bg-secondary) { padding-block: 3rem; }
+  .statement > .shell { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1rem; align-items: start; }
+  .statement > .shell > h2 { grid-row: span 2; margin-bottom: 0; padding-right: 2rem; font-size: clamp(32px, 3.8vw, 48px); line-height: 1.08; }
+  .statement > .shell > p, .statement > .shell > .content-link { grid-column: 2; }
+  .statement > .shell > .wide { grid-column: 1 / -1; }
+  .cycle-link { position: absolute; left: 12.5%; right: 12.5%; top: 50%; height: 1px; background: var(--foreground); pointer-events: none; }
+
+  @media (max-width: 1000px) {
+    .cycle-link { display: none; }
+  }
+  @media (max-width: 860px) {
+    .statement > .shell { grid-template-columns: minmax(0, 1fr); }
+    .statement > .shell > h2 { grid-row: auto; margin-bottom: 1rem; padding-right: 0; }
+    .statement > .shell > p, .statement > .shell > .content-link { grid-column: auto; }
+  }
+  @media (max-width: 620px) {
+    .hero { min-height: max(400px, calc(100vh - var(--nav-height))); min-height: max(400px, calc(100svh - var(--nav-height))); }
+    .cycle-link { display: block; left: 50%; right: auto; top: 12%; bottom: 12%; width: 1px; height: auto; }
+  }
+</style>

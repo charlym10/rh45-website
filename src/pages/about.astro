@@ -1,0 +1,52 @@
+---
+import BackHome from '@/components/BackHome.astro';
+import PageIntro from '@/components/PageIntro.astro';
+import { Card, CardContent } from '@/components/ui/card';
+import about from '@/data/about.json';
+import Layout from '@/layouts/Layout.astro';
+
+const groups = [about.principles, about.values, about.beliefs, about.nonNegotiables];
+---
+
+<Layout title="About | Rh45">
+  <PageIntro
+    eyebrow="About Rh45"
+    lead="Rh45 is an early-stage company working toward foundational infrastructure for more autonomous, adaptive and secure physical environments."
+  >
+    Working toward a <em>cognitive layer</em> for the physical world.
+  </PageIntro>
+  <div class="pb-12">
+    <div class="shell">
+      <div class="max-w-[68ch] [&_h2:not(:first-child)]:mt-12 [&_p]:mb-4">
+        <h2>Why we exist</h2>
+        <p>The places where humanity lives were never designed to think. As physical environments become more complex, disconnected systems and reactive operations are no longer enough.</p>
+        <p>We believe intelligence should extend beyond screens and isolated applications. It should be embedded into the environments themselves&#8288;—distributed across the physical layer where life happens, and designed to operate responsibly, securely and with human oversight.</p>
+        <h2>Purpose</h2>
+        <p>To redefine how the physical world supports human life.</p>
+        <h2>Mission</h2>
+        <p>To build the foundational infrastructure that enables physical environments to become autonomous, adaptive and secure.</p>
+        <h2>Vision</h2>
+        <p>A world where physical environments coordinate through distributed intelligence networks.</p>
+      </div>
+      {
+        groups.map(({ title, items }) => (
+          <>
+            <h2 class="mt-12">{title}</h2>
+            <div class="grid grid-cols-2 gap-4 max-[620px]:grid-cols-1">
+              {items.map(({ number, title, text }) => (
+                <Card className="shadow-none">
+                  <CardContent>
+                    <div class="eyebrow tabular-nums">{number}</div>
+                    <h3>{title}</h3>
+                    <p class="text-sm">{text}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </>
+        ))
+      }
+      <BackHome />
+    </div>
+  </div>
+</Layout>

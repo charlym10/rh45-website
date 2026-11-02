@@ -1,0 +1,43 @@
+---
+import { Crosshair, Diamond, RefreshCw, TrendingUp, ZoomIn } from 'lucide-react';
+import BackHome from '@/components/BackHome.astro';
+import PageIntro from '@/components/PageIntro.astro';
+import { Card, CardContent } from '@/components/ui/card';
+import principles from '@/data/operating-principles.json';
+import Layout from '@/layouts/Layout.astro';
+
+const icons = [Crosshair, ZoomIn, TrendingUp, Diamond, RefreshCw];
+---
+
+<Layout title="How we operate | Rh45">
+  <PageIntro
+    eyebrow="How we operate"
+    lead="At Rh45, we believe building the future requires more than ambitious ideas. It requires clarity of purpose, thoughtful decisions, and the ability to turn ideas into reality."
+  >
+    Build fast. <em>Learn faster.</em>
+  </PageIntro>
+  <div class="pb-12">
+    <div class="shell">
+      <div class="grid grid-cols-2 gap-4 max-[720px]:grid-cols-1">
+        {
+          principles.map(({ title, text }, index) => {
+            const Icon = icons[index];
+            return (
+              <Card className="shadow-none last:col-span-full max-[720px]:last:col-auto">
+                <CardContent className="grid grid-cols-[24px_minmax(0,1fr)] gap-4">
+                  <Icon className="size-6" strokeWidth={1.5} aria-hidden="true" />
+                  <div>
+                    <h2 class="mb-2 text-xl leading-7 tracking-normal">{title}</h2>
+                    <p class="max-w-[68ch] text-sm">{text}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })
+        }
+      </div>
+      <div class="mt-12 font-serif text-3xl leading-9">Build with purpose. Learn continuously. Evolve deliberately.</div>
+      <BackHome />
+    </div>
+  </div>
+</Layout>
