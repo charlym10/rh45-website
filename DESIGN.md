@@ -85,9 +85,9 @@ The Home hero fills the viewport below the header, with its text vertically cent
 
 All from shadcn/ui, themed by the tokens. Their files in `src/components/ui/` are not edited for color or radius.
 
-- **Button:** `default` once per view, for Contact, with `sm` size and 36px high below 620px. `outline` with an `input` border and no shadow for Company, the mobile menu and section actions. `link` with an underline for Back to home and the footer email.
+- **Button:** `default` once per view, for Contact, with `sm` size and 36px high below 620px. `outline` with an `input` border and no shadow for Company and section actions. `ghost` `icon` with a 44px touch target and the Lucide `PanelLeft` icon for the mobile menu, left of the wordmark. `link` with an underline for Back to home and the footer email.
 - **DropdownMenu:** Company on desktop.
-- **Sheet:** Company below 620px.
+- **Sheet and Collapsible:** the mobile menu below 620px, built like shadcn's Sidebar and using its `sidebar` tokens. It opens from the left, under an Rh45 group label, with Home and a collapsible Company item whose links sit behind a `sidebar-border` rule. Company starts open.
 - **Dialog:** Contact. It holds the contact sentence and the email button.
 - **Card:** the conflict tiles, operating principles and About groups, with `shadow-none` and `space-6` padding.
 - **Badge:** `secondary`, for The status quo and The consequence.

@@ -1,5 +1,6 @@
-import { ArrowUpRight, ChevronDown, Menu } from 'lucide-react';
+import { ArrowUpRight, Building2, ChevronDown, ChevronRight, House, PanelLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
@@ -10,12 +11,64 @@ const companyLinks = [
   { href: '/about/', label: 'About' },
 ];
 
+const menuItem = 'flex w-full cursor-pointer items-center gap-2 rounded-md p-2 text-sm hover:bg-sidebar-accent aria-[current]:bg-sidebar-accent aria-[current]:font-medium';
+
+function MobileMenu({ path }: { path: string }) {
+  return (
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button className="relative -ml-2 cursor-pointer after:absolute after:-inset-1" variant="ghost" size="icon" aria-label="Open navigation menu">
+          <PanelLeft />
+        </Button>
+      </SheetTrigger>
+      <SheetContent className="w-72 gap-0 bg-sidebar text-sidebar-foreground" side="left" aria-describedby={undefined}>
+        <SheetHeader className="px-4 pb-2">
+          <SheetTitle className="mb-0 text-xs leading-4 font-medium tracking-normal text-muted-foreground">Rh45</SheetTitle>
+        </SheetHeader>
+        <ul className="flex flex-col gap-1 px-2">
+          <li>
+            <a className={menuItem} href="/" aria-current={path === '/' ? 'page' : undefined}>
+              <House className="size-4" aria-hidden="true" />
+              Home
+            </a>
+          </li>
+          <Collapsible asChild defaultOpen className="group/collapsible">
+            <li>
+              <CollapsibleTrigger className={menuItem}>
+                <Building2 className="size-4" aria-hidden="true" />
+                Company
+                <ChevronRight className="ml-auto size-4 transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" aria-hidden="true" />
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                <ul className="mx-3.5 flex translate-x-px flex-col gap-1 border-l border-sidebar-border px-2.5 py-0.5">
+                  {companyLinks.map(({ href, label }) => (
+                    <li key={href}>
+                      <a className={menuItem} href={href} aria-current={path === href ? 'page' : undefined}>
+                        {label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </CollapsibleContent>
+            </li>
+          </Collapsible>
+        </ul>
+      </SheetContent>
+    </Sheet>
+  );
+}
+
 export function SiteHeader({ path }: { path: string }) {
   return (
     <nav className="shell flex h-(--nav-height) items-center justify-between gap-2">
-      <a className="text-[22px] leading-7 font-semibold tracking-[-.02em]" href="/">
-        Rh45
-      </a>
+      <div className="flex items-center gap-2">
+        <div className="min-[621px]:hidden">
+          <MobileMenu path={path} />
+        </div>
+        <a className="text-[22px] leading-7 font-semibold tracking-[-.02em]" href="/">
+          Rh45
+        </a>
+      </div>
       <div className="flex items-center gap-2">
         <div className="max-[620px]:hidden">
           <DropdownMenu>
@@ -56,27 +109,6 @@ export function SiteHeader({ path }: { path: string }) {
             </Button>
           </DialogContent>
         </Dialog>
-        <div className="min-[621px]:hidden">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button className="cursor-pointer border-input shadow-none" variant="outline" size="icon" aria-label="Open navigation menu">
-                <Menu />
-              </Button>
-            </SheetTrigger>
-            <SheetContent aria-describedby={undefined}>
-              <SheetHeader>
-                <SheetTitle className="mb-0 text-base leading-6 tracking-normal">Company</SheetTitle>
-              </SheetHeader>
-              <div className="flex flex-col px-4">
-                {companyLinks.map(({ href, label }) => (
-                  <a className="border-t py-4 aria-[current]:font-semibold" key={href} href={href} aria-current={path === href ? 'page' : undefined}>
-                    {label}
-                  </a>
-                ))}
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
       </div>
     </nav>
   );
