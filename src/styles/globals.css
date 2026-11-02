@@ -9,7 +9,7 @@
   --radius: 0.5rem;
   --background: #FFFFFF;
   --foreground: #000000;
-  --card: #F5F5F5;
+  --card: var(--background);
   --card-foreground: var(--foreground);
   --popover: var(--background);
   --popover-foreground: var(--foreground);
@@ -55,9 +55,9 @@
   :root {
     --background: #000000;
     --foreground: #FFFFFF;
-    --card: #1F1F1F;
-    --secondary: #1F1F1F;
-    --muted-foreground: #999999;
+    --card: #141414;
+    --secondary: #262626;
+    --muted-foreground: #A3A3A3;
     --accent: #333333;
     --destructive: #E07A6E;
     --border: #333333;

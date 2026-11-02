@@ -4,10 +4,10 @@ description: A monochrome statement site on shadcn/ui. White and black pages, bo
 colors:
   background: { light: "#FFFFFF", dark: "#000000" }
   foreground: { light: "#000000", dark: "#FFFFFF" }
-  card: { light: "#F5F5F5", dark: "#1F1F1F" }
-  secondary: { light: "#F5F5F5", dark: "#1F1F1F" }
+  card: { light: "#FFFFFF", dark: "#141414" }
+  secondary: { light: "#F5F5F5", dark: "#262626" }
   accent: { light: "#EBEBEB", dark: "#333333" }
-  muted-foreground: { light: "#666666", dark: "#999999" }
+  muted-foreground: { light: "#666666", dark: "#A3A3A3" }
   primary-foreground: { light: "#FFFFFF", dark: "#000000" }
   border: { light: "#E0E0E0", dark: "#333333" }
   circle-line: { light: "rgba(0,0,0,.28)", dark: "rgba(255,255,255,.34)" }
@@ -58,7 +58,8 @@ Short, declarative sentences. Lead with the fact, in the active voice. Sentence 
 
 ## Color
 
-- Page: `background`. Cards: `card`. Bands: `secondary`. Hover states: `accent`.
+- Page: `background`. Cards: `card`, set apart by `border`. Bands: `secondary`. Hover states: `accent`, and `muted-foreground` on the primary button. Focus rings: solid `ring`.
+- Use only tokens from the system: no literal colors and no opacity variants of a token.
 - Text: `foreground`, secondary `muted-foreground`. Never text in `border`.
 - The `circle-*` tokens are only for the hero circle.
 - The footer stays dark in both themes, using `footer` and `footer-foreground`.

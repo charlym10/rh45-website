@@ -17,7 +17,7 @@ const path = Astro.url.pathname.replace(/\/?$/, '/');
     <div class="links" id="main-navigation">
       <div class="company-menu">
         <button
-          class={cn(buttonVariants({ variant: 'secondary', size: 'sm' }), 'company-trigger cursor-pointer hover:bg-accent')}
+          class={cn(buttonVariants({ variant: 'secondary', size: 'sm' }), 'company-trigger cursor-pointer hover:bg-accent focus-visible:ring-ring')}
           type="button"
           aria-expanded="false"
           aria-controls="company-links"
@@ -35,9 +35,9 @@ const path = Astro.url.pathname.replace(/\/?$/, '/');
         </div>
       </div>
     </div>
-    <a class={cn(buttonVariants({ size: 'sm' }), 'contact')} href="mailto:info@rh45.ai">Contact Rh45 ↗</a>
+    <a class={cn(buttonVariants({ size: 'sm' }), 'contact hover:bg-muted-foreground focus-visible:ring-ring')} href="mailto:info@rh45.ai">Contact Rh45 ↗</a>
     <button
-      class={cn(buttonVariants({ variant: 'secondary', size: 'icon' }), 'mobile-menu-toggle cursor-pointer hover:bg-accent')}
+      class={cn(buttonVariants({ variant: 'secondary', size: 'icon' }), 'mobile-menu-toggle cursor-pointer hover:bg-accent focus-visible:ring-ring')}
       type="button"
       aria-label="Open navigation menu"
       aria-controls="main-navigation"
