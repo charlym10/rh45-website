@@ -13,7 +13,7 @@ colors:
   footer-foreground: { light: "#8C8C8C", dark: "#A3A3A3" }
 typography:
   display: { fontFamily: "Inter", fontSize: "48px", lineHeight: "52px", fontWeight: 600, letterSpacing: "-0.02em" }
-  display-second-beat: { fontFamily: "JetBrains Mono", fontWeight: 400, letterSpacing: "-0.04em" }
+  display-second-beat: { fontFamily: "Source Serif 4", fontWeight: 400 }
   title: { fontFamily: "Inter", fontSize: "30px", lineHeight: "36px", fontWeight: 600, letterSpacing: "-0.01em" }
   heading: { fontFamily: "Inter", fontSize: "20px", lineHeight: "28px", fontWeight: 600 }
   lead: { fontFamily: "Inter", fontSize: "18px", lineHeight: "28px", fontWeight: 400 }
@@ -37,7 +37,7 @@ spacing:
 
 This file records the design the website ships. The website uses the **Rh45** Design System artifact on claude.ai: its shadcn/ui tokens, `globals.css` theme, type, components and Lucide icons. `src/styles/globals.css` holds the tokens, and changing the artifact does not change the site until someone updates that file.
 
-**Where the site differs from the artifact, on purpose.** It uses the media query instead of the `.dark` class, because it follows the system theme. `lead` 18/28 and the second beat of a headline in JetBrains Mono are its own; the artifact reserves that face for data. Status, Metric, EventRow, Chart, Input and AlertDialog are not used: Rh45 has no live data to show and the site has no forms.
+**Where the site differs from the artifact, on purpose.** It uses the media query instead of the `.dark` class, because it follows the system theme. `lead` 18/28 and the second beat of a headline in Source Serif 4 are its own; the artifact defines only Inter and JetBrains Mono. Status, Metric, EventRow, Chart, Input and AlertDialog are not used: Rh45 has no live data to show and the site has no forms.
 
 ## Principles
 
@@ -63,7 +63,7 @@ Short, declarative sentences. Lead with the fact, in the active voice. Sentence 
 
 ## Typography
 
-Inter for text, from Google Fonts. JetBrains Mono for the second beat of a headline and the cycle numbers.
+Inter for text and Source Serif 4 for the second beat of a headline, from Google Fonts. JetBrains Mono only for the cycle numbers.
 
 | Element | Style |
 | --- | --- |
