@@ -17,7 +17,7 @@ function MobileMenu({ path }: { path: string }) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button className="relative -mr-2 cursor-pointer after:absolute after:-inset-1" variant="ghost" size="icon" aria-label="Open navigation menu">
+        <Button className="relative -mr-2 cursor-pointer after:absolute after:-inset-x-1 after:-inset-y-1.5" variant="ghost" size="icon-sm" aria-label="Open navigation menu">
           <PanelLeft />
         </Button>
       </SheetTrigger>
@@ -86,7 +86,7 @@ export function SiteHeader({ path }: { path: string }) {
         </div>
         <Dialog>
           <DialogTrigger asChild>
-            <Button className="cursor-pointer hover:bg-muted-foreground max-[620px]:h-9" size="sm">
+            <Button className="relative cursor-pointer after:absolute after:-inset-y-1.5 after:inset-x-0 hover:bg-muted-foreground" size="sm">
               Contact Rh45
               <ArrowUpRight />
             </Button>
