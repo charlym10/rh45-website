@@ -57,6 +57,7 @@ Short, declarative sentences. Lead with the fact, in the active voice. Sentence 
 - Text: `foreground`, secondary `muted-foreground`. Never text in `border`.
 - Hover: `accent`, which equals `secondary`; `muted-foreground` on the primary button.
 - The footer uses `footer` and `footer-foreground` in both themes.
+- A note on the solid block uses `input` in the light theme, because `muted-foreground` on black falls below 4.5:1.
 - No literal colors. Translucency is a token with opacity, as in shadcn's focus rings at 50%.
 - The theme follows `prefers-color-scheme`.
 
