@@ -1,0 +1,153 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* The website follows the system theme, so dark mode is a media query instead of the .dark class. */
+@custom-variant dark (@media (prefers-color-scheme: dark));
+
+/* Rh45 theme for shadcn/ui — generated from the Rh45 design system tokens */
+:root {
+  --radius: 0.5rem;
+  --background: #FFFFFF;
+  --foreground: #000000;
+  --secondary: #F5F5F5;
+  --border: #E5E5E5;
+  --input: #8C8C8C;
+  --muted-foreground: #666666;
+  --card: var(--background);
+  --card-foreground: var(--foreground);
+  --popover: var(--card);
+  --popover-foreground: var(--foreground);
+  --primary: var(--foreground);
+  --primary-foreground: var(--background);
+  --secondary-foreground: var(--foreground);
+  --muted: var(--secondary);
+  --accent: var(--secondary);
+  --accent-foreground: var(--foreground);
+  --ring: var(--foreground);
+  --destructive: #A3332A;
+  --attention: #8A5B12;
+  --state-ok: #2E6A43;
+  --state-active: #2C5C8A;
+  --state-attention: var(--attention);
+  --state-alert: var(--destructive);
+  --chart-1: var(--foreground);
+  --chart-2: var(--state-active);
+  --chart-3: var(--input);
+  --chart-4: var(--attention);
+  --chart-5: var(--border);
+  --footer: var(--foreground);
+  --footer-foreground: var(--input);
+  --sidebar: var(--card);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #FFFFFF;
+    --secondary: #262626;
+    --border: var(--secondary);
+    --input: #737373;
+    --muted-foreground: #A3A3A3;
+    --card: #141414;
+    --destructive: #E07A6E;
+    --attention: #D9A54A;
+    --state-ok: #6FBF8A;
+    --state-active: #8DB6E0;
+    --footer: var(--card);
+    --footer-foreground: var(--muted-foreground);
+  }
+}
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-serif: "Source Serif 4", ui-serif, Georgia, serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-secondary: var(--secondary);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-attention: var(--attention);
+  --color-state-ok: var(--state-ok);
+  --color-state-active: var(--state-active);
+  --color-state-attention: var(--state-attention);
+  --color-state-alert: var(--state-alert);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-footer: var(--footer);
+  --color-footer-foreground: var(--footer-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  body { @apply bg-background text-foreground; }
+}
+
+/* Rh45 website: the styles that are not part of the design system theme. */
+:root {
+  color-scheme: light dark;
+  --max: 1120px;
+  --nav-height: 84px;
+}
+@media (max-width: 620px) {
+  :root { --nav-height: 66px; }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 1rem); }
+  ::selection { background: var(--foreground); color: var(--background); }
+  h1 { margin-bottom: 1.5rem; font-size: 48px; line-height: 52px; font-weight: 600; letter-spacing: -.02em; text-wrap: balance; }
+  h1 em { @apply font-serif; font-style: normal; font-weight: 400; letter-spacing: 0; }
+  h2 { margin-bottom: 1rem; font-size: 30px; line-height: 36px; font-weight: 600; letter-spacing: -.01em; text-wrap: balance; }
+  h3 { margin-bottom: .5rem; font-size: 20px; line-height: 28px; font-weight: 600; }
+  a:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+  .lucide { stroke-width: 1.5; }
+  @media (max-width: 620px) {
+    h1 { font-size: 36px; line-height: 40px; }
+  }
+}
+
+@layer components {
+  .shell { width: min(calc(100% - 3rem), var(--max)); margin-inline: auto; }
+  .note { margin-top: 1rem; font-size: 14px; line-height: 20px; color: var(--muted-foreground); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .lucide { transition: none; }
+}
