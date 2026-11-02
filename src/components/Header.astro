@@ -17,7 +17,7 @@ const path = Astro.url.pathname.replace(/\/?$/, '/');
     <div class="links" id="main-navigation">
       <div class="company-menu">
         <button
-          class={cn(buttonVariants({ variant: 'secondary', size: 'sm' }), 'company-trigger cursor-pointer hover:bg-accent focus-visible:ring-ring')}
+          class={cn(buttonVariants({ variant: 'outline', size: 'sm' }), 'company-trigger cursor-pointer border-input shadow-none')}
           type="button"
           aria-expanded="false"
           aria-controls="company-links"
@@ -35,9 +35,9 @@ const path = Astro.url.pathname.replace(/\/?$/, '/');
         </div>
       </div>
     </div>
-    <a class={cn(buttonVariants({ size: 'sm' }), 'contact hover:bg-muted-foreground focus-visible:ring-ring')} href="mailto:info@rh45.ai">Contact Rh45 ↗</a>
+    <a class={cn(buttonVariants({ size: 'sm' }), 'contact hover:bg-muted-foreground')} href="mailto:info@rh45.ai">Contact Rh45 ↗</a>
     <button
-      class={cn(buttonVariants({ variant: 'secondary', size: 'icon' }), 'mobile-menu-toggle cursor-pointer hover:bg-accent focus-visible:ring-ring')}
+      class={cn(buttonVariants({ variant: 'outline', size: 'icon' }), 'mobile-menu-toggle cursor-pointer border-input shadow-none')}
       type="button"
       aria-label="Open navigation menu"
       aria-controls="main-navigation"
@@ -72,7 +72,7 @@ const path = Astro.url.pathname.replace(/\/?$/, '/');
     .links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; padding: 15px 1.5rem; background: var(--background); border-bottom: 1px solid var(--border); }
     .links.open { display: flex; }
     .company-menu { flex-direction: column; align-items: stretch; }
-    .company-trigger, .company-trigger:hover { justify-content: space-between; width: 100%; height: auto; padding: 10px; background: none; border-radius: 0; font-size: 16px; line-height: 24px; font-weight: 400; }
+    .company-trigger, .company-trigger:hover { justify-content: space-between; width: 100%; height: auto; padding: 10px; background: none; border: 0; border-radius: 0; font-size: 16px; line-height: 24px; font-weight: 400; }
     .company-dropdown { position: static; min-width: 0; margin: 0 0 6px 10px; padding: 4px 8px; background: transparent; border: 0; border-left: 1px solid var(--border); border-radius: 0; }
     .company-dropdown::before { content: none; }
     .company-dropdown a { padding: 9px 12px; font-size: .78rem; white-space: normal; }
