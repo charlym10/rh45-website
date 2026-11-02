@@ -17,7 +17,7 @@ import Layout from '@/layouts/Layout.astro';
       <div class="max-w-[68ch]">
         {
           paragraphs.map((text, index) => (
-            <p class:list={['mb-4 whitespace-pre-line', index === 0 && 'text-xl leading-7 font-semibold', text.startsWith('Places that') && 'my-6 text-xl leading-7 font-semibold']}>{text}</p>
+            <p class:list={['mb-4 whitespace-pre-line', index === 0 && 'text-xl leading-7 font-semibold', text.startsWith('Places that') && 'font-semibold']}>{text}</p>
           ))
         }
         <BackHome />
