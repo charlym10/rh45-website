@@ -1,5 +1,6 @@
 ---
 import BackHome from '@/components/BackHome.astro';
+import ContactClose from '@/components/ContactClose.astro';
 import PageIntro from '@/components/PageIntro.astro';
 import { Card, CardContent } from '@/components/ui/card';
 import about from '@/data/about.json';
@@ -11,9 +12,9 @@ const groups = [about.principles, about.values, about.beliefs, about.nonNegotiab
 <Layout title="About | Rh45">
   <PageIntro
     eyebrow="About Rh45"
-    lead="Rh45 is an early-stage company working toward foundational infrastructure for more autonomous, adaptive and secure physical environments."
+    lead="Rh45 is an early-stage company building foundational infrastructure for more autonomous, adaptive and secure physical environments."
   >
-    Working toward a <em>cognitive layer</em> for the physical world.
+    Building a <em>cognitive layer</em> for the physical world.
   </PageIntro>
   <div class="pb-12">
     <div class="shell">
@@ -49,4 +50,5 @@ const groups = [about.principles, about.values, about.beliefs, about.nonNegotiab
       <BackHome />
     </div>
   </div>
+  <ContactClose />
 </Layout>

@@ -1,5 +1,6 @@
 ---
 import { ArrowRight, RefreshCw } from 'lucide-react';
+import ContactClose from '@/components/ContactClose.astro';
 import { Card, CardContent } from '@/components/ui/card';
 import Layout from '@/layouts/Layout.astro';
 
@@ -23,7 +24,7 @@ const conflict = [
   <section class="hero">
     <div class="shell relative z-1">
       <h1>The world around us is changing.<br /><em>Our environments must, too.</em></h1>
-      <p class="max-w-[68ch]">The places where people live and work remain too often passive, fragmented and reactive&#8288;—even as the systems around them become more complex.</p>
+      <p class="max-w-[68ch]">The places where people live and work remain too often passive, fragmented and reactive&#8288;—even as the systems around them become more complex. Rh45 is building the cognitive layer for the physical world, starting with autonomous access.</p>
       <a class="content-link" href="#conflict">See the challenge <span>↓</span></a>
     </div>
   </section>
@@ -55,7 +56,7 @@ const conflict = [
     <div class="shell">
       <h2>What if the environment itself could understand and respond?</h2>
       <p>Not simply by adding another app or dashboard, but by embedding intelligence into the physical layer&#8288;—where context, infrastructure and everyday life meet.</p>
-      <p class="note">Rh45 is at an early stage. This site shares our direction and how we intend to work as we begin our first project, focused on autonomous access.</p>
+      <p class="note">Rh45 is at an early stage. This site shares our direction and how we work as we build our first project, focused on autonomous access.</p>
     </div>
   </section>
 
@@ -83,17 +84,19 @@ const conflict = [
         <RefreshCw className="size-6 flex-none" strokeWidth={2} aria-hidden="true" />
         <span>Each action informs the next cycle</span>
       </div>
-      <p class="note wide">Conceptual model of the infrastructure Rh45 aims to build&#8288;—not a description of a currently available product.</p>
+      <p class="note wide">Conceptual model of the infrastructure Rh45 is building&#8288;—not a description of a currently available product.</p>
     </div>
   </section>
 
   <section class="statement bg-secondary py-24 max-[620px]:py-12" id="mission">
     <div class="shell">
-      <h2>Our long-term direction is to build a cognitive layer for the physical world.</h2>
-      <p class="lead">We aim to build foundational infrastructure that enables physical environments to become autonomous, adaptive and secure.</p>
+      <h2>We are building a cognitive layer for the physical world.</h2>
+      <p class="lead">We are building foundational infrastructure that enables physical environments to become autonomous, adaptive and secure.</p>
       <a class="content-link" href="/about/">Discover Rh45 <span>↗</span></a>
     </div>
   </section>
+
+  <ContactClose />
 </Layout>
 
 <style>
