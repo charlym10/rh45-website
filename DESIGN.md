@@ -85,7 +85,7 @@ Inter (400, 500, 600) for text, Source Serif 4 for the second beat of a headline
 
 ## Layout
 
-A centered 1120px shell with `space-6` side margins. Each company page is its own route. Home sections are two columns, with the title on the left and the supporting text on the right, and they collapse to one column at 860px. Two full-width `secondary` bands alternate with the `background` sections on Home. Card grids use `space-4` gaps. The cycle goes from four columns to two at 1000px and to one at 620px. Principles collapse at 720px, and About cards at 620px.
+A centered 1120px shell with `space-6` side margins. Each company page is its own route. Home sections are two columns, with the title on the left and the supporting text on the right, and they collapse to one column at 860px. Two full-width `secondary` bands alternate with the `background` sections on Home, and the second closes the page above the footer. Card grids use `space-4` gaps. The cycle goes from four columns to two at 1000px and to one at 620px. Principles collapse at 720px, and About cards at 620px.
 
 The Home hero fills the viewport below the header, with its text vertically centered, so its link leads to the next section. It keeps the circle from the first version of the site, in the new palette and stronger, so it reads in both themes: 550px wide, 120px past the right edge and 12% from the top, with a 1px `circle-line` border and two flat bands of 60px (`circle-wide`) and 120px (`circle-outer`). The hero is never shorter than 460px, or 400px below 620px wide, and clips the circle at its lower rule.
 
@@ -96,8 +96,7 @@ The Home hero fills the viewport below the header, with its text vertically cent
 - **Content links:** kept from the first version of the site. `.content-link` is inline `foreground` text with a 1px `foreground` underline 6px below it.
 - **Mobile menu:** below 620px, a shadcn Button, `secondary`, `icon`, with a 44px touch target. Its icon is three left-aligned lines of decreasing length. The menu opens as a panel under the header: Company as a plain row, and its links indented behind a `border` rule, kept from the first version of the site.
 - **Card:** shadcn Card for tiles, cycle steps, principles and About cards, with its border and `shadow-none`. `space-6` padding.
-- **Contact close:** the last section of Home and About: a title, one sentence and the email address as a content link.
-- **Footer:** the legal line only, on `footer`.
+- **Footer:** on every page, a contact close (title, one sentence and the email address as a content link) above the legal line, all in `footer-foreground`, on `footer`.
 - **Status, Metric and EventRow:** not used. They show live readings, and the site must not present data Rh45 does not have.
 
 ## Behavior
