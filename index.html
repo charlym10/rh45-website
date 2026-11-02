@@ -48,6 +48,7 @@ section.page{padding:0}
 
 /* Type */
 h1{margin:0 0 var(--space-6);font-size:clamp(36px,4.4vw,64px);line-height:1.25;font-weight:600;letter-spacing:-.01em;text-wrap:pretty}
+h1:focus{outline:none}
 h1 em{font-family:var(--font-serif);font-style:normal;font-weight:400}
 h2{margin:0 0 var(--space-4);font-size:32px;line-height:40px;font-weight:600;letter-spacing:-.01em}
 h3{margin:0 0 var(--space-2);font-size:21px;line-height:26px;font-weight:700}
@@ -73,6 +74,7 @@ nav{height:var(--nav-height);display:grid;grid-template-columns:1fr auto auto;al
 .company-dropdown:before{content:"";position:absolute;left:0;right:0;top:calc(-1*var(--space-2) - 1px);height:var(--space-2)}
 .company-dropdown a{padding:var(--space-2) 12px;border-radius:var(--radius-button);font-size:14px;line-height:20px;white-space:nowrap}
 .company-dropdown a:hover,.company-dropdown a:focus-visible{background:var(--surface)}
+.company-dropdown a[aria-current]{font-weight:600}
 .contact{justify-self:end;background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
 .contact:hover{background:var(--ink-muted);border-color:var(--ink-muted)}
 .mobile-menu-toggle{display:none;align-items:center;justify-content:center;flex:none;width:44px;height:44px;background:var(--surface);border:1px solid var(--line);border-radius:8px;color:var(--ink);cursor:pointer}
@@ -128,10 +130,6 @@ footer{padding:var(--space-6) 0;background:var(--footer-bg);color:#999999;font-s
 footer .row{display:flex;justify-content:space-between;align-items:center;gap:var(--space-6)}
 
 /* Responsive */
-@media(hover:hover) and (pointer:fine) and (min-width:621px){
-  .company-menu:hover>.company-dropdown,.company-menu:focus-within>.company-dropdown{display:flex}
-  .company-menu:hover>.company-trigger .company-chevron,.company-menu:focus-within>.company-trigger .company-chevron{transform:rotate(180deg)}
-}
 @media(max-width:1000px){
   .cognitive-cycle{grid-template-columns:repeat(2,minmax(0,1fr))}
   .cycle-link{display:none}
@@ -179,7 +177,7 @@ button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 </style><link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-</head><body id="top"><header><nav class="shell"><a class="logo" href="#top" id="home-link">Rh45</a><div class="links" id="main-navigation"><div class="company-menu"><button class="company-trigger" type="button" aria-expanded="false" aria-haspopup="true">Company<svg class="company-chevron" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="company-dropdown"><a href="#manifesto">Manifesto</a><a href="#how-we-operate">How we operate</a><a href="#about">About</a></div></div></div><a class="contact" href="mailto:info@rh45.ai">Contact Rh45 ↗</a><button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="main-navigation" aria-expanded="false"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3.5 5.5H16.5M3.5 10H13M3.5 14.5H9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></nav></header><main><div class="page active" id="home-page"><section class="hero"><div class="shell"><h1>The world around us is changing.<br><em>Our environments must, too.</em></h1><p>The places where people live and work remain too often passive, fragmented and reactive&#8288;—even as the systems around them become more complex.</p><a class="link" href="#conflict">See the challenge <span>↓</span></a></div></section><section class="statement" id="conflict"><div class="shell"><h2>Connected is not the same as intelligent.</h2><p>Connectivity has brought more devices and data into physical spaces. But isolated systems, delayed responses and fragmented operations can still leave environments unable to understand context or coordinate effectively.</p><div class="conflict-flow"><div class="tile"><div class="small">The status quo</div><h3>Fragmented systems</h3><p class="note">Information and action remain separated.</p></div><div class="conflict-arrow" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 16H27M19 8L27 16L19 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="tile"><div class="small">The consequence</div><h3>Reactive environments</h3><p class="note">People still carry the burden of coordination.</p></div></div></div></section><section class="statement band"><div class="shell"><h2>What if the environment itself could understand and respond?</h2><p>Not simply by adding another app or dashboard, but by embedding intelligence into the physical layer&#8288;—where context, infrastructure and everyday life meet.</p><p class="note">Rh45 is at an early stage. This site shares our direction and how we intend to work as we begin our first project, focused on autonomous access.</p></div></section><section class="statement" id="cognitive"><div class="shell"><div class="eyebrow">The cognitive layer</div><h2>Intelligence, embedded into the environments where life happens.</h2><p>Rh45’s foundational ambition is to connect the physical layer with distributed intelligence, so environments can move beyond isolated automation toward contextual, coordinated action.</p><div class="cognitive-cycle"><div class="cycle-link" aria-hidden="true"></div><div class="cap"><h3 class="cap-title"><span class="num">01</span> Sense</h3><p>Understand what is happening across a physical environment.</p></div><div class="cap"><h3 class="cap-title"><span class="num">02</span> Reason</h3><p>Interpret context and determine appropriate responses.</p></div><div class="cap"><h3 class="cap-title"><span class="num">03</span> Coordinate</h3><p>Coordinate connected systems, infrastructure and agents.</p></div><div class="cap"><h3 class="cap-title"><span class="num">04</span> Act</h3><p>Execute actions autonomously within defined boundaries.</p></div></div><div class="cycle-return"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M25 12A10 10 0 0 0 7 9L4 12M4 12V5M4 12H11M7 20A10 10 0 0 0 25 23L28 20M28 20V27M28 20H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Each action informs the next cycle</span></div><p class="note note-wide">Conceptual model of the infrastructure Rh45 aims to build&#8288;—not a description of a currently available product.</p></div></section><section class="statement band" id="mission"><div class="shell"><h2>Our long-term direction is to build a cognitive layer for the physical world.</h2><p class="lead">We aim to build foundational infrastructure that enables physical environments to become autonomous, adaptive and secure.</p><a class="link" href="#about">Discover Rh45 <span>↗</span></a></div></section></div><section class="page how-operate-page" id="how-we-operate-page">
+</head><body id="top"><header><nav class="shell"><a class="logo" href="#top" id="home-link">Rh45</a><div class="links" id="main-navigation"><div class="company-menu"><button class="company-trigger" type="button" aria-expanded="false" aria-controls="company-links">Company<svg class="company-chevron" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="company-dropdown" id="company-links"><a href="#manifesto">Manifesto</a><a href="#how-we-operate">How we operate</a><a href="#about">About</a></div></div></div><a class="contact" href="mailto:info@rh45.ai">Contact Rh45 ↗</a><button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="main-navigation" aria-expanded="false"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3.5 5.5H16.5M3.5 10H13M3.5 14.5H9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></nav></header><main><div class="page active" id="home-page"><section class="hero"><div class="shell"><h1>The world around us is changing.<br><em>Our environments must, too.</em></h1><p>The places where people live and work remain too often passive, fragmented and reactive&#8288;—even as the systems around them become more complex.</p><a class="link" href="#conflict">See the challenge <span>↓</span></a></div></section><section class="statement" id="conflict"><div class="shell"><h2>Connected is not the same as intelligent.</h2><p>Connectivity has brought more devices and data into physical spaces. But isolated systems, delayed responses and fragmented operations can still leave environments unable to understand context or coordinate effectively.</p><div class="conflict-flow"><div class="tile"><div class="small">The status quo</div><h3>Fragmented systems</h3><p class="note">Information and action remain separated.</p></div><div class="conflict-arrow" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 16H27M19 8L27 16L19 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="tile"><div class="small">The consequence</div><h3>Reactive environments</h3><p class="note">People still carry the burden of coordination.</p></div></div></div></section><section class="statement band"><div class="shell"><h2>What if the environment itself could understand and respond?</h2><p>Not simply by adding another app or dashboard, but by embedding intelligence into the physical layer&#8288;—where context, infrastructure and everyday life meet.</p><p class="note">Rh45 is at an early stage. This site shares our direction and how we intend to work as we begin our first project, focused on autonomous access.</p></div></section><section class="statement" id="cognitive"><div class="shell"><div class="eyebrow">The cognitive layer</div><h2>Intelligence, embedded into the environments where life happens.</h2><p>Rh45’s foundational ambition is to connect the physical layer with distributed intelligence, so environments can move beyond isolated automation toward contextual, coordinated action.</p><div class="cognitive-cycle"><div class="cycle-link" aria-hidden="true"></div><div class="cap"><h3 class="cap-title"><span class="num">01</span> Sense</h3><p>Understand what is happening across a physical environment.</p></div><div class="cap"><h3 class="cap-title"><span class="num">02</span> Reason</h3><p>Interpret context and determine appropriate responses.</p></div><div class="cap"><h3 class="cap-title"><span class="num">03</span> Coordinate</h3><p>Coordinate connected systems, infrastructure and agents.</p></div><div class="cap"><h3 class="cap-title"><span class="num">04</span> Act</h3><p>Execute actions autonomously within defined boundaries.</p></div></div><div class="cycle-return"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M25 12A10 10 0 0 0 7 9L4 12M4 12V5M4 12H11M7 20A10 10 0 0 0 25 23L28 20M28 20V27M28 20H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Each action informs the next cycle</span></div><p class="note note-wide">Conceptual model of the infrastructure Rh45 aims to build&#8288;—not a description of a currently available product.</p></div></section><section class="statement band" id="mission"><div class="shell"><h2>Our long-term direction is to build a cognitive layer for the physical world.</h2><p class="lead">We aim to build foundational infrastructure that enables physical environments to become autonomous, adaptive and secure.</p><a class="link" href="#about">Discover Rh45 <span>↗</span></a></div></section></div><section class="page how-operate-page" id="how-we-operate-page">
   <div class="subhero"><div class="shell">
     <div class="eyebrow">How we operate</div>
     <h1>Build fast. <em>Learn faster.</em></h1>
@@ -229,139 +227,111 @@ Places that evolve.</p>
 <h2 class="about-title">Core beliefs</h2><div class="aboutgrid"><article class="aboutcard"><div class="eyebrow">01</div><h3>Physical environments will become intelligent</h3><p>Homes, communities and cities will evolve from passive structures into adaptive systems capable of sensing, reasoning and responding in real time.</p></article><article class="aboutcard"><div class="eyebrow">02</div><h3>Intelligence will be distributed</h3><p>The future of intelligent systems will depend on the coordination of edge infrastructure, cloud systems, embodied agents, and human context.</p></article><article class="aboutcard"><div class="eyebrow">03</div><h3>Infrastructure is becoming computational</h3><p>Connectivity, energy, security and physical operations are evolving into programmable and data-driven systems.</p></article><article class="aboutcard"><div class="eyebrow">04</div><h3>Autonomy will become part of everyday life</h3><p>Autonomous systems will increasingly operate within the environments where people live, requiring reliability, transparency and human oversight.</p></article><article class="aboutcard"><div class="eyebrow">05</div><h3>Interoperability enables scale</h3><p>Long-term innovation depends on open and interoperable ecosystems capable of evolving across technologies, vendors and environments.</p></article><article class="aboutcard"><div class="eyebrow">06</div><h3>Human-centered systems create lasting value</h3><p>Technology creates meaningful impact when it improves safety, efficiency and quality of life for the people it serves.</p></article><article class="aboutcard"><div class="eyebrow">07</div><h3>Foundations matter more than isolated products</h3><p>Lasting technological change is driven by foundational infrastructure that enables continuous evolution, not by disconnected point solutions.</p></article></div>
 <h2 class="about-title">Non-negotiables</h2><div class="aboutgrid"><article class="aboutcard"><div class="eyebrow">01</div><h3>Human safety comes first</h3><p>No system, automation or optimization is more important than the safety and well-being of the people who depend on it.</p></article><article class="aboutcard"><div class="eyebrow">02</div><h3>Security and privacy are foundational</h3><p>Trust cannot exist without strong security, resilient infrastructure and responsible data practices.</p></article><article class="aboutcard"><div class="eyebrow">03</div><h3>Reliability is mandatory</h3><p>Systems operating in physical environments must remain dependable, resilient and operational under real-world conditions.</p></article><article class="aboutcard"><div class="eyebrow">04</div><h3>Autonomy requires transparency</h3><p>Autonomous systems must remain observable, understandable and accountable to human oversight.</p></article><article class="aboutcard"><div class="eyebrow">05</div><h3>Interoperability is a strategic requirement</h3><p>We do not build ecosystems that depend on unnecessary lock-in, fragmentation or closed standards.</p></article><article class="aboutcard"><div class="eyebrow">06</div><h3>Long-term foundations outweigh short-term gains</h3><p>We prioritize durable infrastructure, sustainable architecture and long-term value over temporary optimization or rapid but fragile growth.</p></article><article class="aboutcard"><div class="eyebrow">07</div><h3>Technical rigor is non-negotiable</h3><p>Important systems require depth, precision and disciplined execution&#8288;—not hype, shortcuts or superficial innovation.</p></article></div>
 <a class="back" href="#top" id="back-home">← Back to home</a></div></div></section></main><footer><div class="shell row"><span>Delaware Corporation · United States</span><span>Copyright © 2026 Rh45 Corp. All rights reserved.</span></div></footer><script>
+const views = {
+  manifesto: { page: 'manifesto-page', title: 'Manifesto | Rh45' },
+  'how-we-operate': { page: 'how-we-operate-page', title: 'How we operate | Rh45' },
+  about: { page: 'about', title: 'About | Rh45' },
+};
+const homeTitle = document.title;
+const pages = document.querySelectorAll('.page');
+const header = document.querySelector('header');
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const mainNavigation = document.querySelector('#main-navigation');
 const companyMenu = document.querySelector('.company-menu');
 const companyTrigger = document.querySelector('.company-trigger');
+const companyLinks = document.querySelectorAll('.company-dropdown a');
+const desktopPointer = window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 621px)');
+const mobileLayout = window.matchMedia('(max-width: 620px)');
 
-function closeCompanyMenu() {
-  companyMenu.classList.remove('open');
-  companyTrigger.setAttribute('aria-expanded', 'false');
+function setCompanyMenu(isOpen) {
+  companyMenu.classList.toggle('open', isOpen);
+  companyTrigger.setAttribute('aria-expanded', String(isOpen));
 }
 
-mobileMenuToggle.addEventListener('click', () => {
-  const isOpen = mainNavigation.classList.toggle('open');
+function setMobileMenu(isOpen) {
+  mainNavigation.classList.toggle('open', isOpen);
   mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
   mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-  if (!isOpen) closeCompanyMenu();
+}
+
+function closeMenus() {
+  setCompanyMenu(false);
+  setMobileMenu(false);
+}
+
+// The URL hash decides the view, so links, Back, Forward and typed URLs behave the same.
+function showCurrentView(moveFocus) {
+  const hash = location.hash.slice(1);
+  const view = views[hash];
+  const pageId = view ? view.page : 'home-page';
+  const page = document.getElementById(pageId);
+  const changed = !page.classList.contains('active');
+
+  pages.forEach((item) => item.classList.toggle('active', item === page));
+  document.title = view ? view.title : homeTitle;
+  companyLinks.forEach((link) => {
+    if (link.getAttribute('href') === `#${hash}`) link.setAttribute('aria-current', 'page');
+    else link.removeAttribute('aria-current');
+  });
+
+  // Jump on a view change or first load; moving within a view keeps the CSS smooth scroll.
+  const behavior = changed || !moveFocus ? 'instant' : 'auto';
+  const anchor = view || !hash || hash === 'top' ? null : document.getElementById(hash);
+  if (anchor) anchor.scrollIntoView({ behavior });
+  else window.scrollTo({ top: 0, behavior });
+
+  if (changed && moveFocus && !anchor) {
+    const heading = page.querySelector('h1');
+    heading.setAttribute('tabindex', '-1');
+    heading.focus({ preventScroll: true });
+  }
+}
+
+history.scrollRestoration = 'manual';
+window.addEventListener('hashchange', () => {
+  closeMenus();
+  showCurrentView(true);
+});
+showCurrentView(false);
+
+mobileMenuToggle.addEventListener('click', () => {
+  const isOpen = !mainNavigation.classList.contains('open');
+  setMobileMenu(isOpen);
+  if (isOpen) companyTrigger.focus();
+  else setCompanyMenu(false);
 });
 
 companyTrigger.addEventListener('click', (event) => {
-  event.preventDefault();
-  event.stopPropagation();
-  // Desktop uses hover; retain click-to-toggle only for touch/mobile layouts.
-  if (window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 621px)').matches) return;
-  const isOpen = !companyMenu.classList.contains('open');
-  companyMenu.classList.toggle('open', isOpen);
-  companyTrigger.setAttribute('aria-expanded', String(isOpen));
+  // With a mouse the menu follows hover; keyboard and touch toggle it.
+  if (desktopPointer.matches && event.detail > 0) return;
+  setCompanyMenu(!companyMenu.classList.contains('open'));
 });
 
-// Keep accessibility state synchronized with desktop hover/focus behavior.
 companyMenu.addEventListener('mouseenter', () => {
-  if (window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 621px)').matches) {
-    companyTrigger.setAttribute('aria-expanded', 'true');
-  }
+  if (desktopPointer.matches) setCompanyMenu(true);
 });
 companyMenu.addEventListener('mouseleave', () => {
-  if (window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 621px)').matches) {
-    companyTrigger.setAttribute('aria-expanded', 'false');
-  }
+  if (desktopPointer.matches && !companyMenu.querySelector(':focus-visible')) setCompanyMenu(false);
+});
+companyMenu.addEventListener('focusout', (event) => {
+  if (!companyMenu.contains(event.relatedTarget) && !companyMenu.matches(':hover')) setCompanyMenu(false);
 });
 
+// Also covers links to the current hash, which fire no hashchange.
+header.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenus));
+
 document.addEventListener('click', (event) => {
-  if (!companyMenu.contains(event.target)) closeCompanyMenu();
+  if (!header.contains(event.target)) closeMenus();
 });
 
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') {
-    closeCompanyMenu();
-    mainNavigation.classList.remove('open');
-    mobileMenuToggle.setAttribute('aria-expanded', 'false');
-    mobileMenuToggle.setAttribute('aria-label', 'Open navigation menu');
-  }
+  if (event.key !== 'Escape') return;
+  const focusInMenu = companyMenu.contains(document.activeElement);
+  const mobileOpen = mainNavigation.classList.contains('open');
+  closeMenus();
+  if (mobileOpen) mobileMenuToggle.focus();
+  else if (focusInMenu) companyTrigger.focus();
 });
 
-document.querySelectorAll('#main-navigation a[href^="#"]').forEach((link) => {
-  link.addEventListener('click', (event) => {
-    const id = link.getAttribute('href').slice(1);
-    const target = document.getElementById(id);
-    mainNavigation.classList.remove('open');
-    mobileMenuToggle.setAttribute('aria-expanded', 'false');
-    mobileMenuToggle.setAttribute('aria-label', 'Open navigation menu');
-    closeCompanyMenu();
-
-    if (id === 'about') {
-      event.preventDefault();
-      document.querySelectorAll('.page').forEach((item) => item.classList.toggle('active', item.id === 'about'));
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      history.replaceState(null, '', '#about');
-    } else if (id === 'manifesto') {
-      event.preventDefault();
-      document.querySelectorAll('.page').forEach((item) => item.classList.toggle('active', item.id === 'manifesto-page'));
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      history.replaceState(null, '', '#manifesto');
-    } else if (id === 'how-we-operate') {
-      event.preventDefault();
-      document.querySelectorAll('.page').forEach((item) => item.classList.toggle('active', item.id === 'how-we-operate-page'));
-      mainNavigation.classList.remove('open');
-      mobileMenuToggle.setAttribute('aria-expanded', 'false');
-      closeCompanyMenu();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      history.replaceState(null, '', '#how-we-operate');
-    } else if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
-
-document.querySelectorAll('a[href="#about"]').forEach((link) => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-    document.querySelectorAll('.page').forEach((item) => item.classList.toggle('active', item.id === 'about'));
-    mainNavigation.classList.remove('open');
-    mobileMenuToggle.setAttribute('aria-expanded', 'false');
-    mobileMenuToggle.setAttribute('aria-label', 'Open navigation menu');
-    closeCompanyMenu();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    history.replaceState(null, '', '#about');
-  });
-});
-
-document.querySelector('#home-link').addEventListener('click', (event) => {
-  event.preventDefault();
-  document.querySelectorAll('.page').forEach((item) => item.classList.toggle('active', item.id === 'home-page'));
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  history.replaceState(null, '', '#top');
-});
-
-document.querySelector('#how-operate-back-story').addEventListener('click', (event) => {
-  event.preventDefault();
-  document.querySelectorAll('.page').forEach((item) => item.classList.toggle('active', item.id === 'home-page'));
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  history.replaceState(null, '', '#top');
-});
-
-document.querySelector('#manifesto-back-home').addEventListener('click', (event) => {
-  event.preventDefault();
-  document.querySelectorAll('.page').forEach((item) => item.classList.toggle('active', item.id === 'home-page'));
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  history.replaceState(null, '', '#top');
-});
-
-const backHome = document.querySelector('#back-home');
-backHome.addEventListener('click', (event) => {
-  event.preventDefault();
-  document.querySelectorAll('.page').forEach((item) => item.classList.toggle('active', item.id === 'home-page'));
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  history.replaceState(null, '', '#top');
-});
-
-if (window.location.hash === '#about') {
-  document.querySelectorAll('.page').forEach((item) => item.classList.toggle('active', item.id === 'about'));
-} else if (window.location.hash === '#manifesto') {
-  document.querySelectorAll('.page').forEach((item) => item.classList.toggle('active', item.id === 'manifesto-page'));
-} else if (window.location.hash === '#how-we-operate') {
-  document.querySelectorAll('.page').forEach((item) => item.classList.toggle('active', item.id === 'how-we-operate-page'));
-}
-
+mobileLayout.addEventListener('change', closeMenus);
 </script></body></html>
