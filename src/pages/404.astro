@@ -1,10 +1,45 @@
 ---
-import BackHome from '@/components/BackHome.astro';
-import PageIntro from '@/components/PageIntro.astro';
+import { ArrowLeft } from 'lucide-react';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import Layout from '@/layouts/Layout.astro';
 ---
 
-<Layout title="Page not found | Rh45">
-  <PageIntro label="404" lead="This page does not exist or has moved.">Page not found.</PageIntro>
-  <div class="shell pb-12"><BackHome /></div>
+<Layout title="Page not found · Rh45" minimal>
+  <div class="flex flex-1 items-center py-16">
+    <div class="wrap flex min-w-0 flex-1 items-center gap-12">
+      <div class="flex min-w-0 flex-[999_1_520px] flex-col gap-8">
+        <p class="font-mono text-[13px] leading-5 text-muted-foreground">404 · Not found</p>
+        <h1 class="display m-0 max-w-160">This page does not exist. <em>The rest of the site does.</em></h1>
+        <p class="max-w-140 text-xl text-muted-foreground">The address may be mistyped, or the page may have moved.</p>
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <a class={cn(buttonVariants(), 'relative after:absolute after:inset-x-0 after:-inset-y-1')} href="/"><ArrowLeft /> Back to home</a>
+          <a class="inline-block py-3 text-sm underline underline-offset-4" href="/es/" hreflang="es" lang="es">Ir al inicio en español</a>
+        </div>
+      </div>
+      <div class="min-w-0 flex-[0_1_360px] max-[900px]:hidden">
+        <svg class="block w-full text-foreground" viewBox="0 0 440 440" role="img" aria-label="A network of nodes around a central hub, with one node missing">
+          <circle cx="220" cy="220" r="219" fill="none" stroke="currentColor" stroke-opacity="0.3" stroke-width="1"></circle>
+          <circle class="fill-foreground/4 dark:fill-foreground/12" cx="220" cy="220" r="150"></circle>
+          <g stroke="currentColor" stroke-opacity="0.35" stroke-width="1">
+            <line x1="220" y1="220" x2="117" y2="141"></line>
+            <line x1="220" y1="220" x2="347" y2="186"></line>
+            <line x1="220" y1="220" x2="286" y2="334"></line>
+            <line x1="220" y1="220" x2="98" y2="262"></line>
+            <line x1="117" y1="141" x2="98" y2="262"></line>
+            <line x1="98" y1="262" x2="286" y2="334"></line>
+            <line x1="286" y1="334" x2="347" y2="186"></line>
+          </g>
+          <g class="fill-background" stroke="currentColor" stroke-width="1.5">
+            <circle cx="117" cy="141" r="6"></circle>
+            <circle cx="347" cy="186" r="6"></circle>
+            <circle cx="286" cy="334" r="6"></circle>
+            <circle cx="98" cy="262" r="6"></circle>
+          </g>
+          <circle cx="232" cy="96" r="6" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-dasharray="3 3"></circle>
+          <circle cx="220" cy="220" r="10" fill="currentColor"></circle>
+        </svg>
+      </div>
+    </div>
+  </div>
 </Layout>

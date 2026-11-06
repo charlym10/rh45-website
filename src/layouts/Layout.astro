@@ -1,27 +1,45 @@
 ---
+import '@fontsource-variable/source-sans-3';
+import '@fontsource-variable/source-serif-4/opsz.css';
+import '@fontsource/source-code-pro/400.css';
 import '@/styles/globals.css';
 import Footer from '@/components/Footer.astro';
 import SiteHeader from '@/components/SiteHeader.astro';
+import { type Lang, ui } from '@/i18n';
 
 interface Props {
   title: string;
+  lang?: Lang;
+  minimal?: boolean;
+  /** The same page in each language, for hreflang links. */
+  alternates?: Record<Lang, string>;
 }
 
-const { title } = Astro.props;
-const description =
-  'Rh45 is an early-stage company that exists to give the physical world the ability to think. Our first project is an autonomous access system for residential communities.';
+const { title, lang = 'en', minimal = false, alternates } = Astro.props;
+const { description, locale, skip, ogImage, ogImageAlt } = ui[lang];
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const image = new URL(ogImage, Astro.site);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
-    <meta name="robots" content="index, follow" />
+    {!minimal && <link rel="canonical" href={canonical} />}
+    {
+      alternates && (
+        <>
+          {Object.entries(alternates).map(([code, path]) => (
+            <link rel="alternate" hreflang={code} href={new URL(path, Astro.site)} />
+          ))}
+          <link rel="alternate" hreflang="x-default" href={new URL(alternates.en, Astro.site)} />
+        </>
+      )
+    }
+    <meta name="robots" content={minimal ? 'noindex' : 'index, follow'} />
     <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
     <meta property="og:type" content="website" />
@@ -29,32 +47,47 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:locale" content={locale} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogImageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400&display=swap" />
+    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <slot name="head" />
   </head>
-  <body>
-    <a class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-30 focus:rounded-md focus:bg-background focus:px-3 focus:py-2 focus:text-sm" href="#main">Skip to content</a>
-    <header class="sticky top-0 z-10 bg-background">
-      <SiteHeader />
-    </header>
-    <noscript>
-      <nav class="shell flex gap-4 pb-4 text-sm underline min-[621px]:hidden">
-        <a href="/manifesto/">Manifesto</a>
-        <a href="/how-we-operate/">How we operate</a>
-        <a href="/about/">About</a>
-      </nav>
-    </noscript>
-    <main id="main">
+  <body class="flex min-h-svh flex-col">
+    <a class="sr-only focus:not-sr-only focus:block focus:bg-secondary focus:py-3 focus:text-center focus:text-sm focus:font-medium" href="#main">{skip}</a>
+    <SiteHeader lang={lang} minimal={minimal} />
+    <main class="flex flex-1 flex-col outline-none" id="main" tabindex="-1">
       <slot />
     </main>
-    <Footer />
+    <Footer lang={lang} minimal={minimal} />
+    <script>
+      // Links within the page scroll without writing the anchor into the address, so a reload
+      // keeps the visitor where they are instead of jumping back to the last section they chose.
+      document.addEventListener('click', (event) => {
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        const link = (event.target as Element).closest<HTMLAnchorElement>('a[href*="#"]');
+        if (!link || link.origin !== location.origin || link.pathname !== location.pathname || !link.hash) return;
+        const id = decodeURIComponent(link.hash.slice(1));
+        // #top has no element: browsers read it as the top of the page.
+        const target = document.getElementById(id) ?? (id === 'top' ? document.getElementById('main') : null);
+        if (!target) return;
+        event.preventDefault();
+        if (location.hash) history.replaceState(history.state, '', location.pathname + location.search);
+        if (target.id === id) target.scrollIntoView();
+        else window.scrollTo({ top: 0 });
+        // Like a native anchor, the next Tab continues from the section that was reached.
+        if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,72 @@
+---
+import { Check, Copy } from 'lucide-react';
+import { type Lang, ui } from '@/i18n';
+import { cn } from '@/lib/utils';
+
+interface Props {
+  email: string;
+  lang: Lang;
+  class?: string;
+}
+
+const { email, lang, class: className } = Astro.props;
+const { copyAddress, copied } = ui[lang];
+const label = `${copyAddress}: ${email}`;
+---
+
+<!-- For visitors whose browser has no mail app behind mailto: links. The icon inherits the colour around it. -->
+<!-- Placed right after the address with no space: its margin and padding make an 8px gap to the text. -->
+<span class={cn('copy-address group relative ml-1 inline-flex align-middle', className)} data-email={email} data-copied={copied}>
+  <button class="inline-flex size-6 cursor-pointer items-center justify-center rounded-sm opacity-80 transition-opacity after:absolute after:-inset-2.5 hover:opacity-100" type="button" aria-label={label} title={label}>
+    <Copy className="size-4 group-data-[done]:hidden" aria-hidden="true" />
+    <Check className="hidden size-4 group-data-[done]:block" aria-hidden="true" />
+  </button>
+  <span class="pointer-events-none invisible absolute bottom-full left-1/2 z-30 mb-2 w-max max-w-[calc(100vw-1rem)] -translate-x-1/2 translate-y-1 rounded-md border bg-popover px-2.5 py-1 text-xs font-medium text-popover-foreground opacity-0 shadow-md transition-[opacity,translate,visibility] group-data-[below]:top-full group-data-[below]:bottom-auto group-data-[below]:mt-2 group-data-[below]:mb-0 group-data-[below]:-translate-y-1 group-data-[done]:visible group-data-[done]:translate-y-0 group-data-[done]:opacity-100 motion-reduce:transition-none" role="status"></span>
+</span>
+
+<script>
+  // Some browsers refuse the Clipboard API, so a hidden text field and the old copy command stand in.
+  async function copy(text: string) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch {
+      const field = document.createElement('textarea');
+      field.value = text;
+      field.setAttribute('readonly', '');
+      field.style.cssText = 'position:fixed;opacity:0';
+      document.body.append(field);
+      field.select();
+      const copied = document.execCommand('copy');
+      field.remove();
+      return copied;
+    }
+  }
+
+  document.querySelectorAll<HTMLElement>('.copy-address').forEach((wrapper) => {
+    const button = wrapper.querySelector('button')!;
+    const message = wrapper.querySelector('[role="status"]')!;
+    let timer: number | undefined;
+    button.addEventListener('click', async () => {
+      if (!(await copy(wrapper.dataset.email!))) return;
+      button.focus();
+      // The message is the live region, so screen readers hear the same confirmation people see.
+      message.textContent = wrapper.dataset.copied!;
+      // Centred over the icon, but always 8px inside the window: it moves sideways near an edge,
+      // and below the icon when the sticky header or the top of the window would cover it.
+      message.style.marginLeft = '';
+      wrapper.toggleAttribute('data-below', false);
+      const header = document.querySelector('.site-header')?.getBoundingClientRect().bottom ?? 0;
+      const { left, right, top } = message.getBoundingClientRect();
+      const width = document.documentElement.clientWidth;
+      message.style.marginLeft = `${Math.max(8 - left, Math.min(0, width - 8 - right))}px`;
+      wrapper.toggleAttribute('data-below', top < Math.max(header, 0) + 8);
+      wrapper.toggleAttribute('data-done', true);
+      clearTimeout(timer);
+      timer = window.setTimeout(() => {
+        wrapper.toggleAttribute('data-done', false);
+        message.textContent = '';
+      }, 2000);
+    });
+  });
+</script>
