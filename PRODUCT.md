@@ -45,7 +45,7 @@ Spanish copy uses Colombian vocabulary: *conjunto residencial* and *portería*, 
 - The company is early-stage; describe its direction and current operating reality accurately.
 - Retain conceptual force while maintaining technical precision. The user rejected copy that became generic or technically inaccurate.
 - Preserve the company's stated commitments: purpose before technology; distributed intelligence and open boundaries; autonomy with accountability; foundations that can evolve; and human-centered systems.
-- Treat human safety, security and privacy, reliability and rigor, transparency, and no artificial lock-in as the company's non-negotiables.
+- Treat human safety, security and privacy, reliability, and transparency of autonomy as the company's four non-negotiables. They are stated at the level of the mission, not the first project, each with one sentence on why it holds. No artificial lock-in is no longer one of them on the site.
 - Do not invent customers, deployed products, results, or technical architecture.
 
 ## Evidence on Hand

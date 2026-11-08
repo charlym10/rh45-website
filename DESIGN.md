@@ -69,7 +69,7 @@ Source Sans 3 for text and Source Serif 4 for the second beat of a headline, ser
 | Design partner facts | `small`, terms at weight 600 |
 | Introductions | `heading` size at weight 400, usually in `muted-foreground` |
 | Running text | `body`, measure near 68 characters |
-| Statements and non-negotiables | Weight 500, -0.01em; 24px to 30px and 20px to 24px |
+| Statements and non-negotiables | Weight 500, -0.01em; 24px to 30px and 20px to 24px. Each non-negotiable is an `h3` with one `body` sentence below it in `muted-foreground`, measure near 60 characters |
 | Header links, footer | `small` |
 | Section labels | `label`, uppercase |
 | Non-negotiables numbers, 404 label | `data`, `muted-foreground`, tabular figures |

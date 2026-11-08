@@ -159,10 +159,13 @@ const structuredData = {
       <h2 class="section-label">{t.principlesLabel}</h2>
       <ol class="labelled-content border-b">
         {
-          t.principles.map((principle, index) => (
+          t.principles.map(({ title, detail }, index) => (
             <li class="flex items-baseline gap-6 border-t py-6">
               <span class="font-mono text-[13px] leading-5 text-muted-foreground tabular-nums">{String(index + 1).padStart(2, '0')}</span>
-              <span class="principle">{principle}</span>
+              <div class="flex flex-col gap-2">
+                <h3 class="principle m-0">{title}</h3>
+                <p class="max-w-[60ch] text-muted-foreground">{detail}</p>
+              </div>
             </li>
           ))
         }
